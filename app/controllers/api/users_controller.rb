@@ -1,12 +1,13 @@
 class Api::UsersController < ApplicationController
     def show
+        @user = User.find(params[:id])
         render :show
     end
 
     def create 
         
         @user = User.new(user_params)
-        debugger
+        
         if @user.save
             log_in!(@user)
             render :show
@@ -18,7 +19,7 @@ class Api::UsersController < ApplicationController
     def destroy
         @user = User.find(params[:id])
         @user.destroy 
-        render json: ['You account has been successfully deleted', status: 200]
+        render json: ['You account has been successfully deleted'], status: 200
     end
 
 
