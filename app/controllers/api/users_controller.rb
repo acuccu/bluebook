@@ -1,16 +1,18 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
     def show
         render :show
     end
 
     def create 
-        @user = User.new(user_params)
         
+        @user = User.new(user_params)
+        debugger
         if @user.save
             log_in!(@user)
             render :show
         else
             render json: @user.errors.full_messages, status: 422
+        end
     end
 
     def destroy
@@ -21,6 +23,8 @@ class UsersController < ApplicationController
 
 
     def user_params 
+        debugger
         params.require(:user).permit(:first_name, :last_name, :email, :cellphone, :password, :dob, :gender)
     end
 end
+
