@@ -2,10 +2,10 @@ import React from 'react';
 import LoginForm from '../session/login_container'
 
 
-LoginNav = props => (
-    <div class="nav-login">
+const LoginNav = props => (
+    <div className="nav-login">
         <a href='https://thebluebook.herokuapp.com/'>Blue Book</a>
-        <LoginForm props={props} />
+        <LoginForm />
     </div>
 )
 

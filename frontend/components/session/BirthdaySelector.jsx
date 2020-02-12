@@ -8,29 +8,38 @@ class bodSelector extends React.Component {
             month: '',
             day: '',
             year: '',
-        }}
+        };
+        this.dobSetState = this.dobSetState.bind(this);
     }
+
+    dobSetState (field) {
+        const {dobUpdate} = this.props;
+        let that = this; 
+        e => this.setState({[field]: e.currenTarget.value});
+        return (e) =>  {
+            debugger
+            that.setState({[field]: e.currentTarget.value}, () => dobUpdate(that.state)); 
+        }
+
+        // dobUpdate(this.state);
+    };
+   
+    
     
     render () { 
          
-        const {dobUpdate} = this.props;
-        
-        dobSetState = (field) => {
-            e => this.setState({[field]: e.currenTarget.value});
-            dobUpdate(this.state)
-        };
-       
+    const years = []
+    let d = new Date();
 
-        const years = []
-        for ( let year = getfullyear(); year > 1905; year--) {
+    for ( let year = d.getFullYear(); year > 1905; year--) {
             years.push(year);
-        };
+    };
 
     return (
     <div className = "bday-selector">
-    <label for="dob">Birthday:</label>
+    <label>Birthday:</label>
     
-    <select id="month" onChange={dobSetState("month")}>
+    <select id="month" onChange={this.dobSetState("month")}>
         <option value="0">Jan</option>
         <option value="1">Feb</option>
         <option value="2">Mar</option>
@@ -44,7 +53,7 @@ class bodSelector extends React.Component {
         <option value="10">Nov</option>
         <option value="11">Dec</option>
     </select>
-     <select id='day' onChange={dobSetState("day")} className="date-select" >
+     <select id='day' onChange={this.dobSetState("day")} className="date-select" >
        <option value="1">1</option>
        <option value="2">2</option>
        <option value="3">3</option>
@@ -78,16 +87,17 @@ class bodSelector extends React.Component {
        <option value="30">30</option>
        <option value="31">31</option>
     </select>
-    <select id='year' onChange={dobSetState("year")} className="date-select" >
-        {year.map (year => {
+    <select defaultValue="1995" id='year' onChange={this.dobSetState("year")} className="date-select" >
+        {years.map (year => {
             if (year == 1995) {
-                return  <option value="1995" selected>1995</option>
+                return  <option value="1995" key="1995" >1995</option>
             } else {
-                return  <option value="year">year</option>
+                return  <option value={year} key ={year}>{year}</option>
             }
             })}
     </select>
 
-    </div> ) 
-    };
+    </div> )}
 }
+
+export default bodSelector; 

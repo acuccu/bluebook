@@ -17,11 +17,11 @@ class SignUpForm extends React.Component {
 
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value });
-      }
+      };
 
     dobUpdate({month, day, year}) {
         const bday = `${month}/${day}/${year}`;
-        this.setState({[dob]: bday})
+        this.setState({['dob']: bday})
     };
 
 
@@ -58,21 +58,21 @@ class SignUpForm extends React.Component {
                </label>
                <div className='bday'>
                <label>Birthday
-                    <Birthday dobUpdate={dobUpdate} />
+                    <BirthdaySelector dobUpdate={this.dobUpdate} />
                </label>
                </div>
                <div className='gender'>
                <label>Gender
                 <input onClick={this.update('gender')} type="radio" id="male" name="gender" value="male"/>
-                <label for="male">Male</label>
+                <label >Male</label>
                 <input onClick={this.update('gender')} type="radio" id="female" name="gender" value="female"/>
-                <label for="female">Female</label>
+                <label >Female</label>
                 <input onClick={this.update('gender')} type="radio" id="other" name="gender" value="other"/>
-                <label for="other">Other</label>
+                <label >Other</label>
                </label>
                </div>
                
-               <button type='submit' value={this.props.formType} />
+               <button type='submit' value={this.props.formType}>Sign Up</button>
            </form>
        </div>
     )
