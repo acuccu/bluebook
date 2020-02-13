@@ -1,0 +1,55 @@
+.nav-inside {
+    display: flex;
+    justify-content: space-evenly;
+    
+    // margin-right: auto;
+    align-items: center;
+    height: 78px;
+    background-color: $fb-blue;
+}
+
+.inside-form > label {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    margin-bottom: 1;
+}
+
+.login-nav {
+    margin-right: 125px;
+}
+
+.inside-form {
+    display: flex;
+    padding-left: 10px;
+}
+
+.inside-form > div {
+    padding: 5px;
+}
+
+
+.nav-logo {
+       
+    margin-left: 150px;
+    margin-top: 5px;
+    display: flex;
+    margin-right: auto;
+    color: white;
+    text-decoration: none;
+    font-size: xx-large;
+    font-family: 'Open Sans', sans-serif;   
+}
+
+#login-submit {
+    color: white;
+    border: 1px blue solid;
+    background-color: $fb-blue;
+    font-size: 12px;
+    padding: 3px 6px 4px 6px;
+    margin-top: -5px;
+    font-weight: 700;
+    letter-spacing: 0.25px;
+}
+
+

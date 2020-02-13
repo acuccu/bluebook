@@ -29,33 +29,49 @@ class SignUpForm extends React.Component {
     render() {
     return (
        <div>
-           <form onSubmit={this.handleSubmit}>
-               <label>First Name:
-                   <input type="text" 
-                   onChange={this.update('first_name')} 
-                   value={this.state.auth}/>
-               </label>
-               <label>Last Name:
-                   <input type="text" 
-                   onChange={this.update('last_name')} 
-                   value={this.state.auth}/>
-               </label>
-               <label>E-mail:
+                <div className="signup-invitation">
+                    <h2>Sign Up</h2>
+                    <p>It's quick and easy.</p>
+                </div>
+
+            <div className='signup-form'> 
+            <form onSubmit={this.handleSubmit}>
+
+                <div className='signup-names'>
+                    <label>First Name:
+                        <input type="text" 
+                        onChange={this.update('first_name')} 
+                        value={this.state.auth}/>
+                    </label>
+                    <label>Last Name:
+                        <input type="text" 
+                        onChange={this.update('last_name')} 
+                        value={this.state.auth}/>
+                    </label>
+               </div>
+               
+               <div className="signup-auth">
+                <label>E-mail:
                    <input 
                    type="text" 
                    onChange={this.update('email')} 
                    value={this.state.auth}/>
-               </label>
-               <label>Cellphone:
+                </label>
+                <label>Cellphone:
                    <input type="text" 
                    onChange={this.update('auth')} 
                    value={this.state.auth}/>
-               </label>
-               <label>Password
-                   <input type="password" 
-                   onChange={this.update('password')} 
-                   value={this.state.password}/>
-               </label>
+                </label>
+               </div>
+
+                <div className='password'>          
+                <label>Password
+                    <input type="password" 
+                    onChange={this.update('password')} 
+                    value={this.state.password}/>
+                </label>
+               </div>
+
                <div className='bday'>
                <label>Birthday
                     <BirthdaySelector dobUpdate={this.dobUpdate} />
@@ -72,8 +88,9 @@ class SignUpForm extends React.Component {
                </label>
                </div>
                
-               <button type='submit' value={this.props.formType}>Sign Up</button>
+               <button className="signup-button" type='submit' value={this.props.formType}>Sign Up</button>
            </form>
+           </div>
        </div>
     )
     }

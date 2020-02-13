@@ -19,17 +19,22 @@ class LoginForm extends React.Component {
 
     render() {
     return (
-       <div>
-           <form onSubmit={this.handleSubmit}>
-               <label>Email or Phone
-                  
-                   <input type="text" onChange={this.update('auth')} value={this.state.auth}/>
+       <div className="nav-inside">
+           <a className="nav-logo" href='https://thebluebook.herokuapp.com/'>Blue Book</a>
+           <div className="login-nav"><form onSubmit={this.handleSubmit}>
+                <div className='inside-form'>
+                <label className="auth-block"><p>Email or Phone</p>
+                <div></div>
+                <input id="auth-p" type="text" onChange={this.update('auth')} value={this.state.auth}/>
                </label>
-               <label>Password
+               <div></div>
+               <label className="auth-pw"><p id="auth-pw">Password</p>
+                <div></div>
                    <input type="password" onChange={this.update('password')} value={this.state.password}/>
                </label>
-               <button type='submit' value={this.props.formType}>Log In</button>
-           </form>
+               <div></div>
+               <button id="login-submit" type='submit' value={this.props.formType}>Log In</button></div>
+           </form></div>
        </div>
     )
     }
