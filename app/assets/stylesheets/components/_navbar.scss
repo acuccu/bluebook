@@ -1,8 +1,6 @@
 .nav-inside {
     display: flex;
     justify-content: space-evenly;
-    
-    // margin-right: auto;
     align-items: center;
     height: 78px;
     background-color: $fb-blue;
@@ -15,8 +13,17 @@
     margin-bottom: 1;
 }
 
+.inside-form > label > p {
+    padding-bottom: 5px;
+}
+
+.inside-form > label > input {
+    height: 18px;
+    border: 1px solid black;
+}
+
 .login-nav {
-    margin-right: 125px;
+    margin-right: 285px;
 }
 
 .inside-form {
@@ -25,26 +32,30 @@
 }
 
 .inside-form > div {
-    padding: 5px;
+    padding: 7px;
 }
 
 
 .nav-logo {
        
-    margin-left: 150px;
-    margin-top: 5px;
+    margin-left: 200px;
+    margin-top: 10px;
     display: flex;
     margin-right: auto;
     color: white;
     text-decoration: none;
-    font-size: xx-large;
+    font-size: 37px;
     font-family: 'Open Sans', sans-serif;   
 }
 
 #login-submit {
+    position: absolute;
+    right: 238px;
+    top: 40.5px;  
     color: white;
-    border: 1px blue solid;
-    background-color: $fb-blue;
+    border: 1px #29487d solid;
+    cursor: pointer;
+    background-color: #4267b2;
     font-size: 12px;
     padding: 3px 6px 4px 6px;
     margin-top: -5px;

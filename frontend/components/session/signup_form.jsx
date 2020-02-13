@@ -28,7 +28,7 @@ class SignUpForm extends React.Component {
 
     render() {
     return (
-       <div>
+       <div className='Signup-top'>
                 <div className="signup-invitation">
                     <h2>Sign Up</h2>
                     <p>It's quick and easy.</p>

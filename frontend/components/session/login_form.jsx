@@ -20,7 +20,7 @@ class LoginForm extends React.Component {
     render() {
     return (
        <div className="nav-inside">
-           <a className="nav-logo" href='https://thebluebook.herokuapp.com/'>Blue Book</a>
+           <a className="nav-logo" href='https://thebluebook.herokuapp.com/'>bluebook</a>
            <div className="login-nav"><form onSubmit={this.handleSubmit}>
                 <div className='inside-form'>
                 <label className="auth-block"><p>Email or Phone</p>
