@@ -3,14 +3,17 @@ import React from 'react';
 class LoginForm extends React.Component {
     
     constructor (props) {
+        
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = this.props.user;
-    };
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.login = this.props.login;
+    }
 
-    handleSubmit () {
+    handleSubmit (e) {
         e.preventDefault();
-        this.props.action(this.state);
+        this.login(this.state);
     }
 
     update(field) {
@@ -21,7 +24,8 @@ class LoginForm extends React.Component {
     return (
        <div className="nav-inside">
            <a className="nav-logo" href='https://thebluebook.herokuapp.com/'>bluebook</a>
-           <div className="login-nav"><form onSubmit={this.handleSubmit}>
+           <div className="login-nav">
+               <form onSubmit={this.handleSubmit}>
                 <div className='inside-form'>
                 <label className="auth-block"><p>Email or Phone</p>
                 <div></div>

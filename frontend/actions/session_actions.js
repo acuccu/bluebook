@@ -14,24 +14,24 @@ export const logoutCurrentUser = () => ({
 });
 
 export const receiveErrors = errors => ({
-    RECEIVE_SESSION_ERRORS,
+    type: RECEIVE_SESSION_ERRORS,
     errors
 });
 
-export const signUp = user => dispatch (
+export const signUp = user => dispatch =>(
     APIUtil.signUp(user).then(
     user => dispatch(receiveCurrentUser(user)),
     err => dispatch(receiveErrors(err)))
 );
 
-export const login = user => dispatch (
+export const login = user => dispatch => (
     APIUtil.login(user).then(
         user => dispatch(receiveCurrentUser(user)),
         err =>  dispatch(receiveErrors(err))
     )
 );
 
-export const logout = () => dispatch (
+export const logout = () => dispatch => (
     APIUtil.logout().then(
     user => dispatch(logoutCurrentUser(user)),
     err => dispatch(receiveErrors(err))

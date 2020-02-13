@@ -8,11 +8,12 @@ class SignUpForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = this.props.newUser;
         this.dobUpdate = this.dobUpdate.bind(this);
+        this.signUp = this.props.signUp.bind(this);
     };
 
-    handleSubmit () {
+    handleSubmit (e) {
         e.preventDefault();
-        this.props.action(this.state);
+        this.signUp(this.state);
     }
 
     update(field) {
@@ -38,56 +39,54 @@ class SignUpForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
 
                 <div className='signup-names'>
-                    <label>First Name:
                         <input type="text" 
+                        placeholder='First name'
                         onChange={this.update('first_name')} 
                         value={this.state.auth}/>
-                    </label>
-                    <label>Last Name:
+                    <div></div>
                         <input type="text" 
+                        placeholder='Last name'
                         onChange={this.update('last_name')} 
                         value={this.state.auth}/>
-                    </label>
                </div>
                
                <div className="signup-auth">
-                <label>E-mail:
                    <input 
                    type="text" 
+                    placeholder='Email'
                    onChange={this.update('email')} 
                    value={this.state.auth}/>
-                </label>
-                <label>Cellphone:
+                <div></div>
                    <input type="text" 
-                   onChange={this.update('auth')} 
+                   placeholder='Mobile number'
+                   onChange={this.update('cellphone')} 
                    value={this.state.auth}/>
-                </label>
                </div>
 
                 <div className='password'>          
-                <label>Password
                     <input type="password" 
+                    placeholder='Password'
                     onChange={this.update('password')} 
                     value={this.state.password}/>
-                </label>
                </div>
 
                <div className='bday'>
-               <label>Birthday
                     <BirthdaySelector dobUpdate={this.dobUpdate} />
-               </label>
                </div>
                <div className='gender'>
-               <label>Gender
+               <label>Gender </label>
+                <div className='gender-radio'>
+                <span>
                 <input onClick={this.update('gender')} type="radio" id="male" name="gender" value="male"/>
-                <label >Male</label>
+                <label >Male</label></span>
+                <span>
                 <input onClick={this.update('gender')} type="radio" id="female" name="gender" value="female"/>
-                <label >Female</label>
+                <label >Female</label></span>
+                <span>
                 <input onClick={this.update('gender')} type="radio" id="other" name="gender" value="other"/>
-                <label >Other</label>
-               </label>
+                <label >Other</label></span></div>
                </div>
-               
+               {/* <div className='TOS'><p>By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time.</p></div> */}
                <button className="signup-button" type='submit' value={this.props.formType}>Sign Up</button>
            </form>
            </div>

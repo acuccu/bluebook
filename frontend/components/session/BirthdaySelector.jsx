@@ -37,8 +37,8 @@ class bodSelector extends React.Component {
 
     return (
     <div className = "bday-selector">
-    <label>Birthday:</label>
-    
+    <label>Birthday</label>
+    <div className='selectors'>
     <select id="month" onChange={this.dobSetState("month")}>
         <option value="0">Jan</option>
         <option value="1">Feb</option>
@@ -96,6 +96,7 @@ class bodSelector extends React.Component {
             }
             })}
     </select>
+    </div>
 
     </div> )}
 }

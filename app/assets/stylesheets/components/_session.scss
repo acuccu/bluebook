@@ -1,3 +1,8 @@
+.app {
+    height:100%;
+    background: #edf0f5;
+}
+
 .splash{
     display: block;
     background: #edf0f5;
@@ -8,6 +13,7 @@
     display: flex;
     justify-content: space-evenly;
     background: #edf0f5;
+    height: 100vh;
 }
 
 .presentation-top {
@@ -24,6 +30,8 @@
 }
 
 .signup-invitation > h2 {
+    margin-left: 5px;
+
     font-size: 35px;
     font-weight: 700;
     font-family: 'Open Sans', sans-serif; 
@@ -33,11 +41,148 @@
 }
 
 .signup-invitation > p {
+    margin-left: 5px;
+
     font-size: 20px;
     font-weight: 400r;
     font-family: 'Open Sans', sans-serif; 
     color: #333333;
     padding-bottom: 10px;
-   
+}
 
+.signup-names {
+    display: flex;
+    justify-content: center;
+}
+
+.signup-names > input {
+    display: block;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px; 
+    border-color: #bdc7d8;
+    border: 1px solid #ccd0d5;
+    height: 34px;
+    width: 180px; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.signup-auth {
+    display: flex;
+    justify-content: center;
+}
+
+.signup-auth > input {
+    display: block;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px; 
+    border-color: #bdc7d8;
+    border: 1px solid #ccd0d5;
+    height: 34px;
+    width: 180px; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.password > input {
+
+    display: block;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px; 
+    border-color: #bdc7d8;
+    border: 1px solid #ccd0d5;
+    height: 34px;
+    width: 369px; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.bday-selector {
+    display: flex;
+    flex-direction: column;
+}
+
+.bday-selector > label {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #90949c;
+    font-size: 16px;    
+    margin: 7px;
+    margin-top: 12px;
+    font-weight: bold;
+    
+}
+
+.gender {
+    display: flex;
+    flex-direction: column;
+}
+
+.selectors {
+    margin-left: 5px;
+    height: 30px;
+    
+}
+
+
+.selectors {
+    margin-left: 5px;
+    
+}
+
+.selectors > select {
+    border:  1px solid #ccd0d5;
+    height: 30px;
+    width: 63px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+.gender > label {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #90949c;
+    font-size: 16px;    
+    margin: 7px;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.gender-radio {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px; 
+    margin-bottom: 5px;
+}
+
+.gender-radio > span {
+    margin-left: 15px;
+}
+
+
+
+.signup-button {
+    background: linear-gradient(#67ae55, #578843);
+    border: 1px solid #446644;
+    width: 194px;
+    height: 39px; 
+    border-radius: 5px;
+    font-size: 19px;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    box-shadow: inset ;
+}
+    
+    
+
+.pres-icons > i {
+    height: 15px;
+    width: 15px;
+    margin: 15px;
+    color: black;
 }
