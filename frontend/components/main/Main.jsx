@@ -1,6 +1,8 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom'
 import Splash from './Splash'
+import LoginNav from '../Nav/LoginNav'
+
 
 class Main extends React.Component {
 

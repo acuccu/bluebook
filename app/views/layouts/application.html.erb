@@ -7,11 +7,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
     <script>
       window.turtleicon = "<%= image_url('turtle-i.png') %>"
       window.fishicon = "<%= image_url('fish-i.png') %>"
       window.whaleicon = "<%= image_url('whale-i.png') %>"
-      <%= favicon_link_tag asset_path('favicon.ico') %>
+      
     </script>
   </head>
 
