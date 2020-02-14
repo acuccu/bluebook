@@ -1,5 +1,5 @@
 import React from 'react';
-import BirthdaySelector from './BirthdaySelector';
+import BirthdaySelector from './birthday_selector';
 
 class SignUpForm extends React.Component {
 

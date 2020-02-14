@@ -7,8 +7,10 @@ import Main from './main/Main'
 const App = () => (
     
     <div className='app'>
-            <LoginNav />
-            <Main />
+        <SWITCH>
+            <Route exact path="/" component={<Main />} />
+        </SWITCH>
+            
     </div>
 );
 

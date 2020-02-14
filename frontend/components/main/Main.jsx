@@ -7,6 +7,7 @@ class Main extends React.Component {
     render () {
         return (
             <div className='splash'>
+            <LoginNav />
             <Splash />
             </div>
         )
