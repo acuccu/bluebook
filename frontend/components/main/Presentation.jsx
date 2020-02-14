@@ -12,12 +12,12 @@ const Presentation = props => {
         
        <div className='Signup-top'></div>
             <div className='pres-motto'>
-                <h2>Join 20,000 friends under<br /> the sea on bluebook</h2>
+                <h2>Join 20,000 friends under<br /> the sea on Bluebook</h2>
             </div>
             <div className='pres-icons'>
-                <i className="fas fa-fish" /><span className='icon-bold'> See photos and updates</span> from friends in News Feed. <br />
-                <i className="fas fa-frog" /><span className='icon-bold'> Share what's new </span> in your life on your Timeline. <br />
-                <i className="fab fa-docker" /><span className='icon-bold'> Find more </span> of what you're looking for with Facebook Search.<br />
+                <p><img src={window.turtleicon} /><span className='icon-bold'> See photos and updates</span>  from friends in News Feed. <br /></p>
+               <p> <img src={window.fishicon} /><span className='icon-bold'> Share what's new </span>  in your life on your Timeline. <br /></p>
+                <p><img src={window.whaleicon} /><span className='icon-bold'> Find more </span>  of what you're looking for with Bluebook Search.<br /></p>
             </div>
 
         </div>

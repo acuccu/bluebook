@@ -12,15 +12,25 @@
 .main-session {
     display: flex;
     justify-content: space-evenly;
+    width: 80%;
+    margin: auto;
     background: #edf0f5;
     height: 100vh;
 }
 
 .presentation-top {
    display: block;
+   margin-right: 10px;
+}
+
+.Signup-top {
+    top: 20px;
+    left: 20px;
+    margin: 20px;
 }
 
 .pres-motto > h2 {
+    margin-top: 60px;
     font-size: 28px;
     font-weight: 700;
     font-family: 'Open Sans', sans-serif; 
@@ -44,7 +54,7 @@
     margin-left: 5px;
 
     font-size: 20px;
-    font-weight: 400r;
+    font-weight: 400;
     font-family: 'Open Sans', sans-serif; 
     color: #333333;
     padding-bottom: 10px;
@@ -155,12 +165,14 @@
 
 .gender-radio {
     font-family: Arial, Helvetica, sans-serif;
-    padding: 5px; 
-    margin-bottom: 5px;
+    padding: 4px;
+    left: 5px;
+    margin-bottom: 10px;
 }
 
 .gender-radio > span {
-    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 10px;
 }
 
 
@@ -177,12 +189,25 @@
     color: white;
     box-shadow: inset ;
 }
-    
-    
 
-.pres-icons > i {
-    height: 15px;
-    width: 15px;
-    margin: 15px;
-    color: black;
+.pres-icons{
+    margin-top: 30px;
+}
+    
+.pres-icons > p {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif; 
+    color: #333333;
+    padding-bottom: 10px;
+}
+
+.icon-bold {
+    font-weight: 800;
+    margin: 5px;
+    margin-left: 10px;
 }

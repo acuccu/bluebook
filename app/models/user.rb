@@ -32,5 +32,7 @@ def ensure_session_token
     self.session_token ||= SecureRandom.base64(16)
 end
 
+has_one_attached :photo
+
 
 end
