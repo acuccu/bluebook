@@ -9,26 +9,18 @@ class bodSelector extends React.Component {
             day: '',
             year: '',
         };
-        this.dobSetState = this.dobSetState.bind(this);
     }
 
     dobSetState (field) {
-        const {dobUpdate} = this.props;
-        let that = this; 
-        e => this.setState({[field]: e.currenTarget.value});
-        return (e) =>  {
-            debugger
-            that.setState({[field]: e.currentTarget.value}, () => dobUpdate(that.state)); 
-        }
-
-        // dobUpdate(this.state);
+        return (e) => that.setState({[field]: e.currentTarget.value}, () => this.props.dobUpdate(this.state)); 
+        
     };
    
     
     
     render () { 
          
-    const years = []
+    const years = [];
     let d = new Date();
 
     for ( let year = d.getFullYear(); year > 1905; year--) {
