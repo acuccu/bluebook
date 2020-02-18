@@ -1,7 +1,6 @@
 import React from 'react';
 import LoginForm from '../session/login_container'
 
-
 const LoginNav = props => (
     
     <nav className="nav-login">
@@ -9,4 +8,4 @@ const LoginNav = props => (
     </nav>
 )
 
-export default LoginNav
+export default LoginNav;

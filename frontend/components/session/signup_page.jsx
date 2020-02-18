@@ -1,7 +1,6 @@
 import React from 'react';
-import {withRouter, HashRouter} from 'react-router-dom'
-import Splash from './Splash'
-import LoginNav from '../Nav/LoginNav'
+import {withRouter} from 'react-router-dom'
+import SignupForm from './signup_container'
 
 
 class Main extends React.Component {
@@ -9,7 +8,7 @@ class Main extends React.Component {
     render () {
         return (
             <div className='splash'>
-             <Splash />
+             <SignupForm />
             </div>
         )
     }
