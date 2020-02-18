@@ -18,8 +18,8 @@ class ProfileNav extends React.Component {
 
 }
 
-const mapStateToProps = state => {
-
+const mapStateToProps = (state, ownProps) => {
+    currentUser: 
 }
 
 export default ProfileNav;
