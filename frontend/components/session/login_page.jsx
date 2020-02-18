@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class LoginPage extends React.Component {
     constructor (props) {
@@ -22,6 +23,7 @@ class LoginPage extends React.Component {
             <>
             <div className="nav-inside">
                 <a className="nav-logo" href='https://thebluebook.herokuapp.com/'>bluebook</a>
+            <div><Link to='/create' >Create New Account </Link> </div>
             </div>
             <div className='login-white-square'>
                 <form className="login-page" onSubmit={this.handleSubmit}>
