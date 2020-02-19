@@ -27,6 +27,7 @@ class SignUpForm extends React.Component {
 
     inputUpdate(field, value) {
         const newState = Object.assign({}, this.state.newUser, {[field]: value});
+        debugger
         this.setState({newUser: newState })
       };
 
@@ -44,11 +45,10 @@ class SignUpForm extends React.Component {
             first_name: false,
             last_name: false,
             email: false,
-            celphhone: false,
+            cellphone: false,
             gender: false,
             message: false,
         }
-        debugger
         if (userInfo.first_name === "") {
             signUpErrors['first_name'] = true;
         } else { 
@@ -125,7 +125,7 @@ class SignUpForm extends React.Component {
                         fieldType="text"
                         fieldValue={ this.state.newUser.email }
                         fieldErrorMessage="You'll use this when you log in and if you ever need to reset your password"
-                        fieldPlaceHolder="Email or mobile number"
+                        fieldPlaceHolder="Email"
                         errorCheck = {this.errorCheck}
                         errors={ this.state.signUpErrors }/>
 
@@ -135,10 +135,12 @@ class SignUpForm extends React.Component {
                         fieldType="text"
                         fieldValue={ this.state.newUser.cellphone }
                         fieldErrorMessage="You'll use this when you log in and if you ever need to reset your password"
-                        fieldPlaceHolder="Email or mobile number"
+                        fieldPlaceHolder="Mobile number"
                         errorCheck = {this.errorCheck}
                         errors={ this.state.signUpErrors }/>
+                </div>
 
+                <div className="password">
                     <InputField inputUpdate={this.inputUpdate}
                         id="password"
                         fieldName="password"
@@ -164,7 +166,7 @@ class SignUpForm extends React.Component {
                     <input onClick={this.update('gender')} type="radio" id="female" name="gender" value="female"/>
                     <label >Female</label></span>
                     <span>
-                    <input onClick={this.update('gender')} type="radio" id="other" name="gender" value="other"/>
+                    <input onClick={this.update('gender')} type="radio" id="other" name="gender" value="other" defaultChecked/>
                     <label >Other</label></span></div>
                 </div>
                 <button className="signup-button" type='submit' value={this.props.formType}>Sign Up</button>

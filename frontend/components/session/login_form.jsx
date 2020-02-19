@@ -2,6 +2,7 @@ import React from 'react';
 import {Route, Redirect} from 'react-router-dom';
 import {AuthRoute} from '../../util/routes_util'
 import {LoginPage} from './login_page'
+
 class LoginForm extends React.Component {
     
     constructor (props) {
@@ -18,17 +19,6 @@ class LoginForm extends React.Component {
 
         e.preventDefault();
         this.login(this.state).then(null, errorCB);
-
-        // return (
-        //     <Route exact render={() => ( 
-        //         <Redirect to='/login' />)} />
-        //   )
-        // debugger
-        // 
-        
-        
-            // () => this.props.history.push("/login"
-        
     }
 
     update(field) {

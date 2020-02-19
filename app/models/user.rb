@@ -32,7 +32,10 @@ def ensure_session_token
     self.session_token ||= SecureRandom.base64(16)
 end
 
-has_one_attached :photo
+has_many :posted_posts,
+foreign_key: :author_id,
+class_name: :Post,
+dependent: :delete_all
 
 
 end

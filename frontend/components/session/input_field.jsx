@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faExclamationCircle} from '@fortawesome/free-solid-svg-icons'
 
 class InputField extends React.Component {
     constructor(props) {
@@ -13,15 +15,16 @@ class InputField extends React.Component {
     }
     
     update() {  
-        return e => {this.setState({fieldValue: e.target.value},
-        this.props.inputUpdate(this.props.fieldName, this.state.fieldValue))};
+        return e => {
+            debugger
+            this.setState({fieldValue: e.target.value},
+        this.props.inputUpdate(this.props.fieldName, e.target.value))};
        
     }
 
     errorDisplay() {
         const that = this; 
         return e => {
-            debugger
             if (that.state.message) {
             that.setState({message: false});
         } else {
@@ -32,22 +35,18 @@ class InputField extends React.Component {
 
     render() {
         const cssClass = this.props.fieldName;
-        const iconHidden = this.state.error ? "" : " hidden";
-        const isValid = this.state.error ? " invalid" : "";
-        if (this.props.id === document.activeElement.id) {
-            focus = true; 
-          }
+        const iconHidden = this.props.errors[this.props.fieldName] ? "" : " hidden";
+        const isValid = this.props.errors[this.props.fieldName] ? " invalid" : "";
+        const errorVisible = (this.props.errors[this.props.fieldName] && this.state.message) ? "" : " hidden";
+    
         return (
 
             <div className={ `${cssClass} field-set` }>
 
-            {   this.props.errors[this.props.fieldName] && 
-                this.state.message && 
-                (<div className={ "error-message"}>
+            <div className={ "error-message" + errorVisible }>
                 <span>{ this.props.fieldErrorMessage }</span>
-                </div>)
-            }
-            
+            </div>
+
             <input
                 type={ this.props.fieldType }
                 className={ "signUpInput" + isValid }
@@ -57,7 +56,8 @@ class InputField extends React.Component {
                 onBlur={  this.errorDisplay() }
                 onFocus={ this.errorDisplay() }
                 />
-            <i className={ "fas fa-exclamation-circle" +  iconHidden }></i>
+            <FontAwesomeIcon className={ "fas fa-exclamation-circle" +  iconHidden } icon={faExclamationCircle} />
+            {/* <i className={ "fas fa-exclamation-circle" +  iconHidden } ></i> */}
             </div>
         );
     }
