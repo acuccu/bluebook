@@ -5,10 +5,11 @@ import { createPost } from '../../actions/post_actions';
 
 const mapStateToProps = (state, ownProps) => ({
       post: {
-      title: '',
-      body: '',
-      author_id: ownProps.match.params.userId
-    }
+        title: '',
+        body: '',
+        author_id: ownProps.match.params.userId
+      },
+      author: state.entities.users[ownProps.match.params.userId]     
   });
   
   const mapDispatchToProps = dispatch => ({

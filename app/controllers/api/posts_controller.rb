@@ -1,6 +1,7 @@
 class Api::PostsController < ApplicationController
     def index
-        @posts = Post.all
+        @posts = Post.includes(:author).where(author_id: params[:user_id])
+        render :index
       end
     
       def show

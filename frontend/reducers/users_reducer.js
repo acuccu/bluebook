@@ -6,6 +6,8 @@ const usersReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, state, {[action.currentUser.id]: action.currentUser})
+        case RECEIVE_ALL_POSTS:
+                return Object.assign({}, state, action.payload.author)
         default:
             return state
     }

@@ -22,7 +22,7 @@ const removePost = postId => ({
 
   export const fetchPosts = (userId) => dispatch => (
     PostApiUtil.fetchPosts(userId)
-      .then(posts => dispatch(receiveAllPosts(posts)))
+      .then(payload => dispatch(receiveAllPosts(payload)))
   );
 
   export const fetchPost = (postId, userId) => dispatch => (
