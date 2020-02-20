@@ -1,9 +1,10 @@
 
-export const fetchPosts = userId => (
+export const fetchPosts = userId => {
+  return (
     $.ajax({
       url: `api/users/${userId}/posts/`
     })
-  );
+  )};
 
   export const createPost = (post, userId) => (
     $.ajax({

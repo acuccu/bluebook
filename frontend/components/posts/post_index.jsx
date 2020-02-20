@@ -1,5 +1,6 @@
 import React from 'react';
-import PostItem from './post';
+import PostIndexItem from './post';
+import PostForm from './post_form_container'
 
 
 
@@ -8,14 +9,16 @@ class PostIndex extends React.Component {
       super(props);
     }
     componentDidMount() {
-      this.props.fetchPosts();
+      
+      this.props.fetchPosts(this.props.match.params.userId);
     }
   
     render() {
       const { posts } = this.props;
-      const {author} = this.props;
+      const author = this.props.user;
       return (
         <div>
+          <PostForm />
           <ul>
             {
               posts.map(post => (

@@ -1,15 +1,21 @@
 import { connect } from 'react-redux';
 import PostIndex from './post_index';
 import {fetchPosts} from '../../actions/post_actions';
+import {withRouter} from 'react-router-dom';
 
-const mapStateToProps = state => ({
-    posts: Object.values(state.entities.posts)
-  });
+const mapStateToProps = ({entities: {posts}, entities: {users}}, ownProps) => {
+    return(
+      {
+      posts: Object.values(posts),
+      user: users[ownProps.match.params.userId]
+      }
+    )
+};
 
   const mapDispatchToProps = dispatch => ({
-    fetchPosts: () => dispatch(fetchPosts())
+    fetchPosts: (userId) => dispatch(fetchPosts(userId))
   });
 
-  export default connect(mapStateToProps, mapDispatchToProps)(PostIndex);
+  export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostIndex));
 
   

@@ -57,7 +57,6 @@ class InputField extends React.Component {
                 onFocus={ this.errorDisplay() }
                 />
             <FontAwesomeIcon className={ "fas fa-exclamation-circle" +  iconHidden } icon={faExclamationCircle} />
-            {/* <i className={ "fas fa-exclamation-circle" +  iconHidden } ></i> */}
             </div>
         );
     }

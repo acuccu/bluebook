@@ -1,0 +1,18 @@
+.nav-profile {
+    display: flex;
+    justify-content: space-evenly;
+    height: 43px;
+    background-color: $fb-blue;
+}
+
+.logo-searchbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profile-logo {
+    height: 24px;
+    width: 24px;
+    color: white;
+}

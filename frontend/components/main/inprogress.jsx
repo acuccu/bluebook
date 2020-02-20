@@ -1,5 +1,11 @@
+import React from 'react'
+
 const inProgress = () => {
 
-    return ('Work In Progess')
+    return (
+        <p>'Work In Progess'</p>)
 
 } 
+
+
+export default inProgress

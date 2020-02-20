@@ -2,8 +2,8 @@ import {RECEIVE_ALL_POSTS, REMOVE_POST, RECEIVE_POST} from '../actions/post_acti
 
 
 const PostsReducer = (state = {}, action) => {
+    // debugger
     Object.freeze(state);
-  
     switch (action.type) {
       case RECEIVE_ALL_POSTS:
         return Object.assign({}, state, action.payload.posts)

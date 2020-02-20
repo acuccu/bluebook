@@ -5,7 +5,7 @@ class PostForm extends React.Component {
     constructor(props) {
       super(props);
       this.state = this.props.post;
-  
+
       this.handleSubmit = this.handleSubmit.bind(this);
     }
   
@@ -19,13 +19,14 @@ class PostForm extends React.Component {
     }
     
     render () {
-        <div cassName='create-post'>
+      return(
+        <div className='create-post'>
            
             <form onSubmit={ this.handleSubmit }> <h3>create post</h3> 
                 <button className='photo-button' />
                 <div className='post-area'><input type="textarea" onChange={this.update('body')}/>
                 </div>
-                <div classname='icon-buttons'>
+                <div className='icon-buttons'>
                     <button className='photo-button-ico'>Photo</button>
                     <button className='tag-button-ico'>Tag Friends</button>
                     <button className='location-button-ico'>Check in</button>
@@ -33,6 +34,7 @@ class PostForm extends React.Component {
                 <input type="submit" value="Post"/>
                 </form>
         </div>
+      )
 
     }
 }

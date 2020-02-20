@@ -8,10 +8,10 @@ class SearchBar extends React.Component {
     }
 
     render () {
-        <form className="search-bar">
+       return( <form className="search-bar">
         <input type="text" placeholder="not implemented yet" />
         <button />
-        </form>
+        </form>);
     }
 }
 

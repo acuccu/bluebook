@@ -1,8 +1,14 @@
 import React from 'react';
 import SearchBar from './search_bar'
 import {Link} from 'react-router-dom'
-import { connect } from 'react-redux';
-import {logout} from '../../actions/session_actions'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faUserFriends} from '@fortawesome/free-solid-svg-icons'
+import {faFacebookMessenger} from '@fortawesome/free-brands-svg-icons'
+import {faBell} from '@fortawesome/free-solid-svg-icons'
+import {faQuestionCircle} from '@fortawesome/free-solid-svg-icons'
+import {faCaretDown} from '@fortawesome/free-solid-svg-icons'
+
+
 
 class LoggedInNav extends React.Component {
 
@@ -24,27 +30,36 @@ class LoggedInNav extends React.Component {
     render() {
         return (
         <nav className="nav-profile" >
-        <img className='profile-logo' src={favicon.ico} />
+        <div className='logo-searchbar'>
+        <img className='profile-logo' src={window.fishicon} />
         <SearchBar />
+        </div>
         <div>
-            <img className="user-avatar"/>
-            <Link to={`/users/${user.id}`}>{`${this.user.first_name}`}</Link>
+            <div class="image-container" data-large="https://assets.imgix.net/unsplash/bear.jpg?w=1000">
+                <img class="placeholder" src="https://assets.imgix.net/unsplash/bear.jpg?w=50" class="img-small"/>
+            </div>
+            <Link to={`/users/${this.user.id}`}>{`${this.user.first_name}`}</Link>
             <Link to='/in-progress'>Home</Link>
             <Link to='/in-progress'>Create</Link>
         </div>
-        <div> <button className="button-logou" onClick={ handleLogout }>Logout</button></div>
+        <div className='nav-right'>
+            <div className='nav-icons'> 
+                <FontAwesomeIcon className="userfriends" icon={faUserFriends} />
+                <FontAwesomeIcon className="fb-messenger" icon={faFacebookMessenger} />
+                <FontAwesomeIcon className="bell" icon={faBell} />
+                
+            </div>
+            <div className="logout-div">
+                <FontAwesomeIcon className="question-circle" icon={faQuestionCircle} />
+                <FontAwesomeIcon className="caret-down" icon={faCaretDown} />
+                <span className='logout-button'>
+                    <button className="button-logou" onClick={ this.handleLogout }>Logout</button>
+                </span>
+            </div>
+        </div>
         </nav>)
     }
 }
 
-const mapStateToProps = ({session, entities: {users}}) => ({
-    currentUser: users[session.currentUserId]
-});
-
-const mapDispatchToProps = dispatch => ({
-    logout: () => dispatch(logout())
-})
-
-connect(mapStateToProps, mapDispatchToProps)(LoggedInNav);
 
 export default LoggedInNav;

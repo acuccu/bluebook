@@ -14,7 +14,7 @@ class Banner extends React.Component {
             <span className='banner-image'>
                 <img className='image' />
             </span>
-            <h1>{`${this.props.first_name} ${this.props.last_name}`}</h1>
+            <h1>{`${this.props.profileUser.first_name} ${this.props.profileUser.last_name}`}</h1>
 
             <nav>
 

@@ -5,7 +5,7 @@ import LoginPage from './session/login_page_container';
 import {ProtectedRoute, AuthRoute} from '../util/routes_util';
 import LoginNav from './Nav/LoginNav';
 import SignUpPage from './session/signup_page';
-import LoggedInNav from './Nav/logged_in_nav';
+import LoggedInNav from './Nav/logged_in_container';
 import ProfileMain from './profile/profile_main'
 import InProgress from './main/inprogress'
 
@@ -20,7 +20,7 @@ const App = () => {
         <Switch>
             <AuthRoute exact path='/' component={LoginNav} userId={currentUserId}/>
             <AuthRoute exact path='/create' component={LoginNav} userId={currentUserId}/>
-            <ProtectedRoute exact path='/profile/:userId' component={LoggedInNav} />
+            <ProtectedRoute exact path='/users/:userId' component={LoggedInNav} />
             <ProtectedRoute exact path='/in-progress' component={LoggedInNav} />
         </Switch>
 
@@ -29,7 +29,7 @@ const App = () => {
             <ProtectedRoute exact path='/home' />
             <AuthRoute exact path='/login' component={LoginPage} userId={currentUserId}/>
             <AuthRoute exact path='/create' component={SignUpPage} userId={currentUserId}/>
-            <ProtectedRoute exact path='/profile/:userId' component={ProfileMain} />
+            <ProtectedRoute exact path='/users/:userId' component={ProfileMain} />
             <ProtectedRoute exact path='/in-progress' component={InProgress} />
         </Switch>
         
