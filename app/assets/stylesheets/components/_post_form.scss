@@ -1,0 +1,87 @@
+.create-post {
+    border: 1px solid #cacdd3;
+    box-sizing: border-box;
+    padding-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 2px;
+}
+
+.post-textarea input:focus {
+    outline: none;
+    border-style: none;
+}
+
+.post-textarea input {
+    width: 380px;
+    height: 48px;
+    outline: none;
+    
+    border-style: none;
+}
+
+.form-top {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: #f5f6f7;
+    border-bottom: 1px solid #cacdd3;
+    width: 514px;
+    height: 33px;
+}
+
+.form-top button {
+    background-color: transparent;
+    border-style: none;
+    height: 30px; 
+}
+
+
+
+.photo-button {
+    display: flex;
+    
+    align-items: center;
+}
+.post-area {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: white;
+}
+
+.form-textarea {
+    width: 48px;
+    height: 34px;
+    border: 0;
+   
+}
+
+.post-avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-image: url(https://assets.imgix.net/unsplash/bear.jpg?w=50);
+    background-size: cover;
+}
+
+.form-icon-buttons {
+    border-top: 1px solid #cacdd3;
+    background-color: white;
+    box-sizing: border-box;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.form-icon-buttons > button {
+    width: 118px;
+    height: 31px; 
+    border-radius: 14px;
+    border-style: none;
+    color:#4b4f56;
+    background-color: #f5f6f7;
+}
+
+#submit-post {
+    color: $fb-blue;
+    border: 1px $fb-blue solid;
+}

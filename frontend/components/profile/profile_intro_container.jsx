@@ -2,8 +2,7 @@ import { connect } from 'react-redux';
 import ProfileIntro from './profile_intro'
 import {withRouter} from 'react-router-dom';
 
-const mapStateToProps = ({session, entities: { users }}) => {
-    
+const mapStateToProps = ({entities: { users }}, ownProps) => {
     return ({
     user: users[ownProps.match.params.userId]
 })};

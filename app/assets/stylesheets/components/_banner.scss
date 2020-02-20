@@ -1,0 +1,74 @@
+.banner-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.banner-avatar {
+    top: 170px;
+    left: 30px;
+    padding: 5px;
+    position: absolute;
+    border-radius: 50%;
+    width: 168px;
+    height: 168px;
+    background-image: url(https://assets.imgix.net/unsplash/bear.jpg?w=50);
+    background-size: cover;
+}
+
+.avatar-frame {
+    position: absolute;
+    top: 164px;
+    left: 24px;
+    padding: 5px;
+    border: 1px #cacdd3 solid;
+    border-radius: 50%;
+    width: 178px;
+    height: 178px;
+    background-color: white;
+}
+
+.banner-image {
+    position: relative;
+    background-image: url(https://assets.imgix.net/unsplash/bear.jpg?w=50);
+    background-size: cover;
+    width: 815px;
+    height: 315px;
+}
+
+.h1-name {
+    position: absolute;
+    top: 270px;
+    left: 240px;
+    -webkit-font-smoothing: antialias;
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 35px;
+    -webkit-text-stroke-width: .25px;
+    -webkit-text-stroke-color: black;
+}
+
+.nav-banner {
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 300px;
+}
+
+.div-banner {
+    width: 800px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: white;
+    
+}
+
+.nav-banner > a {
+    color: $fb-blue;
+    text-decoration: none;
+
+}

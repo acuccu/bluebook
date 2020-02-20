@@ -11,8 +11,10 @@ class ProfileMain extends React.Component {
         return (
             <div className='profile'>
                 <Banner />
-                {/* <ProfileIntro /> */}
-                <PostIndexContainer />
+                <div className='profile-content'>
+                    <ProfileIntro />
+                    <PostIndexContainer />
+                </div>
             </div>
         )
     }

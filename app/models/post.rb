@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
 
-    validates :body, presence: true 
+    validates :body, :author_id, presence: true 
   
     belongs_to :author,
     foreign_key: :author_id,

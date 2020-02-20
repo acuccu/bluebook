@@ -1,0 +1,57 @@
+.profile-intro{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 323px;
+    height: 100%; 
+    background-color: white; 
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 2px;
+}
+
+.profile-intro-title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 297px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.profile-intro-title h3 {
+    font-size: 16px;
+    font-weight: lighter;
+    color: #333333;
+}
+ 
+
+.icon-globe-div .icon-globe {
+    background-color: $fb-blue;
+    border-radius: 50%;
+    color: white;
+    padding: 5px;
+    -webkit-font-smoothing: antialiased;
+    transform: scale(0.9);
+}
+
+.icon-span {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: #202020;
+}
+
+.icon-intro {
+    transform: scale(0.9);
+}
+
+.icon-span p {
+    font-size: 12px;
+    color: #202020;
+}
+
+.icon-div {
+    border-top: 1px solid #dddfe2;
+    
+
+}

@@ -15,16 +15,7 @@ class LoggedInNav extends React.Component {
     constructor (props) {
         super(props);
         this.user = this.props.currentUser;
-        this.handleLogout = this.handleLogout.bind(this)
-    }
-
-    handleLogout () {
-
-     (e) => {
-        e.preventDefault();
-        logout()
-          .then( history.push("/") );
-      };
+        this.logout = this.props.logout;
     }
 
     render() {
@@ -34,26 +25,28 @@ class LoggedInNav extends React.Component {
         <img className='profile-logo' src={window.fishicon} />
         <SearchBar />
         </div>
-        <div>
-            <div class="image-container" data-large="https://assets.imgix.net/unsplash/bear.jpg?w=1000">
-                <img class="placeholder" src="https://assets.imgix.net/unsplash/bear.jpg?w=50" class="img-small"/>
-            </div>
-            <Link to={`/users/${this.user.id}`}>{`${this.user.first_name}`}</Link>
-            <Link to='/in-progress'>Home</Link>
-            <Link to='/in-progress'>Create</Link>
-        </div>
         <div className='nav-right'>
-            <div className='nav-icons'> 
-                <FontAwesomeIcon className="userfriends" icon={faUserFriends} />
-                <FontAwesomeIcon className="fb-messenger" icon={faFacebookMessenger} />
-                <FontAwesomeIcon className="bell" icon={faBell} />
-                
+            <div className='avatar-group'>
+                <div className='nav-avatar'></div>
+                <Link to={`/users/${this.user.id}`}>{`${this.user.first_name}`}</Link>
+                <div className="separators" />
+                <Link to='/in-progress'>Home</Link>
+                <div className="separators" /> 
+                <Link to='/in-progress'>Create</Link> 
+                <div className="separators"/>
             </div>
+       
+            <div className='nav-icons'> 
+                <FontAwesomeIcon className="nav-i" icon={faUserFriends} />
+                <FontAwesomeIcon className="nav-i" icon={faFacebookMessenger} />
+                <FontAwesomeIcon className="nav-i" icon={faBell} /> 
+            </div>
+            <div className="separators"></div>
             <div className="logout-div">
-                <FontAwesomeIcon className="question-circle" icon={faQuestionCircle} />
-                <FontAwesomeIcon className="caret-down" icon={faCaretDown} />
+                <FontAwesomeIcon className="nav-i" icon={faQuestionCircle} />
+                <FontAwesomeIcon className="nav-i" icon={faCaretDown} />
                 <span className='logout-button'>
-                    <button className="button-logou" onClick={ this.handleLogout }>Logout</button>
+                    <button className="button-logout" onClick={()=>this.logout().then(history.push("/"))}>Logout</button>
                 </span>
             </div>
         </div>

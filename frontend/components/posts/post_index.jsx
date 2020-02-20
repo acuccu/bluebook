@@ -21,7 +21,7 @@ class PostIndex extends React.Component {
           <PostForm />
           <ul>
             {
-              posts.map(post => (
+              posts.reverse().map(post => (
                 <PostIndexItem
                   post={post}
                   key={post.id}
