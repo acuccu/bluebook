@@ -1,24 +1,18 @@
-# README
+# BlueBook
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+BlueBook is a social-media website for marine fauna that is modeled after Facebook. Users can login and post on their wall. 
 
-Things you may want to cover:
+## Styling 
 
-* Ruby version
+BlueBook is closely modeled to render the feeling and user experience of Facebook. 
 
-* System dependencies
+## Front-end and backend authentication
 
-* Configuration
+All the forms in the website are self-validating and offer the user guidence on how to properly sign up and log in. For additional security validations are checked both at the model and database level. Users can sign in using either their email or mobile number. Passwords are hashed and salted using Bcrypt. 
 
-* Database creation
+## Future implementations
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Add comments to posts 
+* Friendship requests
+* Feed and continuous scrolling 
+* Uploading pictures
