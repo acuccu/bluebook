@@ -14,11 +14,17 @@ class PostForm extends React.Component {
       this.state = this.props.post;
 
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.clearField = this.clearField.bind(this);
     }
-  
+    
     handleSubmit(e) {
       e.preventDefault();
-      this.props.createPost(this.state);
+      this.props.createPost(this.state).then(() => this.clearField());
+    }
+
+    clearField() {
+        debugger
+        this.setState({body: "", title: "", author_id: ""})
     }
   
     update(field) {
@@ -26,7 +32,7 @@ class PostForm extends React.Component {
     }
     
     render () {
-      debugger
+      
       return(
         <div className='create-post'>
            
@@ -43,7 +49,7 @@ class PostForm extends React.Component {
               <div className='post-area'>
                   <div className='post-avatar'></div>
                 <div className='post-textarea'>
-                  <input  type="form-textarea" onChange={this.update('body')}/>
+                  <input  type="form-textarea" value={`${this.state.body}`} onChange={this.update('body')}/>
                 </div>
               </div>
 
