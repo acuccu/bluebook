@@ -1,11 +1,14 @@
 .profile-intro{
     box-sizing: border-box;
     padding: 10px;
-    width: 323px;
+    width: 287px;
+    margin-right: 12px;
     height: 100%; 
     background-color: white; 
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 2px;
+    border: 1px solid #cacdd3;
+
 }
 
 .profile-intro-title {
@@ -18,12 +21,26 @@
     font-weight: lighter;
 }
 
+.profile-intro-title > h3 {
+    margin-left: 5px;
+}
+
 .profile-intro-title h3 {
     font-size: 16px;
     font-weight: lighter;
     color: #333333;
 }
  
+.bio-span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 11px;
+    color: #333333;
+}
+.bio-span > p {
+    font-size: 12px;
+}
 
 .icon-globe-div .icon-globe {
     background-color: $fb-blue;
@@ -43,15 +60,48 @@
 
 .icon-intro {
     transform: scale(0.9);
+    margin-right: 8px;
+    padding-bottom: 10px;
+}
+
+
+.intro-blue {
+    
+    color: $fb-blue
+}
+
+#grad-cap {
+    margin-right: 6px;
+}
+
+.intro-black {
+    color: #202020;
 }
 
 .icon-span p {
     font-size: 12px;
-    color: #202020;
+    margin-right: 3px;
+    padding-bottom: 8px;
 }
 
 .icon-div {
     border-top: 1px solid #dddfe2;
-    
+    padding-top: 12px;
+}
 
+.edit-intro-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f6f7;
+    height: 26px;
+    border: 1px solid #cacdd3;
+    
+}
+
+.edit-intro-button > a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #4b4f56c9;
 }

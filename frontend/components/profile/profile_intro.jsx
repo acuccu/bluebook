@@ -29,24 +29,24 @@ class ProfileIntro extends React.Component {
             <div className='icon-div'>
                 <span className='icon-span'>
                 <FontAwesomeIcon className='icon-intro' icon={faHome} />
-                <p>Lives in </p> <p>{`${this.user.location}`}</p>
+                <p className='intro-black'>Lives in </p><p className='intro-blue'>{`${this.user.location}`}</p>
                </span>
 
                <span className='icon-span'>
-                <FontAwesomeIcon className='icon-intro' icon={faGraduationCap} />
-                <p>Went to </p> <p>{`${this.user.education}`}</p>
+                <FontAwesomeIcon id="grad-cap" className='icon-intro' icon={faGraduationCap} />
+                <p className='intro-black'>Went to </p><p className='intro-blue'>{`${this.user.education}`}</p>
                </span>
 
                <span className='icon-span'>
                <FontAwesomeIcon className='icon-intro' icon={faBriefcase} />
-               <p>Works at </p> <p>{`${this.user.work_place}`}</p>
+               <p className='intro-black'>Works at </p><p className='intro-blue'>{`${this.user.work_place}`}</p>
                </span>
             </div>
 
            
-
-            <Link to='/in-progress'>Edit</Link>
-
+            <div className="edit-intro-button">
+                <Link  to='/in-progress'>Edit details</Link>
+            </div>
         </div>)
     };
 

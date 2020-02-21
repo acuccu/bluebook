@@ -35,20 +35,21 @@ class LoggedInNav extends React.Component {
                 <Link to='/in-progress'>Create</Link> 
                 <div className="separators"/>
             </div>
-       
+            
+            <div className='logout-i-div'>
             <div className='nav-icons'> 
                 <FontAwesomeIcon className="nav-i" icon={faUserFriends} />
                 <FontAwesomeIcon className="nav-i" icon={faFacebookMessenger} />
-                <FontAwesomeIcon className="nav-i" icon={faBell} /> 
-            </div>
-            <div className="separators"></div>
+                <FontAwesomeIcon className="nav-i" icon={faBell} /> </div>
+            
+            <div className="separator-i"></div>
             <div className="logout-div">
                 <FontAwesomeIcon className="nav-i" icon={faQuestionCircle} />
                 <FontAwesomeIcon className="nav-i" icon={faCaretDown} />
                 <span className='logout-button'>
                     <button className="button-logout" onClick={()=>this.logout().then(history.push("/"))}>Logout</button>
                 </span>
-            </div>
+            </div></div>
         </div>
         </nav>)
     }

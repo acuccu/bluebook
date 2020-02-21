@@ -12,7 +12,7 @@ class SearchBar extends React.Component {
     render () {
        return( <form className="search-bar-form">
         <div className='search-div'>
-        <input className="search-bar" type="text" placeholder="not implemented yet" />
+        <input className="search-bar" type="text" placeholder="Not implemented yet." />
         <button className='searchButton'><FontAwesomeIcon className='search-button' icon={faSearch} /></button></div>
         </form>);
     };

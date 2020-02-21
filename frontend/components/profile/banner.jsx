@@ -20,10 +20,15 @@ class Banner extends React.Component {
             
                 <div className='div-banner'>
                 <nav className='nav-banner'>
+                <div className='banner-separators' />
                 <Link to='/in-progress'>Timeline</Link>
+                <div className='banner-separators' />
                 <Link to='/in-progress'>About</Link>
+                <div className='banner-separators' />
                 <Link to='/in-progress'>Photos</Link>
+                <div className='banner-separators' />
                 <Link to='/in-progress'>More</Link>
+                <div className='banner-separators' />
                 </nav></div>
             </div>
         )

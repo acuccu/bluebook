@@ -33,7 +33,7 @@ class PostForm extends React.Component {
             <form onSubmit={ this.handleSubmit }> 
               <div className='form-top'>
               <FontAwesomeIcon className='icon-pencil' icon={faPencilAlt} />
-                <h3>Create Post</h3> 
+                <h3>Create Post</h3> <div className='post-forum-separators' />
                 <button className='photo-button'>
                   <FontAwesomeIcon className='icon-camera' icon={faCamera} />
                   <p>Photo/Video</p>

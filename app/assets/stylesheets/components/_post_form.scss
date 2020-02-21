@@ -27,6 +27,42 @@
     border-bottom: 1px solid #cacdd3;
     width: 514px;
     height: 33px;
+    margin-left: 5px;
+    margin-bottom: 3px;
+}
+
+.form-top > h3 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.icon-pencil {
+    transform: scale(0.8);
+}
+
+.icon-camera {
+    transform: scale(1.2);
+}
+
+.post-forum-separators {
+    background: rgba(0, 0, 0, .1);
+    display: block;
+    height: 12px;
+    top: 12px;
+    width: 1px;
+    border-right: 1px black solid;
+    content: '';
+    opacity: 25%;
+    margin-left: 3px;
+
+}
+
+.photo-button > p {
+    margin-left: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    color: $fb-blue;
 }
 
 .form-top button {
