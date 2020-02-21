@@ -1,0 +1,103 @@
+.login-white-square {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #f5f6f7;
+    height: 600px;    
+    display: flex;
+    justify-content: center;
+}
+
+.login-page-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    width: 614px;
+    height: 290px;
+    margin-top: 150px;
+}
+
+
+.login-page-form > h2 {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.lin-page-div {
+    margin-left: 15px;
+}
+
+
+
+.lin-error-message {
+    position: absolute;
+    background: #BD4B49;
+    color: white;
+    font-size: 13px;
+    padding: 15px;
+    margin: 0;
+    top: 235px;
+    left: 865px;
+    max-width: 280px;
+    box-shadow: 0px 0px 5px grey;
+    border-radius: 3px;
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.lin-error-message:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 300px;
+    top: 12px;
+    border: 10px solid;
+    transform: rotate(-45deg);
+    border-color: #BD4B49 transparent transparent #BD4B49;
+    z-index: 2;
+}
+
+#lin-submit{
+    width: 302px;
+    height: 44px;
+    margin-left: 5px;
+    background-color: $fb-blue;
+    border-style: none;
+    border: 1px #333333 solid;
+    color: white;
+    font-size: 14px;
+}
+
+.lin-auth {
+    box-sizing: border-box;
+    width: 302px;
+    height: 34px;
+    padding: 5px;
+    margin: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+
+}
+
+.lin-create {
+    margin-right: 850px;
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 145px;
+    height: 32px;
+    border-radius: 2px;
+    background-color: #42b72a;
+}
+
+.lin-create > a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: white;
+}
+

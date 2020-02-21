@@ -23,16 +23,24 @@ class LoginPage extends React.Component {
             <>
             <div className="nav-inside">
                 <a className="nav-logo" href='https://thebluebook.herokuapp.com/'>bluebook</a>
-            <div><Link to='/create' >Create New Account </Link> </div>
+            <div className="lin-create"><Link to='/create' >Create New Account </Link> </div>
             </div>
             <div className='login-white-square'>
-                <form className="login-page" onSubmit={this.handleSubmit}>
-                    <h1>Log into Bluebook</h1>
-                    <p>Email or Phone</p>
-                    <input id="auth-p" type="text" onChange={this.update('auth')} value={this.state.auth}/>
-                    <p id="auth-pw">Password</p>
-                    <input type="password" onChange={this.update('password')} value={this.state.password}/>
-                    <button id="login-form-submit" type='submit' value={this.props.formType}>Log In</button>
+            <p className="lin-error-message">The email or phone number you’ve entered doesn’t match any account. Sign up for an account.</p>
+
+                <form className="login-page-form" onSubmit={this.handleSubmit}>
+                    <h2>Log into Bluebook</h2>  
+                    
+                    <div className='lin-page-div'>
+                        <div className="lin-auth-div">
+                            <input className="lin-auth" type="text" onChange={this.update('auth')} placeholder="Email or Phone" value={this.state.auth}/>  
+                        </div>
+                        <div className="lin-pw-sub">
+                        <input type="password" className="lin-auth" onChange={this.update('password')} placeholder="Password" value={this.state.password}/>    
+                        </div> 
+                        <div>
+                        <button id="lin-submit" type='submit' value={this.props.formType}>Log In</button></div>
+                    </div>
                 </form>
              </div>
             </>
