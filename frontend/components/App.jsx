@@ -8,7 +8,7 @@ import SignUpPage from './session/signup_page';
 import LoggedInNav from './Nav/logged_in_container';
 import ProfileMain from './profile/profile_main'
 import InProgress from './main/inprogress'
-
+import FeedMain from '././feed/feed_main'
 
 const App = () => {
     
@@ -31,6 +31,7 @@ const App = () => {
             <AuthRoute exact path='/create' component={SignUpPage} userId={currentUserId}/>
             <ProtectedRoute exact path='/users/:userId' component={ProfileMain} />
             <ProtectedRoute exact path='/in-progress' component={InProgress} />
+            <ProtectedRoute exact path='/feed/:userId' component={FeedMain} />
         </Switch>
         
         </HashRouter>

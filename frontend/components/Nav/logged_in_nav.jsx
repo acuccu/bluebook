@@ -30,7 +30,7 @@ class LoggedInNav extends React.Component {
                 <div className='nav-avatar'></div>
                 <Link to={`/users/${this.user.id}`}>{`${this.user.first_name}`}</Link>
                 <div className="separators" />
-                <Link to='/in-progress'>Home</Link>
+                <Link to={`/feed/${this.user.id}`}>Home</Link>
                 <div className="separators" /> 
                 <Link to='/in-progress'>Create</Link> 
                 <div className="separators"/>
