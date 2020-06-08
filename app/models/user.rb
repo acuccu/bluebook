@@ -37,5 +37,12 @@ foreign_key: :author_id,
 class_name: :Post,
 dependent: :delete_all
 
+has_many :friendships,
+class_name: :Friendship,
+foreign_key: :user_id
+
+has_many :friends,
+through: :friendships,
+source: :friend
 
 end
