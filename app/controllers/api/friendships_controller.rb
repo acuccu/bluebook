@@ -1,7 +1,7 @@
 class Api::FriendshipsController < ApplicationController
 
     def index
-        @friendships = Friendship.includes(:friend).where(user_id: params[:user_id])
+        @friendships = Friendship.includes(:friend).where(user_id: params[:user_id], friend_id: params[:user_id])
         render :index
     end
 
