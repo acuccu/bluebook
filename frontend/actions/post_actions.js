@@ -8,23 +8,23 @@ export const REMOVE_POST = 'REMOVE_POST';
 const receiveAllPosts = payload => ({
     type: RECEIVE_ALL_POSTS,
     payload
-  });
+});
 
 const receivePost = post => ({
     type: RECEIVE_POST,
     post
-  });
+});
 
 const removePost = postId => ({
     type: REMOVE_POST,
     postId
-  });
+});
 
-  export const fetchPosts = (userId) => {
-    return ( (dispatch) => {
-    PostApiUtil.fetchPosts(userId)
-      .then(payload => dispatch(receiveAllPosts(payload)))}
-  )};
+export const fetchPosts = (userId) => {
+  return ( (dispatch) => {
+  PostApiUtil.fetchPosts(userId)
+    .then(payload => dispatch(receiveAllPosts(payload)))}
+)};
 
   // export const fetchPost = (postId, userId) => dispatch => (
   //   PostApiUtil.fetchPost(postId, userId)
