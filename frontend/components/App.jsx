@@ -1,12 +1,12 @@
 import React from 'react';
-import {Route, Switch, HashRouter} from 'react-router-dom';
+import {withRouter, Switch, HashRouter} from 'react-router-dom';
 import Main from './main/Main';
 import LoginPage from './session/login_page_container';
 import {ProtectedRoute, AuthRoute} from '../util/routes_util';
 import LoginNav from './Nav/LoginNav';
 import SignUpPage from './session/signup_page';
 import LoggedInNav from './Nav/logged_in_container';
-import ProfileMain from './profile/profile_main'
+import ProfileMain from './profile/profile_main_container'
 import InProgress from './main/inprogress'
 import FeedMain from '././feed/feed_main'
 

@@ -41,8 +41,16 @@ has_many :friendships,
 class_name: :Friendship,
 foreign_key: :user_id
 
+has_many :requested_friendships,
+class_name: :Friendship, 
+foreign_key: :friend_id
+
 has_many :friends,
 through: :friendships,
 source: :friend
+
+has_many :received_friends,
+through: :friendships,
+source: :user
 
 end

@@ -1,12 +1,14 @@
 class Friendship < ApplicationRecord
 
     belongs_to :user,
-    foreign_key: :user_id,
-    class_name: :User
+    class_name: :User,
+    foreign_key: :user_id
+   
 
     belongs_to :friend,
-    foreign_key: :friend_id,
-    class_name: :User
+    class_name: :User,
+    foreign_key: :friend_id
+    
 
 
 end

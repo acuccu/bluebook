@@ -5,7 +5,7 @@ class LoginPage extends React.Component {
     constructor (props) {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.state = this.props.user;
+        this.state = this.props.credentials;
         this.login = this.props.login;
     }
 
@@ -39,7 +39,7 @@ class LoginPage extends React.Component {
                         <input type="password" className="lin-auth" onChange={this.update('password')} placeholder="Password" value={this.state.password}/>    
                         </div> 
                         <div>
-                        <button id="lin-submit" type='submit' value={this.props.formType}>Log In</button></div>
+                        <button id="lin-submit" type='submit'>Log In</button></div>
                     </div>
                 </form>
              </div>

@@ -5,7 +5,7 @@ import {withRouter} from 'react-router-dom'
 
 const mapStateToProps = (state) => ({
     errors: state.errors,
-    user: {
+    credentials: {
         auth: '',
         password: ''
     }

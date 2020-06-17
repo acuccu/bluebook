@@ -7,6 +7,15 @@ import PostIndexContainer from '../posts/post_index_container';
 
 class ProfileMain extends React.Component {
 
+    constructor (props) {
+        super(props)
+    }
+
+    componentWillMount () {
+        debugger
+        this.props.fetchUser(this.props.match.params.userId)
+    }
+
     render () {
         return (
             <div className='profile'>

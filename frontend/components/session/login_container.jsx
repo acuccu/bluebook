@@ -5,14 +5,14 @@ import {withRouter} from 'react-router-dom'
 
 const mapStateToProps = (state) => ({
     errors: state.errors,
-    user: {
+    credentials: {
         auth: '',
         password: ''
     }
 });
 
 const mapDispatchToProps = dispatch =>({
-    login: user => dispatch(login(user))
+    login: credentials => dispatch(login(credentials))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginForm));
