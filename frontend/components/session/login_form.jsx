@@ -42,7 +42,7 @@ class LoginForm extends React.Component {
                    <input type="password" onChange={this.update('password')} value={this.state.password}/>
                </label>
                <div></div>
-               <button id="login-submit" type='submit' value={this.props.formType}>Log In</button></div>
+               <button id="login-submit" type='submit'>Log In</button></div>
            </form></div>
        </div>
     )

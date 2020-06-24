@@ -39,6 +39,7 @@ dependent: :delete_all
 
 has_many :friendships,
 class_name: :Friendship,
+inverse_of: :user,
 foreign_key: :user_id
 
 has_many :requested_friendships,
@@ -51,6 +52,7 @@ source: :friend
 
 has_many :received_friends,
 through: :friendships,
+inverse_of: :friend,
 source: :user
 
 end

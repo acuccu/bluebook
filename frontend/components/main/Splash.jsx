@@ -1,5 +1,5 @@
 import React from 'react';
-import SignUpForm from '../session/signup_container';
+import SignUpPage from '../session/signup_page_container';
 import Presentation from './Presentation'
 
 class Splash extends React.Component {
@@ -13,7 +13,7 @@ class Splash extends React.Component {
         return (
          <div className='main-session'>
             <Presentation />
-            <SignUpForm />
+            <SignUpPage />
          </div>
         );
     }
