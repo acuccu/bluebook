@@ -13,6 +13,7 @@ class Friends extends React.Component {
     }
 
     friendsArray () {
+        debugger
         const friends = this.friendships.map((fr) => {
             if (fr.user_id == this.id) {
                 return this.users[fr.friend_id];
@@ -25,6 +26,7 @@ class Friends extends React.Component {
 
     render () {
         friends = this.friendsArray().slice(0,9);
+        debugger
         return(
             <div className='friends_main'>
                 <div className='friends_title'>

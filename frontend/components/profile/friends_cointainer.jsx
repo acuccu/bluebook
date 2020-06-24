@@ -3,10 +3,13 @@ import Friends from './friends'
 import {withRouter} from 'react-router-dom'
 
 const mapStateToProps = ({entities: {users, friendships}}, ownProps) => {
+    
+    const profileId = ownProps.match.params
+    debugger
     return({
         users: users, 
         friendships: Object.values(friendships[ownProps.match.params.userId].accepted),
-        profileId: ownProps.match.params.userId
+        profileId: profileId.userId
     });
 }
 

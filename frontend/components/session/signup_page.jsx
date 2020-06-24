@@ -11,7 +11,7 @@ class SignUpPage extends React.Component {
     }
 
     handleSubmit () {
-        this.login(this.props.credentials).then(null, errorCB);
+        this.login(this.props.credentials).then(null);
     };
 
     render () {
