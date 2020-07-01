@@ -9,7 +9,15 @@ import PostIndexContainer from '../posts/post_index_container';
 class ProfileMain extends React.Component {
 
     constructor (props) {
-        super(props)
+        super(props);
+        this.state = {didFetch: false};
+    }
+
+    componentDidMount () {
+        
+        this.props.fetchUser(10).then(() => {
+            this.setState({didFetch: true})});
+                
     }
 
     render () {
@@ -19,7 +27,7 @@ class ProfileMain extends React.Component {
                 <div className='profile-content'>
                     <div className='side-bar'>
                     <ProfileIntro />
-                    <Friends />
+                    {this.state.didFetch && <Friends />}
                     </div>
                     {/* <PostIndexContainer /> */}
                 </div>

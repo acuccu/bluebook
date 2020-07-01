@@ -2,14 +2,14 @@ import { connect } from 'react-redux';
 import Friends from './friends'
 import {withRouter} from 'react-router-dom'
 
-const mapStateToProps = ({entities: {users, friendships}}, ownProps) => {
+const mapStateToProps = ({entities: {users, friends}}, ownProps) => {
     
-    const profileId = ownProps.match.params
+    let friendships = friends[ownProps.match.params.userId] ? Object.values(friends[ownProps.match.params.userId].accepted) : [];
     debugger
     return({
         users: users, 
-        friendships: Object.values(friendships[ownProps.match.params.userId].accepted),
-        profileId: profileId.userId
+        friendships: friendships,
+        profileId: ownProps.match.params.userId
     });
 }
 

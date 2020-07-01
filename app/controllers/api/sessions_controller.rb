@@ -7,6 +7,7 @@ class Api::SessionsController < ApplicationController
             @pending = @friendships.select {|fr| fr.accepted == false}
             @accepted = @friendships.select {|fr| fr.accepted == true}
             @friends = @friendships.map {|fr| fr.user_id == @user.id ? fr.friend : fr.user }
+            
             render 'api/users/show'
         else
             render json: ['Invalid credentials please try logging in again'], status: 401
