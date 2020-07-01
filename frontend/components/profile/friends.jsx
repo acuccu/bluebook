@@ -1,22 +1,17 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 class Friends extends React.Component {
 
     constructor(props) {
         super(props);
         this.users = this.props.users;
-        
-        this.id = this.props.profileId;
         this.friendsArray = this.friendsArray.bind(this);
 
     }
 
     friendsArray () {
-        debugger
         let friends = this.props.friendships.map((fr) => {
-            debugger
-            if (fr.user_id == this.id) {
+            if (fr.user_id == this.props.profileId) {
                 return this.users[fr.friend_id];
             } else {
                 return this.users[fr.user_id]
@@ -26,14 +21,11 @@ class Friends extends React.Component {
         
     }
 
-    componentWillUnmount () {
-        debugger
-        this.setState(() => {return {friendships: []}});
-    }
+
 
     render () {
        let friends = this.friendsArray().slice(0,9);
-        debugger
+        
         return(
             <div className='friends_main'>
                 <div className='friends_title'>
@@ -43,7 +35,7 @@ class Friends extends React.Component {
                     {friends.map((friend) => {
                         return (
                             <div>
-                               <Link to={`/users/${friend.id}`} > {friend.first_name} {friend.last_name}</Link>
+                               <div onClick={ () => this.props.fetchUser(friend.id).then(() => this.props.history.push(`/users/${friend.id}`))} key={friend.id}> {friend.first_name} {friend.last_name}</div>
                             </div>
                         )
                     }  )}

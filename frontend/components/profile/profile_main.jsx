@@ -14,13 +14,13 @@ class ProfileMain extends React.Component {
     }
 
     componentDidMount () {
-        
-        this.props.fetchUser(10).then(() => {
-            this.setState({didFetch: true})});
-                
+        debugger
+        this.props.fetchUser(this.props.match.params.userId).then(() => {
+            this.setState({didFetch: true})});   
     }
 
     render () {
+        debugger
         return (
             <div className='profile'>
                 <Banner />

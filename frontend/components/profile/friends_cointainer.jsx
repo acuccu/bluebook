@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
-import Friends from './friends'
-import {withRouter} from 'react-router-dom'
+import Friends from './friends';
+import {withRouter} from 'react-router-dom';
+import {fetchUser} from '../../actions/user_actions';
+
 
 const mapStateToProps = ({entities: {users, friends}}, ownProps) => {
     
@@ -13,4 +15,8 @@ const mapStateToProps = ({entities: {users, friends}}, ownProps) => {
     });
 }
 
-export default withRouter(connect(mapStateToProps)(Friends));
+const mapDispatchToProps = dispatch => ({
+    fetchUser: (userId) => dispatch(fetchUser(userId))
+})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Friends));
