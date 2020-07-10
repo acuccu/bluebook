@@ -32,9 +32,9 @@ export const createFriend = (friend, userId) => dispatch => (
 
 // Need to figure out how to find the friend 
 
-export const deleteFriendId = (FriendIdId, userId) => dispatch => (
-    FriendIdApiUtil.deleteFriendId(FriendIdId, userId)
-      .then(() => dispatch(removeFriendId(FriendIdId)))
+export const deleteFriend = (friendshipId) => dispatch => (
+    FriendApiUtil.deleteFriend(friendshipId)
+      .then(() => dispatch(removeFriendId(firendshipId)))
 ); 
 
 

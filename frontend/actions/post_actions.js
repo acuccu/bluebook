@@ -5,17 +5,17 @@ export const RECEIVE_POST = 'RECEIVE_POST';
 export const REMOVE_POST = 'REMOVE_POST';
 
 
-const receiveAllPosts = payload => ({
+export const receiveAllPosts = payload => ({
     type: RECEIVE_ALL_POSTS,
     payload
 });
 
-const receivePost = post => ({
+export const receivePost = post => ({
     type: RECEIVE_POST,
     post
 });
 
-const removePost = postId => ({
+export const removePost = postId => ({
     type: REMOVE_POST,
     postId
 });

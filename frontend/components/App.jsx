@@ -22,11 +22,12 @@ const App = () => {
             <AuthRoute exact path='/create' component={LoginNav} userId={currentUserId}/>
             <ProtectedRoute exact path='/users/:userId' component={LoggedInNav} />
             <ProtectedRoute exact path='/in-progress' component={LoggedInNav} />
+            <ProtectedRoute exact path='/feed' component={LoggedInNav} />
         </Switch>
 
         <Switch>
             <AuthRoute exact path='/' component={Main} userId={currentUserId}/>˙
-            <ProtectedRoute exact path='/home' />
+            <ProtectedRoute exact path='/feed' component={FeedMain} userId={currentUserId} />
             <AuthRoute exact path='/login' component={LoginPage} userId={currentUserId}/>
             <AuthRoute exact path='/create' component={SignUpPage} userId={currentUserId}/>
             <ProtectedRoute exact path='/users/:userId' component={ProfileMain} />

@@ -7,6 +7,7 @@ import PostIndexContainer from '../posts/post_index_container';
 
 class ProfileMain extends React.Component {
     render () {
+       
         return (
             <div className = 'feed'>
                 <div className='profile-content'>

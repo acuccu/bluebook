@@ -27,7 +27,7 @@ class ProfileMain extends React.Component {
                     <ProfileIntro />
                     {this.state.didFetch && <Friends />}
                     </div>
-                    {/* <PostIndexContainer /> */}
+                    <PostIndexContainer />
                 </div>
             </div>
         )

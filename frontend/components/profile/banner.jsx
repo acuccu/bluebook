@@ -13,19 +13,36 @@ class Banner extends React.Component {
 
     buttonType () {
        if (this.props.currentAccepted) {
-           return <div>Friends</div> ;
+           return <button onClick={
+             () => {
+                 this.props.deleteFriend(this.props.currentAccepted.id)
+             }
+           }>Friends</button> ;
        } else if (this.props.currentPending) {
            return (this.props.currentPending.userId === this.props.currentUserId) ?  
-           <div>Pending</div> : 
+           <div onClick={
+            () => {
+                this.props.deleteFriend(this.props.currentAccepted.id)
+            }}>Pending</div> : 
            <button>Accept</button> ;
        } else {
-           return <button>Request Frienship</button> ;
+           return <button onClick={()=>
+               this.props.createFriends(
+               {user_id: this.props.currentUserId, friend_id: this.props.profileUser.id, accepted: false}
+               )}
+               >Request Frienship</button> ;
        };
-
     }
 
+    // fetchFriendsPosts (){
+
+    //     friends.forEach( (friend) => {
+    //         this.props.fetchPosts(friend);
+    //     })
+    // }
+
     render () {
-        debugger
+        
         return(
             
             <div className='banner-main'>
@@ -41,7 +58,7 @@ class Banner extends React.Component {
                 <div className='div-banner'>
                 <nav className='nav-banner'>
                 <div className='banner-separators' />
-                <Link to='/in-progress'>Timeline</Link>
+                   <Link to='/feed'>Timeline</Link>
                 <div className='banner-separators' />
                 <Link to='/in-progress'>About</Link>
                 <div className='banner-separators' />
