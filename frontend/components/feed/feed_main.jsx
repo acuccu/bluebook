@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import SideBar from './side_bar'
-import PostIndexContainer from '../posts/post_index_container';
+import PostIndexContainer from './feed_posts_container';
 
 
 

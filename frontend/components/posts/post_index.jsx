@@ -7,10 +7,19 @@ import PostForm from './post_form_container'
 class PostIndex extends React.Component {
     constructor (props){
       super(props);
+      this.posts = this.props.posts;
     }
+    
     componentDidMount() {
-      
+      if (this.props.match.params.userId) {
       this.props.fetchPosts(this.props.match.params.userId);
+      } else {
+        debugger
+        this.props.friends.forEach( friend => {
+          debugger
+          this.props.fetchPosts(friend.id);
+        });
+      } 
     }
   
     render() {

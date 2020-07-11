@@ -3,11 +3,11 @@ import PostIndex from './post_index';
 import {fetchPosts} from '../../actions/post_actions';
 import {withRouter} from 'react-router-dom';
 
-const mapStateToProps = ({entities: {posts}, entities: {users}}, ownProps) => {
+const mapStateToProps = ({entities: {posts}, entities: {users}, session: {currentUserId}}) => {
     return(
       {
       posts: Object.values(posts),
-      user: users[ownProps.match.params.userId]
+      user: users[currentUserId]
       }
     )
 };

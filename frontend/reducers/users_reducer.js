@@ -10,8 +10,6 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_USER:
             let user = Object.assign({}, {[action.payload.user.id]: action.payload.user}, action.payload.friends )
             return Object.assign({}, state, user)
-        case RECEIVE_ALL_POSTS:
-            return Object.assign({}, state, action.payload.author)
         default:
             return state
     }
