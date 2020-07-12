@@ -1,4 +1,4 @@
-class Api::FriendshipsController < ApplicationController
+class Api::FriendsController < ApplicationController
 
     def index
         @friendships = Friendship.includes(:friend).where(user_id: params[:user_id], friend_id: params[:user_id])
@@ -16,10 +16,12 @@ class Api::FriendshipsController < ApplicationController
     end
 
     def destroy
-        @friendship = Friendship.find(params[:id])
-    
-        if @friendship.destroy
-          render :show
+        @friendship = Friendship.where(user_id: params[:user_id], friend_id: params[:id]).or(Friendship.where(user_id: params[:id], friend_id: params[:user_id]))
+        @data = {user_id: params[:user_id], friend_id: params[:id], status: @friendship[0].accepted ? "accepted" : "pending"}
+        if @friendship[0]
+          @friendship[0].destroy
+          @data
+          render :delete
         else
           render json: @friendship.errors.full_messages, status: 422
         end

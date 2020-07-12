@@ -1,5 +1,4 @@
-import * as APIUtil from "../util/friend_api_util";
-
+import * as ApiUtil from "../util/friend_api_util";
 export const RECEIVE_ALL_FRIENDS = 'RECEIVE_ALL_FRIENDS';
 export const RECEIVE_FRIEND = 'RECEIVE_FRIEND';
 export const REMOVE_FRIEND = 'REMOVE_FRIEND';
@@ -9,32 +8,31 @@ const receiveAllFriends = payload => ({
     payload
 });
 
-const removeFriend = friendId => ({
+const removeFriend = friend => ({
     type: REMOVE_FRIEND,
-    friendId
+    friend
 });
 
 const receiveFriend = friend => ({
-    type: RECEIVE_Friend,
+    type: RECEIVE_FRIEND,
     friend
 });
 
 export const fetchFriends = (userId) => {
     return ( (dispatch) => {
-    PostApiUtil.fetchFriends(userId)
+    ApiUtil.fetchFriends(userId)
       .then(payload => dispatch(receiveAllFriends(payload)))}
 )};
 
 export const createFriend = (friend, userId) => dispatch => (
-    FriendApiUtil.createFriend(friend, userId)
+    ApiUtil.createFriend(friend, userId)
       .then(friend => dispatch(receiveFriend(friend)))
-);
+); 
 
-// Need to figure out how to find the friend 
-
-export const deleteFriend = (friendshipId) => dispatch => (
-    FriendApiUtil.deleteFriend(friendshipId)
-      .then(() => dispatch(removeFriendId(firendshipId)))
+export const deleteFriend = (currentUserId, friendId) => 
+    dispatch => (
+    ApiUtil.deleteFriend(currentUserId, friendId)
+      .then(() => dispatch(removeFriend(friendship)))
 ); 
 
 

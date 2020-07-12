@@ -12,10 +12,15 @@ class Banner extends React.Component {
    
 
     buttonType () {
-       if (this.props.currentAccepted) {
+        debugger
+       if (this.props.currentUserId == this.props.match.params.userId) {
+           debugger
+        return <div />;
+       } else if (this.props.currentAccepted) {
+           debugger
            return <button onClick={
              () => {
-                 this.props.deleteFriend(this.props.currentAccepted.id)
+                 this.props.deleteFriend(this.props.currentUserId, this.props.match.params.userId)
              }
            }>Friends</button> ;
        } else if (this.props.currentPending) {

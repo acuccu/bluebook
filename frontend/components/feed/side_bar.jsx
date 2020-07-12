@@ -12,7 +12,6 @@ class SideBar extends React.Component {
     render ()  {
         let {currentUserId} = store.getState().session;
         let user = store.getState().entities.users[currentUserId];
-        debugger
         return(
         <div className='side-bar'>
             <div className='bar-user'>

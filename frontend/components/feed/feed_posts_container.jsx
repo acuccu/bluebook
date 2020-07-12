@@ -13,13 +13,11 @@ const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session
             return users[fr.user_id]
         };
         });
-        debugger
     return friendsArr;
   }
   
   
   let friendships = friends[currentUserId] ? Object.values(friends[currentUserId].accepted) : [];
-  debugger
   let friendUsers = friendsArray(friendships);
 
     return(

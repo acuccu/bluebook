@@ -14,13 +14,12 @@ class PostIndex extends React.Component {
       if (this.props.match.params.userId) {
       this.props.fetchPosts(this.props.match.params.userId);
       } else {
-        debugger
         this.props.friends.forEach( friend => {
-          debugger
           this.props.fetchPosts(friend.id);
         });
       } 
-    }
+      this.forceUpdate();
+    }; 
   
     render() {
       const { posts } = this.props;
