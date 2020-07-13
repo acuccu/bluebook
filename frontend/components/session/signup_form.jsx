@@ -169,7 +169,7 @@ class SignUpForm extends React.Component {
                     <input onClick={this.update('gender')} type="radio" id="other" name="gender" value="other" defaultChecked/>
                     <label >Other</label></span></div>
                 </div>
-                <div className='session buttons'>
+                <div className='session-buttons'>
                 <button className='signup-button' type='submit' >Sign Up</button>
                 </div>
             </form>

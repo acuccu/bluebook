@@ -1,0 +1,43 @@
+.icon-globe {
+    background-color: red;
+    border-radius: 70%;
+    color: white;
+    padding: 5px;
+    -webkit-font-smoothing: antialiased;
+    transform: scale(0.7);
+    margin-bottom: 3px;
+}
+
+
+
+.friends_title {
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+}
+
+.friends-text {
+    font-size: 15px;
+}
+
+.friend-avatar{
+    width: 80px;
+    height: 80px;
+    background-image: image_url('turtle.png');
+    background-size: cover;
+}
+
+.friends_pics {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.friend-name {
+    display: block;
+    width: 80px;
+    height: 80px;
+    font-size: 13px;
+    color: $fb-blue;
+    margin-top: 5px;
+    cursor: pointer;
+}

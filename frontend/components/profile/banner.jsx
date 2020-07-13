@@ -32,10 +32,10 @@ class Banner extends React.Component {
            <button>Accept</button> ;
        } else {
            return <button onClick={()=>
-               this.props.createFriends(
+               this.props.createFriend(
                {user_id: this.props.currentUserId, friend_id: this.props.profileUser.id, accepted: false}
                )}
-               >Request Frienship</button> ;
+               >Request Friendship</button> ;
        };
     }
 

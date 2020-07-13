@@ -28,7 +28,6 @@ const mapStateToProps = ({ session, entities: { users, friends } }, ownProps) =>
   const mapDispatchToProps = dispatch => ({
     createFriend: (friend) => dispatch(createFriend(friend)),
     deleteFriend: (userId, friendId) => dispatch(deleteFriend(userId, friendId)),
-    fetchPosts: (userId) => dispatch(fetchPosts(userId))
   });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Banner));

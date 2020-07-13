@@ -21,13 +21,16 @@ class ProfileMain extends React.Component {
     render () {
         return (
             <div className='profile'>
+                <div>
                 <Banner />
                 <div className='profile-content'>
+                    
                     <div className='side-bar'>
                     <ProfileIntro />
                     {this.state.didFetch && <Friends />}
                     </div>
                     <PostIndexContainer />
+                </div>
                 </div>
             </div>
         )

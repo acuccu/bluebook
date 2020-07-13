@@ -17,11 +17,13 @@ class SignUpPage extends React.Component {
     render () {
         return (
             <div className='splash'>
-             <SignupForm />
-             <button className='signup-button' type='submit' onClick = {() => this.handleSubmit()}>Demo Login</button>
+                <SignupForm />
+                <div className='demo-button'>
+                    <button className='signup-button' type='submit' onClick = {() => this.handleSubmit()}>Demo Login</button>
+                </div>
             </div>
         )
-    }
+    };
 }
 
-export default withRouter(SignUpPage); 
+export default withRouter(SignUpPage);
