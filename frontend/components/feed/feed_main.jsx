@@ -9,7 +9,7 @@ class ProfileMain extends React.Component {
     render () {
        
         return (
-            <div className = 'feed'>
+            <div className='feed'>
                 <div className='profile-content'>
                 <SideBar />
                 <PostIndexContainer />

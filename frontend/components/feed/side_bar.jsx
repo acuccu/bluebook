@@ -15,20 +15,22 @@ class SideBar extends React.Component {
         return(
         <div className='side-bar'>
             <div className='bar-user'>
-                <div className='nav-avatar'></div>
+                <div className='feed-avatar'></div>
                 <Link to={`/users/${user.id}`}>{`${user.first_name} ${user.last_name}`}</Link>
             </div>
-            <div className='news-bar'>
+            <div className='bar-elements'>
+            <div className='news-bar-element'>
                 <FontAwesomeIcon className='icon-bar' icon={faNewspaper} />
             <a href='https://www.linkedin.com/in/antonio-cuccu-4b0906114/'>News Feed</a>
             </div>
-            <div className='bar-messenger'>
+            <div className='bar-element'>
                 <FontAwesomeIcon className="icon-bar" icon={faFacebookMessenger} />
-                Messenger
+                <a>Messenger</a>
             </div>
-            <div className='Watch-bar'> 
+            <div className='bar-element'> 
                 <FontAwesomeIcon className="icon-bar" icon={faTv} />
-                Watch
+                <a>Watch</a>
+            </div>
             </div>
         </div>);
     }
