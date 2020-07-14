@@ -26,7 +26,7 @@ const mapStateToProps = ({ session, entities: { users, friends } }, ownProps) =>
 };
 
   const mapDispatchToProps = dispatch => ({
-    createFriend: (friend) => dispatch(createFriend(friend)),
+    createFriend: (friend, userId) => dispatch(createFriend(friend, userId)),
     deleteFriend: (userId, friendId) => dispatch(deleteFriend(userId, friendId)),
   });
 
