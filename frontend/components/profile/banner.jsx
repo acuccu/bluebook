@@ -13,7 +13,6 @@ class Banner extends React.Component {
    
 
     buttonType () {
-        debugger
        if (this.props.currentUserId == this.props.match.params.userId) {
         return <div></div> ;
        } else if (this.props.currentAccepted) {

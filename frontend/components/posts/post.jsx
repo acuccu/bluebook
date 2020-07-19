@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 
 const PostIndexItem = props => {
     const {post} = props;
-    const {author} = props;
+    const {users} = props;
     let date = new Date(post.created_at);
     return (
     <div className='post-item'>
@@ -16,11 +16,11 @@ const PostIndexItem = props => {
      <div className='post-item-title'>
       <img className="post-item-avatar" />
       <div className="author">
-      <Link to={`/users/${author.id}`}><p>{author.first_name} {author.last_name}</p></Link>
+      <Link to={`/users/${post.author_id}`}><p>{users[post.author_id].first_name} {users[post.author_id].last_name}</p></Link>
         <div className='post-author-separator'/>
         <div className="post-date">
         <p>{date.toDateString()}</p>
-        <p>{author.location}</p></div>
+        <p>{users[post.author_id].first_name.location}</p></div>
        </div> 
      </div>
      <div className='post-body'>

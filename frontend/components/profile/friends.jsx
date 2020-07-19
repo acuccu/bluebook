@@ -6,20 +6,20 @@ class Friends extends React.Component {
 
     constructor(props) {
         super(props);
-        this.users = this.props.users;
+        this.state = {
+        users: this.props.users}
         this.friendsArray = this.friendsArray.bind(this);
 
     }
 
     friendsArray () {
         let friends = this.props.friendships.map((fr) => {
-            debugger
             if (fr.user_id == this.props.profileId) {
-                debugger
-                return this.users[fr.friend_id];
+    
+                return this.props.users[fr.friend_id];
             } else {
-                debugger
-                return this.users[fr.user_id]
+    
+                return this.props.users[fr.user_id]
             };
             });
         return friends;
@@ -30,7 +30,6 @@ class Friends extends React.Component {
 
     render () {
        let friends = this.friendsArray().slice(0,9);
-        debugger
         return(
             <div className='profile-intro'>
                 <div className='friends_title'>
@@ -42,7 +41,7 @@ class Friends extends React.Component {
                         return (
                             <div className='friend-frame' id={friend.id}>
                                 <div className='friend-avatar'></div>
-                                <div className='friend-name' onClick={ () => this.props.fetchUser(friend.id).then(() => this.props.history.push(`/users/${friend.id}`))}> {friend.first_name} {friend.last_name}</div>
+                                <div className='friend-name' onClick={ () => this.props.fetchUser(friend.id).then(() => this.props.fetchPosts(friend.id)).then(() => this.props.history.push(`/users/${friend.id}`))}> {friend.first_name} {friend.last_name}</div>
                             </div>
                         )
                     }  )}
