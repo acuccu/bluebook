@@ -13,6 +13,7 @@ const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session
               return fr.user_id
           };
           });
+      friendsArr.push(currentUserId)
       return friendsArr;
     }
   
