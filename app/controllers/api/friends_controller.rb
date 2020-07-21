@@ -7,7 +7,6 @@ class Api::FriendsController < ApplicationController
 
     def create
         @friendship = Friendship.new(friend_params)
-    
         if @friendship.save
           render :show
         else
@@ -17,7 +16,7 @@ class Api::FriendsController < ApplicationController
 
     def destroy
         @friendship = Friendship.where(user_id: params[:user_id], friend_id: params[:id]).or(Friendship.where(user_id: params[:id], friend_id: params[:user_id]))
-        @data = {user_id: params[:user_id], friend_id: params[:id], status: @friendship[0].accepted ? "accepted" : "pending"}
+        @data = {user_id: params[:user_id], friend_id: params[:id], accepted: false}
         if @friendship[0]
           @friendship[0].destroy
           @data
@@ -30,7 +29,7 @@ class Api::FriendsController < ApplicationController
     private
     
     def friend_params
-        params.require(:post).permit(:user_id, :friend_id)
+        params.require(:friendship).permit(:user_id, :friend_id, :accepted)
     end
 
 end

@@ -6,16 +6,15 @@ export const fetchFriends = userId => {
 )};
 
 
-export const createFriend = (friend, userId) => (
+export const createFriend = (friendship, currentUserId) => (
     $.ajax({
-      url: `api/users/${userId}/friends/`,
+      url: `api/users/${currentUserId}/friends/`,
       method: 'POST',
-      data: { friend }
+      data: { friendship }
     })
 );
 
 export const deleteFriend = (userId, friendId) => {
-    debugger
     $.ajax({
       url: `/api/users/${userId}/friends/${friendId}`,
       method: 'DELETE'

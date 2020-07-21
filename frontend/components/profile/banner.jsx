@@ -7,7 +7,7 @@ class Banner extends React.Component {
         super(props);
         console.log(this.prop);
         this.buttonType = this.buttonType.bind(this);
-        this.firendships = this.props.friendships;
+        // this.firendships = this.props.friendships;
     }
 
    
@@ -22,18 +22,20 @@ class Banner extends React.Component {
              }
            }>Friends</button> ;
        } else if (this.props.currentPending) {
-           return (this.props.currentPending.userId === this.props.currentUserId) ?  
-           <div onClick={
+           return (this.props.currentPending.user_id == this.props.currentUserId) ?  
+           <button onClick={
             () => {
-                this.props.deleteFriend(this.props.currentAccepted.id)
-            }}>Pending</div> : 
+                this.props.deleteFriend(this.props.currentUserId, this.props.match.params.userId)
+            }}>Pending</button> : 
            <button>Accept</button> ;
        } else {
            return <button onClick={()=>
                this.props.createFriend(
-               {user_id: this.props.currentUserId, friend_id: this.props.profileUser.id, accepted: false},
-               this.props.currentUserId
-               ).then(this.forceUpdate())}
+                   {user_id: this.props.currentUserId, 
+                    friend_id: this.props.profileUser.id,
+                    accepted: false}, 
+                    this.props.currentUserId
+                )}
                >Request Friendship</button> ;
        };
     }

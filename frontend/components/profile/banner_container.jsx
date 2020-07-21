@@ -21,12 +21,12 @@ const mapStateToProps = ({ session, entities: { users, friends } }, ownProps) =>
     currentAccepted: extractFriends(friends, session['currentUserId'], "accepted", ownProps.match.params.userId),
     currentPending: extractFriends(friends, session['currentUserId'], "pending", ownProps.match.params.userId),
     friendships: friendships,
-    currentUserId: "10"
+    currentUserId: session.currentUserId
   })
 };
 
   const mapDispatchToProps = dispatch => ({
-    createFriend: (friend, userId) => dispatch(createFriend(friend, userId)),
+    createFriend: (friendship, user_id) => dispatch(createFriend(friendship, user_id)),
     deleteFriend: (userId, friendId) => dispatch(deleteFriend(userId, friendId)),
   });
 
