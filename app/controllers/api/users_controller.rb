@@ -12,7 +12,10 @@ class Api::UsersController < ApplicationController
     def create 
         
         @user = User.new(user_params)
-        
+        @friendships = []
+        @pending = []
+        accepted = []
+        @friends = []
         if @user.save
             log_in!(@user)
             render :show
@@ -27,9 +30,11 @@ class Api::UsersController < ApplicationController
         render json: ['You account has been successfully deleted'], status: 200
     end
 
+    private
 
     def user_params 
         params.require(:user).permit(:first_name, :last_name, :email, :cellphone, :password, :dob, :gender)
     end
+
 end
 
