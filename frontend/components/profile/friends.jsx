@@ -26,13 +26,8 @@ class Friends extends React.Component {
         
     }
 
-
-
     render () {
-       let friends = this.friendsArray().slice(0,9);
-    //     friends.forEach(fr => {
-    //         this.props.fetchPosts(fr.id)
-    //     })
+       let friends = this.friendsArray().slice(0,9);   
         return(
             <div className='profile-intro'>
                 <div className='friends_title'>

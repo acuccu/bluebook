@@ -3,6 +3,7 @@ import {RECEIVE_CURRENT_USER} from '../actions/session_actions'
 import {RECEIVE_USER} from '../actions/user_actions'
 
 const FriendsReducer = (state = {}, action) => {
+    debugger
     Object.freeze(state);
     switch (action.type) {
       case RECEIVE_CURRENT_USER:
@@ -12,7 +13,7 @@ const FriendsReducer = (state = {}, action) => {
       case RECEIVE_ALL_FRIENDS:
         return Object.assign({}, state, action.payload.friends)
       case RECEIVE_FRIEND:
-        return Object.assign({}, state, { [action.friend.id]: action.friend })
+        return Object.assign({}, state, action.friend )
       case REMOVE_FRIEND:
         let nextState = Object.assign({}, state);
         delete nextState[action.friend.user_id][action.friend.status][action.friend.friend_id]

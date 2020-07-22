@@ -24,16 +24,14 @@ export const fetchFriends = (userId) => {
       .then(payload => dispatch(receiveAllFriends(payload)))}
 )};
 
-export const createFriend = (friendship, currentUserId) => 
-    dispatch => (
+export const createFriend = (friendship, currentUserId) => dispatch => (
     ApiUtil.createFriend(friendship, currentUserId)
-      .then(() => dispatch(receiveFriend(friendship)))
+    .then(friendship => dispatch(receiveFriend(friendship)))
 ); 
 
-export const deleteFriend = (currentUserId, friendId) => 
-    dispatch => (
+export const deleteFriend = (currentUserId, friendId) => dispatch => (
     ApiUtil.deleteFriend(currentUserId, friendId)
-      .then(() => dispatch(removeFriend(friendship)))
+    .then(friendship => dispatch(removeFriend(friendship)))
 ); 
 
 

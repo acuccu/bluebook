@@ -29,7 +29,7 @@ const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session
       {
       posts: feedPosts,
       users: users,
-      friends: friendUsers
+      friendships: friendUsers
       }
     )
 };

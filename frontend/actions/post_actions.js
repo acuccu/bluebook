@@ -33,7 +33,7 @@ export const fetchPosts = (userId) => {
 
   export const createPost = (post, userId) => dispatch => (
     ApiUtil.createPost(post, userId)
-      .then(post => dispatch(receivePost(post)))
+    .then(post => dispatch(receivePost(post)))
   );
 
   export const updatePost = (post, userId) => dispatch => (
@@ -43,7 +43,7 @@ export const fetchPosts = (userId) => {
 
   export const deletePost = (postId, userId) => dispatch => (
     ApiUtil.deletePost(postId, userId)
-      .then(() => dispatch(removePost(postId)))
+    .then(() => dispatch(removePost(postId)))
   );
   
 

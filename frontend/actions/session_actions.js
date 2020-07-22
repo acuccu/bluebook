@@ -32,11 +32,9 @@ export const login = user => dispatch => (
     )
 );
 
-export const logout = () => dispatch => {
-    debugger
-    return (
+export const logout = () => dispatch => (
     APIUtil.logout().then(
     () => dispatch(logoutCurrentUser()),
     err => dispatch(receiveErrors(err))
     )
-)};
+);
