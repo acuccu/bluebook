@@ -14,7 +14,7 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
         @friendships = []
         @pending = []
-        accepted = []
+        @accepted = []
         @friends = []
         if @user.save
             log_in!(@user)
