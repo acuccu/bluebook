@@ -12,6 +12,7 @@ class Api::UsersController < ApplicationController
     def create 
         
         @user = User.new(user_params)
+        byebug
         if @user.save
             log_in!(@user)
             # this code creates first friend 

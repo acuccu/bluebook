@@ -27,9 +27,8 @@ class SignUpForm extends React.Component {
 
     inputUpdate(field, value) {
         const newState = Object.assign({}, this.state.newUser, {[field]: value});
-        debugger
         this.setState({newUser: newState })
-      };
+    };
 
 
     update(field) {

@@ -12,8 +12,9 @@ class bodSelector extends React.Component {
     }
 
     dobSetState (field) {
+
+        const that = this; 
         return (e) => that.setState({[field]: e.currentTarget.value}, () => this.props.dobUpdate(this.state)); 
-        
     };
    
     

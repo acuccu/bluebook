@@ -1,7 +1,10 @@
 class Api::FriendsController < ApplicationController
 
     def index
-        @friendships = Friendship.includes(:friend).where(user_id: params[:user_id], friend_id: params[:user_id])
+        @friendships = Friendship.where(user_id: params[:user_id]).or(Friendship.where(friend_id: params[:user_id]))
+        @user = current_user
+        @pending = @friendships.select {|fr| fr.accepted == false}
+        @accepted = @friendships.select {|fr| fr.accepted == true}
         render :index
     end
 
@@ -9,7 +12,11 @@ class Api::FriendsController < ApplicationController
         @friendship = Friendship.new(friend_params)
         @user = current_user
         if @friendship.save
-          render :show
+          @friendships = Friendship.where(user_id: @user.id).or(Friendship.where(friend_id: @user.id))
+          @pending = @friendships.select {|fr| fr.accepted == false}
+          @accepted = @friendships.select {|fr| fr.accepted == true}
+          
+          render :index
         else
           render json: @friendship.errors.full_messages, status: 422
         end
