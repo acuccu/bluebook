@@ -16,7 +16,6 @@ class InputField extends React.Component {
     
     update() {  
         return e => {
-            debugger
             this.setState({fieldValue: e.target.value},
         this.props.inputUpdate(this.props.fieldName, e.target.value))};
        
