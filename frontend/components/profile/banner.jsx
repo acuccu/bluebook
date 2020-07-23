@@ -13,8 +13,6 @@ class Banner extends React.Component {
         }
     }
 
-   
-
     buttonType () {
        if (this.props.currentUserId == this.props.match.params.userId) {
         return <div></div> ;
@@ -30,7 +28,11 @@ class Banner extends React.Component {
             () => {
                 this.props.deleteFriend(this.props.currentUserId, this.props.match.params.userId)
             }}>Pending</button> : 
-           <button>Accept</button>
+           <button onClick={
+               () => {
+                this.props.acceptFriend(this.props.currentUserId, this.props.match.params.userId)
+               }
+           }>Accept</button>
        } else {
            return <button onClick={()=>
                this.props.createFriend(

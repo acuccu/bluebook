@@ -27,22 +27,25 @@ class Api::FriendsController < ApplicationController
 
         @friendship = Friendship.where(user_id: params[:user_id], friend_id: params[:id]).or(Friendship.where(user_id: params[:id], friend_id: params[:user_id]))  
         @user = current_user
-          
+        
+        byebug 
 
-      if @friendship.accepted
-          @friendship.update_attribute(:accepted, false)
+      if @friendship[0].accepted
+          @friendship[0].update_attribute(:accepted, false)
 
-          @friendships = Friendship.where(user_id: @user.id).or(Friendship.where(friend_id: @user.id)
+          @friendships = Friendship.where(user_id: @user.id).or(Friendship.where(friend_id: @user.id))
           @pending = @friendships.select {|fr| fr.accepted == false}
           @accepted = @friendships.select {|fr| fr.accepted == true}
     
           render :index
-      elsif @friendship.accepted == false
-        @friendship.update_attribute(:accepted, true)
+      elsif @friendship[0].accepted == false
+        @friendship[0].update_attribute(:accepted, true)
 
         @friendships = Friendship.where(user_id: @user.id).or(Friendship.where(friend_id: @user.id))
         @pending = @friendships.select {|fr| fr.accepted == false}
         @accepted = @friendships.select {|fr| fr.accepted == true}
+
+        render :index
       else
         render json: @friendship.errors.full_messages, status: 422
       end 
