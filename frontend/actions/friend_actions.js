@@ -26,12 +26,17 @@ export const fetchFriends = (userId) => {
 
 export const createFriend = (friendship, currentUserId) => dispatch => (
     ApiUtil.createFriend(friendship, currentUserId)
-    .then(friendship => dispatch(receiveAllFriends(friendship)))
+    .then(friendships => dispatch(receiveAllFriends(friendships)))
 ); 
+
+export const acceptFriend = (currentUserId, friendId) => dispatch => (
+    ApiUtil.acceptFriend(currentUserId, friendId)
+    .then(friendships => dispatch(receiveAllFriends(friendships))) 
+);
 
 export const deleteFriend = (currentUserId, friendId) => dispatch => (
     ApiUtil.deleteFriend(currentUserId, friendId)
-    .then(friendship => dispatch(removeFriend(friendship)))
+    .then(friendships => dispatch(receiveAllFriends(friendships)))
 ); 
 
 

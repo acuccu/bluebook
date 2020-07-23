@@ -3,6 +3,7 @@ import Banner from './banner';
 import {withRouter} from 'react-router-dom';
 import {createFriend} from '../../actions/friend_actions';
 import {deleteFriend} from '../../actions/friend_actions';
+import {acceptFriend} from '../../actions/friend_actions';
 
 const mapStateToProps = ({ session, entities: { users, friends } }, ownProps) => {
 
@@ -28,6 +29,7 @@ const mapStateToProps = ({ session, entities: { users, friends } }, ownProps) =>
   const mapDispatchToProps = dispatch => ({
     createFriend: (friendship, user_id) => dispatch(createFriend(friendship, user_id)),
     deleteFriend: (userId, friendId) => dispatch(deleteFriend(userId, friendId)),
+    acceptFriend: (userId, friendId) => dispatch(acceptFriend(userId, friendId))
   });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Banner));

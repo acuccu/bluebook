@@ -1,10 +1,15 @@
-export const fetchFriends = userId => {
-    return (
-      $.ajax({
-        url: `api/users/${userId}/friends/`
+export const fetchFriends = userId => (
+    $.ajax({
+      url: `api/users/${userId}/friends/`
     })
-)};
+);
 
+export const acceptFriend = (userId, friendId) => (
+    $.ajax({
+      url: `/api/users/${userId}/friends/${friendId}`,
+      method: 'PATCH'
+    })
+);
 
 export const createFriend = (friendship, currentUserId) => (
     $.ajax({

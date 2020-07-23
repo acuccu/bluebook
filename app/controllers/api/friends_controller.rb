@@ -23,6 +23,32 @@ class Api::FriendsController < ApplicationController
         end
     end
 
+    def update
+
+        @friendship = Friendship.where(user_id: params[:user_id], friend_id: params[:id]).or(Friendship.where(user_id: params[:id], friend_id: params[:user_id]))  
+        @user = current_user
+          
+
+      if @friendship.accepted
+          @friendship.update_attribute(:accepted, false)
+
+          @friendships = Friendship.where(user_id: @user.id).or(Friendship.where(friend_id: @user.id)
+          @pending = @friendships.select {|fr| fr.accepted == false}
+          @accepted = @friendships.select {|fr| fr.accepted == true}
+    
+          render :index
+      elsif @friendship.accepted == false
+        @friendship.update_attribute(:accepted, true)
+
+        @friendships = Friendship.where(user_id: @user.id).or(Friendship.where(friend_id: @user.id))
+        @pending = @friendships.select {|fr| fr.accepted == false}
+        @accepted = @friendships.select {|fr| fr.accepted == true}
+      else
+        render json: @friendship.errors.full_messages, status: 422
+      end 
+
+    end
+
     def destroy
         @friendship = Friendship.where(user_id: params[:user_id], friend_id: params[:id]).or(Friendship.where(user_id: params[:id], friend_id: params[:user_id]))  
         if @friendship[0]
