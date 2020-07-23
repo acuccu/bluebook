@@ -8,9 +8,9 @@ const receiveAllFriends = payload => ({
     payload
 });
 
-const removeFriend = friend => ({
+const removeFriend = payload => ({
     type: REMOVE_FRIEND,
-    friend
+    payload
 });
 
 const receiveFriend = friend => ({

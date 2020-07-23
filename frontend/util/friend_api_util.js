@@ -14,9 +14,9 @@ export const createFriend = (friendship, currentUserId) => (
     })
 );
 
-export const deleteFriend = (userId, friendId) => {
+export const deleteFriend = (userId, friendId) => (
     $.ajax({
       url: `/api/users/${userId}/friends/${friendId}`,
       method: 'DELETE'
     })
-};
+);
