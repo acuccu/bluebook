@@ -1,7 +1,6 @@
 class Api::UsersController < ApplicationController
     def show
         @user = User.find(params[:id])
-        @user
         @friendships = Friendship.where(user_id: @user.id).or(Friendship.where(friend_id: @user.id))
         @pending = @friendships.select {|fr| fr.accepted == false}
         @accepted = @friendships.select {|fr| fr.accepted == true}
@@ -9,8 +8,7 @@ class Api::UsersController < ApplicationController
         render :show
     end
 
-    def create 
-        
+    def create    
         @user = User.new(user_params)
         byebug
         if @user.save
@@ -27,6 +25,11 @@ class Api::UsersController < ApplicationController
         else
             render json: @user.errors.full_messages, status: 422
         end
+    end
+
+    def update 
+        @user = current_user
+        
     end
 
     def destroy
