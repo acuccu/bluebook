@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faNewspaper} from '@fortawesome/free-solid-svg-icons';
 import {faFacebookMessenger} from '@fortawesome/free-brands-svg-icons';
 import {faTv} from '@fortawesome/free-solid-svg-icons';
+import Modal from 'react-modal';
 
 
 class SideBar extends React.Component {
@@ -23,11 +24,11 @@ class SideBar extends React.Component {
                 <FontAwesomeIcon className='icon-bar' icon={faNewspaper} />
             <a href='https://www.linkedin.com/in/antonio-cuccu-4b0906114/'>News Feed</a>
             </div>
-            <div className='bar-element'>
+            <div className='news-bar-element'>
                 <FontAwesomeIcon className="icon-bar" icon={faFacebookMessenger} />
                 <a>Messenger</a>
             </div>
-            <div className='bar-element'> 
+            <div className='news-bar-element'> 
                 <FontAwesomeIcon className="icon-bar" icon={faTv} />
                 <a>Watch</a>
             </div>

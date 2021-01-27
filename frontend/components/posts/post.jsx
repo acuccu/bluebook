@@ -29,15 +29,7 @@ const PostIndexItem = props => {
     </li>
 
     <div className='post-item-icons'>
-    <button className='post-button'>
-       <FontAwesomeIcon className='icon-like' icon={faThumbsUp} />
-        Like                     
-    </button>
-    <div className='horizontal-spacing'></div>
-    <button className='post-button'>
-       <FontAwesomeIcon className='icon-like' icon={faCommentAlt} />
-        Comment                  
-    </button>
+    
     
     </div>
     

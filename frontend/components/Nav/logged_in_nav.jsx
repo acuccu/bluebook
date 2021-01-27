@@ -31,8 +31,6 @@ class LoggedInNav extends React.Component {
                 <Link to={`/users/${this.user.id}`}>{`${this.user.first_name}`}</Link>
                 <div className="separators" />
                 <Link to={`/feed/`}>Home</Link>
-                <div className="separators" /> 
-                <Link to='/in-progress'>Create</Link> 
                 <div className="separators"/>
             </div>
             
@@ -44,8 +42,7 @@ class LoggedInNav extends React.Component {
             
             <div className="separator-i"></div>
             <div className="logout-div">
-                <FontAwesomeIcon className="nav-i" icon={faQuestionCircle} />
-                <FontAwesomeIcon className="nav-i" icon={faCaretDown} />
+              
                 <span className='logout-button'>
                     <button className="button-logout" onClick={()=>this.logout().then(history.push("/"))}>Logout</button>
                 </span>

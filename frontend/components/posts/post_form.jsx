@@ -54,18 +54,6 @@ class PostForm extends React.Component {
               </div>
 
               <div className='form-icon-buttons'>
-                <button className='photo-button-ico'>
-                  <FontAwesomeIcon className='icon-images' icon={faImages} />
-                  Photo
-                </button>
-                <button className='tag-button-ico'>
-                  <FontAwesomeIcon className='icon-tag' icon={faUserTag} />
-                  Tag Friends
-                </button>
-                <button className='location-button-ico'>
-                  <FontAwesomeIcon className='icon-grin' icon={faGrin} />
-                  Feeling/Activity
-                </button> 
                 <button id='submit-post' >Post</button>
               </div> 
             </form>
