@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faNewspaper} from '@fortawesome/free-solid-svg-icons';
 import {faFacebookMessenger} from '@fortawesome/free-brands-svg-icons';
 import {faTv} from '@fortawesome/free-solid-svg-icons';
-import Modal from 'react-modal';
+
+
 
 
 class SideBar extends React.Component {
