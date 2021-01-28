@@ -9,6 +9,10 @@ import {faTv} from '@fortawesome/free-solid-svg-icons';
 
 
 class SideBar extends React.Component {
+
+    constructor(props) {
+        super(props);
+    };
      
     
     render ()  {
