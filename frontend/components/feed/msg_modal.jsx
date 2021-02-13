@@ -3,10 +3,17 @@ import React from 'react';
 
 class MSGModal extends React.Component {
 
+	constructor(props) {
+        super(props);
+    };
+
     render () {
+		
 
 		return(
-        <div className='modal'>
+        <div className='modal' z-index={
+			this.props.show ? '1' : '-1'
+			}>
             <div class="content">
 							<p>Feel free to get in touch with me through <strong>this form</strong>. I'm looking forward to the opportnity to make your ideas reality.</p>
 							<form action="https://formspree.io/xrgyjrab" method="post">

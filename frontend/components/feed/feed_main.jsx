@@ -16,7 +16,7 @@ class ProfileMain extends React.Component {
     };
 
     setShow () {
-        this.setState({show: true});
+        () => this.setState({show: true});
     };
 
     render () {
@@ -24,9 +24,9 @@ class ProfileMain extends React.Component {
         return (
             <div className='feed'>
                 <div className='profile-content'>
-                <SideBar setShow={this.setShow} show={this.show} />
+                <SideBar setShow={this.setShow} show={this.state.show} />
                 <PostIndexContainer />
-                <MSGModal setShow={this.setShow} show={this.show} />
+                <MSGModal setShow={this.setShow} show={this.state.show} />
                 </div>
             </div>
         )

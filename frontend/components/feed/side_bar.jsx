@@ -30,7 +30,7 @@ class SideBar extends React.Component {
             <a href='https://www.linkedin.com/in/antonio-cuccu-4b0906114/'>News Feed</a>
             </div>
             <div className='news-bar-element'>
-                <FontAwesomeIcon className="icon-bar" icon={faFacebookMessenger} />
+                <FontAwesomeIcon className="icon-bar" icon={faFacebookMessenger} onClick={this.props.setShow()}/>
                 <a>Messenger</a>
             </div>
             <div className='news-bar-element'> 
