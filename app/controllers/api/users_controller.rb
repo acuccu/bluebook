@@ -1,4 +1,10 @@
 class Api::UsersController < ApplicationController
+
+    def index 
+        @users = User.all
+        render :index
+    end
+    
     def show
         @user = User.find(params[:id])
         @friendships = Friendship.where(user_id: @user.id).or(Friendship.where(friend_id: @user.id))
