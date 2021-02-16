@@ -1,0 +1,21 @@
+.msg-modal {
+    position: absolute; 
+    top: 100px;
+    left: 100px;
+    height: 300px;
+    width: 300px; 
+    float: left;
+    background: white;
+}
+
+#msgName {
+    display: flex;
+    justify-content: space-between;
+    background-color: #3b5998;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 12px;
+    line-height: 28px;
+    font-weight: bold;
+    color: white;
+}
