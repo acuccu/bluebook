@@ -7,7 +7,7 @@ import {faFacebookMessenger} from '@fortawesome/free-brands-svg-icons'
 import {faBell} from '@fortawesome/free-solid-svg-icons'
 import {faQuestionCircle} from '@fortawesome/free-solid-svg-icons'
 import {faCaretDown} from '@fortawesome/free-solid-svg-icons'
-
+import MsgModal from './msg_modal'
 
 
 class LoggedInNav extends React.Component {
@@ -16,7 +16,19 @@ class LoggedInNav extends React.Component {
         super(props);
         this.user = this.props.currentUser;
         this.logout = this.props.logout;
+        this.showModal = this.showModal.bind(this);
+        this.state = {
+            isOpen: false
+        }
     }
+
+   showModal() {
+    if (this.state["isOpen"]) {
+        this.setState({isOpen: false})
+    } else {
+        this.setState({isOpen: true})
+    }
+   }
 
     render() {
         return (
@@ -37,7 +49,7 @@ class LoggedInNav extends React.Component {
             <div className='logout-i-div'>
             <div className='nav-icons'> 
                 <FontAwesomeIcon className="nav-i" icon={faUserFriends} />
-                <FontAwesomeIcon className="nav-i" icon={faFacebookMessenger} />
+                <FontAwesomeIcon onClick={()=>this.showModal()} className="nav-i" icon={faFacebookMessenger} />
                 <FontAwesomeIcon className="nav-i" icon={faBell} /> </div>
             
             <div className="separator-i"></div>
@@ -47,6 +59,7 @@ class LoggedInNav extends React.Component {
                     <button className="button-logout" onClick={()=>this.logout().then(history.push("/"))}>Logout</button>
                 </span>
             </div></div>
+            <MsgModal isOpen={this.state["isOpen"]} showModal={this.showModal} />
         </div>
         </nav>)
     }

@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactModal from 'react-modal';
+
 
 
 class MSGModal extends React.Component {
@@ -11,10 +13,13 @@ class MSGModal extends React.Component {
 		
 
 		return(
-        <div className='modal' z-index={
-			this.props.show ? '1' : '-1'
-			}>
-            <div class="content">
+		
+		<ReactModal className="msg-modal" isOpen={this.props["isOpen"]} overlayClassName={
+			"ReactModal_Overlay"}>
+            <div class="content"> 
+							<div id="msgName"> 
+							Antonio Cuccu <div onClick={() => this.props.showModal()}>X</div>
+							</div>	
 							<p>Feel free to get in touch with me through <strong>this form</strong>. I'm looking forward to the opportnity to make your ideas reality.</p>
 							<form action="https://formspree.io/xrgyjrab" method="post">
 								<div class="fields">
@@ -33,8 +38,9 @@ class MSGModal extends React.Component {
 								</ul>
 							</form>
 						</div>
-        </div>)
-    }
+       
+		</ReactModal>
+		)};
 
     
 }
