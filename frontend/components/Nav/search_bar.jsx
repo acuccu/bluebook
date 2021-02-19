@@ -38,14 +38,15 @@ class SearchBar extends React.Component {
 
     render () {
     
-       let filteredUsers = this.props.users.filter(user => this.userNameFilter(user));
+       let filteredUsers = []
+       filteredUsers = this.props.users.filter(user => this.userNameFilter(user));
 
        return( <div><form className="search-bar-form">
         <div className='search-div'>
         <input className="search-bar" type="text" placeholder="Search" onChange={this.searchUpdate("text")} value={`${this.state.query}`} />
         <button className='searchButton'><FontAwesomeIcon className='search-button' icon={faSearch} /></button></div>
         </form>
-        <SearchResult filteredUsers={filteredUsers} /></div>
+        <SearchResult users={filteredUsers} /></div>
         );
         
     };
