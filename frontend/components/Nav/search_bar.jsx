@@ -8,7 +8,7 @@ class SearchBar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            query: ''
+            query: ""
         };
         this.searchUpdate = this.searchUpdate.bind(this);
         this.userNameFilter = this.userNameFilter.bind(this)
@@ -21,15 +21,16 @@ class SearchBar extends React.Component {
     };
 
     userNameFilter (user) {
-        if (user) {
+        let nameVar = false
+        if (this.state.query) {
             let searchQuery = this.state.query.toLowerCase();
-            let nameVar = (
+            nameVar = (
                 user.first_name.toLowerCase().includes(searchQuery)
                 ||
                 user.last_name.toLowerCase().includes(searchQuery)
             );
-            return nameVar;
         }
+        return nameVar;
     };
 
     componentDidMount() {
