@@ -1,12 +1,10 @@
 import React from 'react';
-import SearchBar from './search_bar'
+import SearchBarContainer from './search_bar_container'
 import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUserFriends} from '@fortawesome/free-solid-svg-icons'
 import {faFacebookMessenger} from '@fortawesome/free-brands-svg-icons'
 import {faBell} from '@fortawesome/free-solid-svg-icons'
-import {faQuestionCircle} from '@fortawesome/free-solid-svg-icons'
-import {faCaretDown} from '@fortawesome/free-solid-svg-icons'
 import MsgModal from './msg_modal'
 
 
@@ -35,7 +33,7 @@ class LoggedInNav extends React.Component {
         <nav className="nav-profile" >
         <div className='logo-searchbar'>
         <img className='profile-logo' src={window.fishicon} />
-        <SearchBar />
+        <SearchBarContainer />
         </div>
         <div className='nav-right'>
             <div className='avatar-group'>

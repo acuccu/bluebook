@@ -1,20 +1,53 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
+import SearchResult from './search_result'
 
 class SearchBar extends React.Component {
 
     constructor(props) {
         super(props)
-        this.searchField = '';
+        this.state = {
+            query: ''
+        };
+        this.searchUpdate = this.searchUpdate.bind(this);
+        this.userNameFilter = this.userNameFilter.bind(this)
     }
 
+    searchUpdate() {
+        return e => {
+            this.setState({query: e.target.value});
+        }
+    };
+
+    userNameFilter (user) {
+        if (user) {
+            let searchQuery = this.state.query.toLowerCase();
+            let nameVar = (
+                user.first_name.toLowerCase().includes(searchQuery)
+                ||
+                user.last_name.toLowerCase().includes(searchQuery)
+            );
+            return nameVar;
+        }
+    };
+
+    componentDidMount() {
+        this.props.fetchUsers();
+    };
+
     render () {
-       return( <form className="search-bar-form">
+    
+       let filteredUsers = this.props.users.filter(user => this.userNameFilter(user));
+
+       return( <div><form className="search-bar-form">
         <div className='search-div'>
-        <input className="search-bar" type="text" placeholder="Not implemented yet." />
+        <input className="search-bar" type="text" placeholder="Search" onChange={this.searchUpdate("text")} value={`${this.state.query}`} />
         <button className='searchButton'><FontAwesomeIcon className='search-button' icon={faSearch} /></button></div>
-        </form>);
+        </form>
+        <SearchResult filteredUsers={filteredUsers} /></div>
+        );
+        
     };
 }
 
