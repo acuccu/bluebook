@@ -12,6 +12,14 @@ export const fetchUsers = () => (
   })
 );
 
+export const updateUser = () => (
+  $.ajax({
+    method: "PUT",
+    url: `/api/users/${userID}`,
+    data: {user}
+  })
+)
+
   
   
   

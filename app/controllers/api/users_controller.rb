@@ -16,7 +16,6 @@ class Api::UsersController < ApplicationController
 
     def create    
         @user = User.new(user_params)
-        byebug
         if @user.save
             log_in!(@user)
             # this code creates first friend 
@@ -35,7 +34,8 @@ class Api::UsersController < ApplicationController
 
     def update 
         @user = current_user
-        
+        @user.update!(user_params)
+        render :show
     end
 
     def destroy
@@ -47,7 +47,7 @@ class Api::UsersController < ApplicationController
     private
 
     def user_params 
-        params.require(:user).permit(:first_name, :last_name, :email, :cellphone, :password, :dob, :gender)
+        params.require(:user).permit(:first_name, :last_name, :email, :cellphone, :password, :dob, :gender, :location, :work_place, :bio, :education)
     end
     
 
