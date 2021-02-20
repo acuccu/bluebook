@@ -44,7 +44,7 @@ class SearchBar extends React.Component {
 
        return( <div><form className="search-bar-form">
         <div className='search-div'>
-        <input className="search-bar" type="text" placeholder="Search" onChange={this.searchUpdate("text")} value={`${this.state.query}`} />
+        <input className="search-bar" type="text" placeholder="Search" onChange={this.searchUpdate()} value={`${this.state.query}`} />
         <button className='searchButton'><FontAwesomeIcon className='search-button' icon={faSearch} /></button></div>
         </form>
         <SearchResult users={filteredUsers} /></div>

@@ -5,7 +5,17 @@ class ProfileEdit extends React.Component {
         super(props)
         this.currentUser = this.props.currentUser
         this.updateUser = this.props.updateUser
+        this.state = {
+            bio: this.currentUser.bio,
+            location: this.currentUser.location,
+            eduction: this.currentUser.eductation,
+            work_place: this.currentUser.work_place
+        }
     }
+
+    inputUpdate(field) {
+        this.setState({[field]: e.target.value });
+    };
 
     render () {
         return(
@@ -16,23 +26,26 @@ class ProfileEdit extends React.Component {
             </div>
              
             <span className='bio-span'>
-                <p>{`${this.user.bio}`}</p>
+                <input type="text" placeholder={`${this.currentUser.bio}`} oncChange={this.inputUpdate('bio')} value={`${this.state.bio}`} />
             </span>
 
             <div className='icon-div'>
                 <span className='icon-span'>
                 <FontAwesomeIcon className='icon-intro' icon={faHome} />
-                <p className='intro-black'>Lives in </p><p className='intro-blue'>{`${this.user.location}`}</p>
+                <p className='intro-black'>Lives in </p>
+                <input type="text" placeholder={`${this.currentUser.location}`} oncChange={this.inputUpdate('location')} value={`${this.state.location}`} />
                </span>
 
                <span className='icon-span'>
                 <FontAwesomeIcon id="grad-cap" className='icon-intro' icon={faGraduationCap} />
-                <p className='intro-black'>Went to </p><p className='intro-blue'>{`${this.user.education}`}</p>
+                <p className='intro-black'>Went to </p>
+                <input type="text" placeholder={`${this.currentUser.education}`} oncChange={this.inputUpdate('education')} value={`${this.state.education}`} />
                </span>
 
                <span className='icon-span'>
                <FontAwesomeIcon className='icon-intro' icon={faBriefcase} />
-               <p className='intro-black'>Works at </p><p className='intro-blue'>{`${this.user.work_place}`}</p>
+               <p className='intro-black'>Works at </p>
+               <input type="text" placeholder={`${this.currentUser.work_place}`} oncChange={this.inputUpdate('work_place')} value={`${this.state.work_place}`} />
                </span>
             </div>
 
