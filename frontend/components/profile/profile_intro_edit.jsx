@@ -1,22 +1,15 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faGlobeAmericas} from '@fortawesome/free-solid-svg-icons';
-import {faGraduationCap} from '@fortawesome/free-solid-svg-icons';
-import {faBriefcase} from '@fortawesome/free-solid-svg-icons';
-import {faHome} from '@fortawesome/free-solid-svg-icons';
 
-
-class ProfileIntro extends React.Component {
-
+class ProfileEdit extends React.Component {
     constructor(props) {
-        super(props);
-        this.user = this.props.user;
+        super(props)
+        this.currentUser = this.props.currentUser
+        this.updateUser = this.props.updateUser
     }
 
     render () {
-       return(
-        <div className='profile-intro'>
+        return(
+            <div className='profile-intro'>
             <div className='profile-intro-title'> 
                 <div className='icon-globe-div'><FontAwesomeIcon className='icon-globe' icon={faGlobeAmericas} /></div>
                 <h3>Intro</h3>
@@ -48,11 +41,9 @@ class ProfileIntro extends React.Component {
                 <Link  to={`/users/${this.user.id}/edit`}>Edit details</Link>
             </div>
         </div>)
+        )
     };
 
 }
 
-
-
-
-export default ProfileIntro;
+export default ProfileEdit;

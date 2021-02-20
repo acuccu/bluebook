@@ -34,4 +34,12 @@ const receiveUser = (payload) => ({
       )
   );
 
+  export const updateUser = (user, userId) => dispatch => (
+    APIUtil.updateUser(user, userId)
+    .then(
+      (user) => dispatch(receiveUser(user)),
+      (errors) => dispatch(receiveUserErrors(errors))
+    )
+  );
+
   
