@@ -12,12 +12,25 @@ class ProfileMain extends React.Component {
 
     constructor (props) {
         super(props);
-        this.state = {didFetch: false};
+        this.editIntro = this.editIntro.bind(this);
+        this.state = {
+            didFetch: false,
+            edit: false
+        };
+        
     }
 
     componentDidMount () {
         this.props.fetchUser(this.props.match.params.userId).then(() => {
             this.setState({didFetch: true})});   
+    }
+
+    editIntro () {
+        if (this.state.edit) {
+            this.setState({edit: false})
+        } else {
+            this.setState({edit: true})
+        };
     }
 
     render () {
@@ -28,12 +41,8 @@ class ProfileMain extends React.Component {
                 <div className='profile-content'>
                     
                     <div className='side-bar'>
-                    <HashRouter>
-                    <Switch>
-                    <ProtectedRoute exact path='/users/:userId' component={ProfileIntro} />
-                    <ProtectedRoute exact path='/users/:userId/edit' component={ProfileEdit} />
-                    </Switch>
-                    </HashRouter>
+                    {!this.state.edit && <ProfileIntro editIntro={this.editIntro} />}
+                    {this.state.edit && <ProfileEdit editIntro={this.editIntro} />}
                     {this.state.didFetch && <Friends />}
                     </div>
                     <PostIndex />

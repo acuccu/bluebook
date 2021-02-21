@@ -4,7 +4,7 @@ import {updateUser} from '../../actions/user_actions'
 
 const mapStateToProps = ({session, entities: {users}}) => {
     return ({
-        currentUser = users[session.currentUserId],
+        currentUser: users[session.currentUserId],
     })
 };
 

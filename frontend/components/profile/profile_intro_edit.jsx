@@ -1,4 +1,9 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faGlobeAmericas} from '@fortawesome/free-solid-svg-icons';
+import {faGraduationCap} from '@fortawesome/free-solid-svg-icons';
+import {faBriefcase} from '@fortawesome/free-solid-svg-icons';
+import {faHome} from '@fortawesome/free-solid-svg-icons';
 
 class ProfileEdit extends React.Component {
     constructor(props) {
@@ -16,14 +21,16 @@ class ProfileEdit extends React.Component {
     }
 
     inputUpdate(field) {
-        this.setState({[field]: e.target.value });
+        return e => {
+        this.setState({[field]: e.target.value })};
     };
 
-    handleSubmit (e) {
-        e.preventDefault();
-        this.updateUser(this.state, this.currentUser.id).then(
-            history.push(`/users/${this.currentUser.id}/`)
-        )
+    handleSubmit () {
+        this.updateUser(this.state, this.currentUser.id)
+        
+        // then(
+        //     history.push(`/users/${this.currentUser.id}/`)
+        // )
     }
 
     render () {
@@ -35,30 +42,30 @@ class ProfileEdit extends React.Component {
             </div>
              
             <span className='bio-span'>
-                <input type="text" placeholder={`${this.currentUser.bio}`} oncChange={this.inputUpdate('bio')} value={`${this.state.bio}`} />
+                <input type="text" placeholder={`${this.currentUser.bio}`} onChange={this.inputUpdate('bio')} value={`${this.state.bio}`} />
             </span>
 
             <div className='icon-div'>
                 <span className='icon-span'>
                 <FontAwesomeIcon className='icon-intro' icon={faHome} />
                 <p className='intro-black'>Lives in </p>
-                <input type="text" placeholder={`${this.currentUser.location}`} oncChange={this.inputUpdate('location')} value={`${this.state.location}`} />
+                <input type="text" placeholder={`${this.currentUser.location}`} onChange={this.inputUpdate('location')} value={`${this.state.location}`} />
                </span>
 
                <span className='icon-span'>
                 <FontAwesomeIcon id="grad-cap" className='icon-intro' icon={faGraduationCap} />
                 <p className='intro-black'>Went to </p>
-                <input type="text" placeholder={`${this.currentUser.education}`} oncChange={this.inputUpdate('education')} value={`${this.state.education}`} />
+                <input type="text" placeholder={`${this.currentUser.education}`} onChange={this.inputUpdate('education')} value={`${this.state.education}`} />
                </span>
 
                <span className='icon-span'>
                <FontAwesomeIcon className='icon-intro' icon={faBriefcase} />
                <p className='intro-black'>Works at </p>
-               <input type="text" placeholder={`${this.currentUser.work_place}`} oncChange={this.inputUpdate('work_place')} value={`${this.state.work_place}`} />
+               <input type="text" placeholder={`${this.currentUser.work_place}`} onChange={this.inputUpdate('work_place')} value={`${this.state.work_place}`} />
                </span>
             </div>
 
-                <div className="edit-intro-button" onClick={() => this.handleSubmit()}>
+                <div className="edit-intro-button" onClick={() => this.props.editIntro()}>
                     Submit Edit
                 </div>
             

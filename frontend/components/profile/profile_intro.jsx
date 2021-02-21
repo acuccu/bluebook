@@ -44,8 +44,8 @@ class ProfileIntro extends React.Component {
             </div>   
             
             {   this.props.currentUserId == this.props.user.id && 
-                <div className="edit-intro-button">
-                <Link  to={`/users/${this.user.id}/edit`}>Edit details</Link>
+                <div onClick={() => this.props.editIntro()} className="edit-intro-button">
+                Edit details
                 </div>
             }
         </div>)
