@@ -41,12 +41,13 @@ class ProfileIntro extends React.Component {
                <FontAwesomeIcon className='icon-intro' icon={faBriefcase} />
                <p className='intro-black'>Works at </p><p className='intro-blue'>{`${this.user.work_place}`}</p>
                </span>
-            </div>
-
-           
-            <div className="edit-intro-button">
+            </div>   
+            
+            {   this.props.currentUserId == this.props.user.id && 
+                <div className="edit-intro-button">
                 <Link  to={`/users/${this.user.id}/edit`}>Edit details</Link>
-            </div>
+                </div>
+            }
         </div>)
     };
 

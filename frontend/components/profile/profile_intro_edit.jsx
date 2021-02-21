@@ -4,7 +4,9 @@ class ProfileEdit extends React.Component {
     constructor(props) {
         super(props)
         this.currentUser = this.props.currentUser
-        this.updateUser = this.props.updateUser
+        this.updateUser = this.props.updateUser.bind(this)
+        this.inputUpdate = this.inputUpdate.bind(this)
+        this.handleSubmit = this.handleSubmit(this)
         this.state = {
             bio: this.currentUser.bio,
             location: this.currentUser.location,
@@ -16,6 +18,13 @@ class ProfileEdit extends React.Component {
     inputUpdate(field) {
         this.setState({[field]: e.target.value });
     };
+
+    handleSubmit (e) {
+        e.preventDefault();
+        this.updateUser(this.state, this.currentUser.id).then(
+            history.push(`/users/${this.currentUser.id}/`)
+        )
+    }
 
     render () {
         return(
@@ -49,11 +58,11 @@ class ProfileEdit extends React.Component {
                </span>
             </div>
 
-           
-            <div className="edit-intro-button">
-                <Link  to={`/users/${this.user.id}/edit`}>Edit details</Link>
-            </div>
-        </div>)
+                <div className="edit-intro-button" onClick={() => this.handleSubmit()}>
+                    Submit Edit
+                </div>
+            
+        </div>
         )
     };
 
