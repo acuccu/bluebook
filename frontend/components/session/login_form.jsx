@@ -18,7 +18,7 @@ class LoginForm extends React.Component {
             this.props.history.push("/login")};
 
         e.preventDefault();
-        this.login(this.state).then(null, errorCB);
+        this.login(this.state).then(null, errorCB());
     }
 
     update(field) {

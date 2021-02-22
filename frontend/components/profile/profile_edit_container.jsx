@@ -9,7 +9,7 @@ const mapStateToProps = ({session, entities: {users}}) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    updateUser: () => dispatch(updateUser)
+    updateUser: (user, userId) => dispatch(updateUser(user, userId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileEdit);

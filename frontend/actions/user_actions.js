@@ -22,7 +22,7 @@ const receiveUser = (payload) => ({
     APIUtil.fetchUser()
     .then(
       (users) => dispatch(receiveUsers(users)),
-      (errors) => dispatch(receiveErrors(errors))
+      (errors) => dispatch(receiveUserErrors(errors))
     )
   );
   
