@@ -55,8 +55,8 @@ through: :friendships,
 inverse_of: :friend,
 source: :user
 
-has_one_attached :avatar
-has_one_attached :banner
+# has_one_attached :avatar
+# has_one_attached :banner
 
 
 end

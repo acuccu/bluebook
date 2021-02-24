@@ -9,21 +9,16 @@ class ProfileMain extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            show: false
-        }
     };
 
-    setShow () {
-        () => this.setState({show: true});
-    };
+    
 
     render () {
        
         return (
             <div className='feed'>
                 <div className='profile-content'>
-                <SideBar setShow={this.setShow} show={this.state.show} />
+                <SideBar isOpen={this.props["isOpen"]} showModal={this.props.showModal} />
                 <PostIndexContainer />
                 </div>
             </div>

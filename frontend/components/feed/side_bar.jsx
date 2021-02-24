@@ -4,14 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faNewspaper} from '@fortawesome/free-solid-svg-icons';
 import {faFacebookMessenger} from '@fortawesome/free-brands-svg-icons';
 import {faTv} from '@fortawesome/free-solid-svg-icons';
-
-
+import MsgModal from '../Nav/msg_modal'
 
 
 class SideBar extends React.Component {
 
     constructor(props) {
         super(props);
+        
     };
      
     
@@ -30,7 +30,7 @@ class SideBar extends React.Component {
             <a href='https://www.linkedin.com/in/antonio-cuccu-4b0906114/'>News Feed</a>
             </div>
             <div className='news-bar-element'>
-                <FontAwesomeIcon className="icon-bar" icon={faFacebookMessenger} onClick={this.props.setShow()}/>
+                <FontAwesomeIcon className="icon-bar" icon={faFacebookMessenger} onClick={() => this.props.showModal()}/>
                 <a>Messenger</a>
             </div>
             <div className='news-bar-element'> 
@@ -38,6 +38,7 @@ class SideBar extends React.Component {
                 <a>Watch</a>
             </div>
             </div>
+            <MsgModal isOpen={this.props["isOpen"]} showModal={this.showModal} />
         </div>);
     }
 }

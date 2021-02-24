@@ -14,19 +14,9 @@ class LoggedInNav extends React.Component {
         super(props);
         this.user = this.props.currentUser;
         this.logout = this.props.logout;
-        this.showModal = this.showModal.bind(this);
-        this.state = {
-            isOpen: false
-        }
     }
 
-   showModal() {
-    if (this.state["isOpen"]) {
-        this.setState({isOpen: false})
-    } else {
-        this.setState({isOpen: true})
-    }
-   }
+   
 
     render() {
         return (
@@ -47,7 +37,7 @@ class LoggedInNav extends React.Component {
             <div className='logout-i-div'>
             <div className='nav-icons'> 
                 <FontAwesomeIcon className="nav-i" icon={faUserFriends} />
-                <FontAwesomeIcon onClick={()=>this.showModal()} className="nav-i" icon={faFacebookMessenger} />
+                <FontAwesomeIcon onClick={()=>this.props.showModal()} className="nav-i" icon={faFacebookMessenger} />
                 <FontAwesomeIcon className="nav-i" icon={faBell} /> </div>
             
             <div className="separator-i"></div>
@@ -57,7 +47,7 @@ class LoggedInNav extends React.Component {
                     <button className="button-logout" onClick={()=>this.logout().then(history.push("/"))}>Logout</button>
                 </span>
             </div></div>
-            <MsgModal isOpen={this.state["isOpen"]} showModal={this.showModal} />
+            <MsgModal isOpen={this.props["isOpen"]} showModal={this.props.showModal} />
         </div>
         </nav>)
     }

@@ -10,8 +10,25 @@ import ProfileMain from './profile/profile_main_container'
 import InProgress from './main/inprogress'
 import FeedMain from '././feed/feed_main'
 
-const App = () => {
+class App extends React.Component{
     
+    constructor (props) {
+        super(props)
+        this.showModal = this.showModal.bind(this)
+        this.state = {
+            isOpen: false
+        }
+    }
+
+    showModal () {
+        if (this.state["isOpen"]) {
+            this.setState({isOpen: false})
+        } else {
+            this.setState({isOpen: true})
+        }
+       }
+
+    render () {
     const {currentUserId} = store.getState().session;
     return (
     <div className='app'>
@@ -20,23 +37,22 @@ const App = () => {
         <Switch>
             <AuthRoute exact path='/' component={LoginNav} userId={currentUserId}/>
             <AuthRoute exact path='/create' component={LoginNav} userId={currentUserId}/>
-            <ProtectedRoute exact path='/users/:userId' component={LoggedInNav} />
+            <ProtectedRoute exact path='/users/:userId' component={LoggedInNav} isOpen={this.state["isOpen"]} showModal={this.showModal}/>
             <ProtectedRoute exact path='/in-progress' component={LoggedInNav} />
-            <ProtectedRoute exact path='/feed' component={LoggedInNav} />
+            <ProtectedRoute exact path='/feed' component={LoggedInNav} isOpen={this.state["isOpen"]} showModal={this.showModal}/>
         </Switch>
 
         <Switch>
-            <AuthRoute exact path='/' component={Main} userId={currentUserId}/>˙
-            <ProtectedRoute exact path='/feed' component={FeedMain} userId={currentUserId} />
+            <AuthRoute exact path='/' component={Main} userId={currentUserId} />˙
+            <ProtectedRoute exact path='/feed' component={FeedMain} userId={currentUserId} isOpen={this.state["isOpen"]} showModal={this.showModal}/>
             <AuthRoute exact path='/login' component={LoginPage} userId={currentUserId}/>
             <AuthRoute exact path='/create' component={SignUpPage} userId={currentUserId}/>
             <ProtectedRoute exact path='/users/:userId' component={ProfileMain} />
             <ProtectedRoute exact path='/in-progress' component={InProgress} />
-            <ProtectedRoute exact path='/feed/:userId' component={FeedMain} />
         </Switch>
         
         </HashRouter>
     </div>
-)};
+)}};
 
 export default App; 

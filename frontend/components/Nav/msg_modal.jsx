@@ -16,7 +16,7 @@ class MSGModal extends React.Component {
 		
 		<ReactModal className="msg-modal" isOpen={this.props["isOpen"]} overlayClassName={
 			"ReactModal_Overlay"}>
-            <div class="content"> 
+            <div className="content"> 
 							<div id="msgName"> 
 							Antonio Cuccu <div onClick={() => this.props.showModal()}>X</div>
 							</div>	
