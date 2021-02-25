@@ -6,18 +6,19 @@ import {faUserFriends} from '@fortawesome/free-solid-svg-icons'
 import {faFacebookMessenger} from '@fortawesome/free-brands-svg-icons'
 import {faBell} from '@fortawesome/free-solid-svg-icons'
 import MsgModal from './msg_modal'
+import ReactModal from 'react-modal';
+
 
 
 class LoggedInNav extends React.Component {
 
     constructor (props) {
-        super(props);
-        this.user = this.props.currentUser;
-        this.logout = this.props.logout;
+        super(props)
+        this.user = this.props.currentUser
+        this.logout = this.props.logout
         this.showModal = this.props.showModal
+        this.badge = this.props.badge
     }
-
-   
 
     render() {
         return (
@@ -39,6 +40,9 @@ class LoggedInNav extends React.Component {
             <div className='nav-icons'> 
                 <FontAwesomeIcon className="nav-i" icon={faUserFriends} />
                 <FontAwesomeIcon onClick={()=>this.props.showModal()} className="nav-i" icon={faFacebookMessenger} />
+                <ReactModal className="badge" isOpen={this.props["badge"]} overlayClassName={"ReactModal_Overlay"} ariaHideApp={false}>
+                    <p className="badge-text">1</p>
+                </ReactModal>
                 <FontAwesomeIcon className="nav-i" icon={faBell} /> </div>
             
             <div className="separator-i"></div>

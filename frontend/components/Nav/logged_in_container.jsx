@@ -7,7 +7,8 @@ const mapStateToProps = ({session, entities: {users}}, ownProps) => {
     return ({
     currentUser: users[session.currentUserId],
     isOpen: ownProps.isOpen,
-    showModal: ownProps.showModal
+    showModal: ownProps.showModal,
+    badge: ownProps.badge
 })};
 
 const mapDispatchToProps = dispatch => ({

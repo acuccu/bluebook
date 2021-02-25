@@ -16,7 +16,8 @@ class App extends React.Component{
         super(props)
         this.showModal = this.showModal.bind(this)
         this.state = {
-            isOpen: false
+            isOpen: false,
+            badge: true 
         }
     }
 
@@ -25,6 +26,9 @@ class App extends React.Component{
             this.setState({isOpen: false})
         } else {
             this.setState({isOpen: true})
+        }
+        if (this.state["badge"]) {
+            this.setState({badge: false})
         }
        }
 
@@ -37,9 +41,9 @@ class App extends React.Component{
         <Switch>
             <AuthRoute exact path='/' component={LoginNav} userId={currentUserId}/>
             <AuthRoute exact path='/create' component={LoginNav} userId={currentUserId}/>
-            <ProtectedRoute exact path='/users/:userId' component={LoggedInNav} isOpen={this.state["isOpen"]} showModal={this.showModal}/>
+            <ProtectedRoute exact path='/users/:userId' component={LoggedInNav} isOpen={this.state["isOpen"]} badge={this.state["badge"]} showModal={this.showModal}/>
             <ProtectedRoute exact path='/in-progress' component={LoggedInNav} />
-            <ProtectedRoute exact path='/feed' component={LoggedInNav} isOpen={this.state["isOpen"]} showModal={this.showModal}/>
+            <ProtectedRoute exact path='/feed' component={LoggedInNav} isOpen={this.state["isOpen"]} showModal={this.showModal} badge={this.state["badge"]}/>
         </Switch>
 
         <Switch>
