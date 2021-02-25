@@ -4,7 +4,6 @@ import {logout} from '../../actions/session_actions'
 
 
 const mapStateToProps = ({session, entities: {users}}, ownProps) => {
-    debugger
     return ({
     currentUser: users[session.currentUserId],
     isOpen: ownProps.isOpen,

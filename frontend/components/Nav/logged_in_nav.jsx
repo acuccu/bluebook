@@ -14,6 +14,7 @@ class LoggedInNav extends React.Component {
         super(props);
         this.user = this.props.currentUser;
         this.logout = this.props.logout;
+        this.showModal = this.props.showModal
     }
 
    

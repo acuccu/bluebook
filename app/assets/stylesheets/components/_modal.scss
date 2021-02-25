@@ -1,16 +1,102 @@
+.chat-button{
+    display: inline-block;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    height: 25px;
+  width: 25px;
+  background-color: #3b5998;
+  border-radius: 50%;
+  margin-left: 5px;
+
+}
+
+#close-modal {
+    margin-left: 170px;  
+}
+
+.field-half {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    background-color: #3b5998;
+    border-radius: 20px;
+    width: 150px;
+    font-family: helvetica;
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+    box-sizing: border-box; 
+    margin: 5px;
+}
+
+.field-half:focus {
+    outline: none;
+}
+
+.field-half::placeholder {
+    color: white;
+    font-size: 12px;
+    font-family: helvetica;
+    opacity: 1;
+}
+
+
+#initial-msg {
+    background-color: #b8babd;
+    border-radius: 20px;
+    height: min-content;
+    width: 200px;
+    margin: 5px;
+    font-family: helvetica;
+    color: black;
+    font-size: 12px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 110px;
+    margin-left: 95px;
+}
+
+.input-box{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+}
+
+.input-box:focus{
+    outline: none;
+}
+
+.input-field {
+    display: flex;
+    justify-content: center;
+    border-top: solid #cacdd3 1px;
+    height: 20px;
+    margin: 5px;
+    padding: 5px;
+}
+
+
 .msg-modal {
     position: absolute; 
-    top: 100px;
-    left: 100px;
-    height: 300px;
+    top: 275px;
+    left: 900px;
+    height: 350px;
     width: 300px; 
     float: left;
     background: white;
+    border: 1px solid #cacdd3;
+}
+
+.msg-modal:focus {
+    outline: none;
 }
 
 #msgName {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     background-color: #3b5998;
     font-family: Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -18,4 +104,19 @@
     line-height: 28px;
     font-weight: bold;
     color: white;
+}
+
+#online-status {
+  height: 9px;
+  width: 9px;
+  background-color: rgb(30, 148, 50);
+  border-radius: 50%;
+  margin:8.5px;
+}
+
+.paperplane{
+    position: relative;
+   color: white;
+   left: -24px;
+   top: 2px;
 }
