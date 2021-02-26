@@ -9,8 +9,8 @@ const mapStateToProps = ({entities: {users}}) => {
     })
 };
 
-const mapDispatchToProps = dispatch => ({
-    fetchUsers: dispatch(fetchUsers)
+const mapDispatchToProps = (dispatch) => ({
+    fetchUsers: () => dispatch(fetchUsers())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBar); 

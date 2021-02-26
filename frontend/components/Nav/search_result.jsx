@@ -9,7 +9,8 @@ class SearchResult extends React.Component {
 
     render () {
         return(
-            <ReactModal className="searchModal" isOpen={Boolean(this.props.users[0])}>
+            <ReactModal className="searchModal" isOpen={Boolean(this.props.users[0])} overlayClassName={"ReactModal_Overlay"}
+            shouldFocusAfterRender={false}>
                 { this.props.users.map(user =>
                     <div>
                         <Link to={`/users/${user.id}`}>{user.first_name} {user.last_name}</Link>
