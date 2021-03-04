@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
 import SearchResult from './search_result'
-import {Link} from 'react-router-dom'
+
 
 class SearchBar extends React.Component {
 
@@ -13,6 +13,13 @@ class SearchBar extends React.Component {
         };
         this.searchUpdate = this.searchUpdate.bind(this);
         this.userNameFilter = this.userNameFilter.bind(this)
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick (usersArr) {
+        if (Boolean(usersArr[0])) {
+            this.props.history.push(`/users/${usersArr[0].id}`)
+        }
     }
 
     searchUpdate() {
@@ -46,7 +53,7 @@ class SearchBar extends React.Component {
        return( <div><form className="search-bar-form">
         <div className='search-div'>
         <input className="search-bar" type="text" placeholder="Search" onChange={this.searchUpdate()} value={`${this.state.query}`} />
-        <button className='searchButton'><FontAwesomeIcon className='search-button' icon={faSearch} /></button></div>
+        <button className='searchButton' onClick={() => this.handleClick(filteredUsers)}><FontAwesomeIcon className='search-button' icon={faSearch} /></button></div>
         </form>
         <SearchResult users={filteredUsers} /></div>
         );

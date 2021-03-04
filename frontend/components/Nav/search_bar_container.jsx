@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import SearchBar from './search_bar';
 import {fetchUsers} from '../../actions/user_actions'
+import {withRouter} from 'react-router-dom'
 
 
 const mapStateToProps = ({entities: {users}}) => {
@@ -13,4 +14,4 @@ const mapDispatchToProps = (dispatch) => ({
     fetchUsers: () => dispatch(fetchUsers())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar); 
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchBar)); 
