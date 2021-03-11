@@ -3,7 +3,7 @@ class Api::SessionsController < ApplicationController
         @user = User.find_by_credentials(params[:user][:auth], params[:user][:password])
         if @user 
             log_in!(@user)
-            @friendships = Friendship.where(user_id: @user.id).or(Friendship.where(friend_id: @user.id))
+            @friendships = Friendship.includes(:friend, :user).where(user_id: @user.id).or(Friendship.includes(:friend, :user).where(friend_id: @user.id))
             @pending = @friendships.select {|fr| fr.accepted == false}
             @accepted = @friendships.select {|fr| fr.accepted == true}
             @friends = @friendships.map {|fr| fr.user_id == @user.id ? fr.friend : fr.user }
