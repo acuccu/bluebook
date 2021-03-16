@@ -24,7 +24,7 @@ class PostForm extends React.Component {
 
     clearField() {
         debugger
-        this.setState({body: "", title: "", author_id: ""})
+        this.setState({body: "", author_id: ""})
     }
   
     update(field) {

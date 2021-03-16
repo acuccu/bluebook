@@ -5,7 +5,6 @@ import { createPost } from '../../actions/post_actions';
 
 const mapStateToProps = ({entities: {users}, session: {currentUserId}}, ownProps) => ({
       post: {
-        title: '',
         body: '',
         author_id: currentUserId,
         wall_id: ownProps.match.params.userId || currentUserId
