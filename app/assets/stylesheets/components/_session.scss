@@ -3,10 +3,68 @@
     background: #edf0f5;
 }
 
-.splash{
-    display: block;
-    background: #edf0f5;
-    height: 100%;
+.bday-selector {
+    display: flex;
+    flex-direction: column;
+}
+
+.bday-selector > label {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #90949c;
+    font-size: 16px;    
+    margin: 7px;
+    margin-top: 12px;
+    font-weight: bold;
+    
+}
+
+.demo-button {
+    margin-left: 22px;
+}
+
+.fas.hidden,
+.error-message.hidden {
+    display: none;
+}
+
+.first_name,
+.last_name,
+.email,
+.cellphone,
+.password {
+    position: relative;
+}
+
+.gender {
+    display: flex;
+    flex-direction: column;
+}
+
+.gender > label {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #90949c;
+    font-size: 16px;    
+    margin: 7px;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.gender-radio {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4px;
+    left: 5px;
+    margin-bottom: 10px;
+}
+
+.gender-radio > span {
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.icon-bold {
+    font-weight: 800;
+    margin: 5px;
+    margin-left: 10px;
 }
 
 .main-session {
@@ -18,16 +76,20 @@
     height: 100vh;
 }
 
-.presentation-top {
-   display: block;
-   margin-right: 10px;
+.password > input {
+    display: block;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px; 
+    border-color: #bdc7d8;
+    border: 1px solid #ccd0d5;
+    height: 34px;
+    width: 369px; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
 }
 
-.Signup-top {
-    top: 20px;
-    left: 20px;
-    margin: 20px;
-}
 
 .pres-motto > h2 {
     margin-top: 60px;
@@ -38,6 +100,26 @@
     padding-bottom: 10px;
     padding-top: 10px;
 }
+
+.presentation-top {
+    display: block;
+    margin-right: 10px;
+ }
+
+.splash{
+    display: block;
+    background: #edf0f5;
+    height: 100%;
+}
+
+
+.Signup-top {
+    top: 20px;
+    left: 20px;
+    margin: 20px;
+}
+
+
 
 .signup-invitation > h2 {
     margin-left: 5px;
@@ -67,13 +149,7 @@
     justify-content: center;
 }
 
-.first_name,
-.last_name,
-.email,
-.cellphone,
-.password {
-    position: relative;
-}
+
 
 .signup-names input {
     display: block;
@@ -131,10 +207,7 @@
     z-index: 2;
 }
 
-.fas.hidden,
-.error-message.hidden {
-    display: none;
-}
+
 
 .signup-form .fa-exclamation-circle {
     position: absolute;
@@ -168,40 +241,6 @@
     font-size: 18px;
 }
 
-.password > input {
-    display: block;
-    box-sizing: border-box;
-    border-radius: 5px;
-    margin: 5px;
-    padding: 10px; 
-    border-color: #bdc7d8;
-    border: 1px solid #ccd0d5;
-    height: 34px;
-    width: 369px; 
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-}
-
-.bday-selector {
-    display: flex;
-    flex-direction: column;
-}
-
-.bday-selector > label {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #90949c;
-    font-size: 16px;    
-    margin: 7px;
-    margin-top: 12px;
-    font-weight: bold;
-    
-}
-
-.gender {
-    display: flex;
-    flex-direction: column;
-}
-
 .selectors {
     margin-left: 5px;
     height: 30px;
@@ -222,29 +261,6 @@
     font-family: Arial, Helvetica, sans-serif;
     background-color: white;
 }
-
-.gender > label {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #90949c;
-    font-size: 16px;    
-    margin: 7px;
-    margin-top: 12px;
-    font-weight: bold;
-}
-
-.gender-radio {
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 4px;
-    left: 5px;
-    margin-bottom: 10px;
-}
-
-.gender-radio > span {
-    margin-right: 15px;
-    margin-bottom: 10px;
-}
-
-
 
 .signup-button {
     background: linear-gradient(#67ae55, #578843);
@@ -275,12 +291,6 @@
     padding-bottom: 10px;
 }
 
-.icon-bold {
-    font-weight: 800;
-    margin: 5px;
-    margin-left: 10px;
-}
 
-.demo-button {
-    margin-left: 22px;
-}
+
+
