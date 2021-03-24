@@ -5,14 +5,17 @@ import {faGlobeAmericas} from '@fortawesome/free-solid-svg-icons';
 import {faGraduationCap} from '@fortawesome/free-solid-svg-icons';
 import {faBriefcase} from '@fortawesome/free-solid-svg-icons';
 import {faHome} from '@fortawesome/free-solid-svg-icons';
+import {withRouter} from 'react-router-dom';
 
 
 class ProfileIntro extends React.Component {
 
     constructor(props) {
-        super(props);
-        this.user = this.props.user;
+        super(props)
+        this.state = this.props
+        this.user = this.state.user
     }
+
 
     render () {
        return(
@@ -56,4 +59,4 @@ class ProfileIntro extends React.Component {
 
 
 
-export default ProfileIntro;
+export default withRouter(ProfileIntro);

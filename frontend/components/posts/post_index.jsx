@@ -1,6 +1,7 @@
 import React from 'react';
 import PostIndexItem from './post';
 import PostForm from './post_form_container'
+import {withRouter} from 'react-router-dom';
 
 
 
@@ -49,4 +50,4 @@ class PostIndex extends React.Component {
     }
   }
   
-  export default PostIndex;
+  export default withRouter(PostIndex);

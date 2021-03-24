@@ -10,6 +10,8 @@ import ProfileMain from './profile/profile_main_container'
 import InProgress from './main/inprogress'
 import FeedMain from '././feed/feed_main'
 
+
+
 class App extends React.Component{
     
     constructor (props) {
@@ -38,21 +40,21 @@ class App extends React.Component{
     <div className='app'>
         
         <HashRouter>
-        <Switch>
-            <AuthRoute exact path='/' component={LoginNav} userId={currentUserId}/>
+        <Switch>     
             <AuthRoute exact path='/create' component={LoginNav} userId={currentUserId}/>
+            <ProtectedRoute exact path='/feed' component={LoggedInNav} isOpen={this.state["isOpen"]} showModal={this.showModal} badge={this.state["badge"]}/>
             <ProtectedRoute exact path='/users/:userId' component={LoggedInNav} isOpen={this.state["isOpen"]} badge={this.state["badge"]} showModal={this.showModal}/>
             <ProtectedRoute exact path='/in-progress' component={LoggedInNav} />
-            <ProtectedRoute exact path='/feed' component={LoggedInNav} isOpen={this.state["isOpen"]} showModal={this.showModal} badge={this.state["badge"]}/>
+            <AuthRoute exact path='/' component={LoginNav} userId={currentUserId}/>
         </Switch>
 
-        <Switch>
-            <AuthRoute exact path='/' component={Main} userId={currentUserId} />˙
-            <ProtectedRoute exact path='/feed' component={FeedMain} userId={currentUserId} isOpen={this.state["isOpen"]} showModal={this.showModal}/>
+        <Switch>     
             <AuthRoute exact path='/login' component={LoginPage} userId={currentUserId}/>
             <AuthRoute exact path='/create' component={SignUpPage} userId={currentUserId}/>
+            <ProtectedRoute exact path='/feed' component={FeedMain} userId={currentUserId} isOpen={this.state["isOpen"]} showModal={this.showModal}/>
             <ProtectedRoute exact path='/users/:userId' component={ProfileMain} />
             <ProtectedRoute exact path='/in-progress' component={InProgress} />
+            <AuthRoute exact path='/' component={Main} userId={currentUserId} />˙
         </Switch>
         
         </HashRouter>

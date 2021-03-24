@@ -5,7 +5,7 @@ import {faPencilAlt} from '@fortawesome/free-solid-svg-icons';
 import {faImages} from '@fortawesome/free-solid-svg-icons';
 import {faUserTag} from '@fortawesome/free-solid-svg-icons';
 import {faGrin} from '@fortawesome/free-solid-svg-icons';
-
+import {withRouter} from 'react-router-dom';
 
 
 class PostForm extends React.Component {
@@ -18,13 +18,14 @@ class PostForm extends React.Component {
     }
     
     handleSubmit(e) {
+      debugger
       e.preventDefault();
       this.props.createPost(this.state).then(() => this.clearField());
     }
 
     clearField() {
         debugger
-        this.setState({body: "", author_id: ""})
+        this.setState({body: "", author_id: "", wall_id: this.props.match.params.userId || this.props.author.id})
     }
   
     update(field) {
@@ -64,4 +65,4 @@ class PostForm extends React.Component {
     }
 }
 
-export default PostForm;
+export default withRouter(PostForm);

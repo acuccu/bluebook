@@ -5,7 +5,7 @@ import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session: {currentUserId}}, ownProps) => {
     let userPosts = Object.values(posts).filter(post => {
-      return  post.author_id ==  ownProps.match.params.userId});
+      return  post.wall_id ==  ownProps.match.params.userId});
     let friendships = friends[ownProps.match.params.userId] ? Object.values(friends[ownProps.match.params.userId].accepted) : [];
     const friendsIdArray = (friendships) => {
       let friendsArr = friendships.map((fr) => {

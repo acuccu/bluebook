@@ -3,9 +3,9 @@ import ProfileMain from './profile_main';
 import {withRouter} from 'react-router-dom'
 import {fetchUser} from '../../actions/user_actions'
 
-const mapStateToProps = (ownProps) => {
+const mapStateToProps = (state, ownProps) => {
     return({
-      pId: 10
+      pId: ownProps.match.params.userId
     })};
   
 
