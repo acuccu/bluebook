@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MoreModal from './more_modal'
 
 class Banner extends React.Component {
 
@@ -69,7 +70,7 @@ class Banner extends React.Component {
                 <div className='banner-separators' />
                 <Link to='/in-progress'>Photos</Link>
                 <div className='banner-separators' />
-                <Link to='/in-progress'>More</Link>
+                <MoreModal />
                 <div className='banner-separators' />
                 </nav></div>
             </div>
