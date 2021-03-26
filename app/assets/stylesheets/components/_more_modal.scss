@@ -1,3 +1,7 @@
+.div-more {
+    margin-bottom: 5px;
+}
+
 #more {
     cursor: pointer;
     color: $fb-blue;
@@ -6,7 +10,18 @@
     font-size: 14px;
 }
 
+.more-icon {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
 .more-modal {
     position: absolute;
-    cursor: pointer
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #cacdd3;
+    padding: 15px;
+    margin: -1px;
+    box-sizing: border-box;
+    border-radius: 2px;
 }

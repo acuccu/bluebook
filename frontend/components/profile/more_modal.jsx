@@ -22,14 +22,14 @@ class MoreModal extends React.Component {
         return (
             <div>
             <div id="more" onMouseEnter={this.handleMouseHover}
-                onMouseLeave={this.handleMouseHover}>
+               >
                  More 
             </div>
                 {this.state.isHovering && 
                 <div className="more-modal" onMouseLeave={this.handleMouseHover}>
-                    <div><a href="https://www.linkedin.com/in/antonio-cuccu-4b0906114/" target="blank_"><FontAwesomeIcon className="more-icon" icon={faLinkedin} />LinkedIn</a></div>
-                    <div><a href="https://github.com/acuccu" target="blank_"><FontAwesomeIcon className="splash-link" icon={faGit} />gitHub</a></div>
-                    <div><a href="https://acuccu.github.io/" target="blank_">Personal website</a></div>
+                    <div className="div-more"><a href="https://www.linkedin.com/in/antonio-cuccu-4b0906114/" target="blank_"><FontAwesomeIcon className="more-icon" icon={faLinkedin} />LinkedIn</a></div>
+                    <div className="div-more"><a href="https://github.com/acuccu" target="blank_"><FontAwesomeIcon className="more-icon" icon={faGit} />gitHub</a></div>
+                    <div className="div-more"><a href="https://acuccu.github.io/" target="blank_">Personal website</a></div>
                 </div>}
                 
             </div>
