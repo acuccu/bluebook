@@ -9,7 +9,17 @@ class MSGModal extends React.Component {
 	constructor(props) {
         super(props)
 		this.handleClick = this.handleClick.bind(this)
+		// this.handleOnChange = this.handleOnChange.bind(this)
+		this.state = {
+			name: "",
+			email: "",
+			message: ""
+		}
     };
+
+	// handleOnChange (event) {
+	// 	this.state()
+	// }
 
 	handleClick () {
 		console.log(this.props)

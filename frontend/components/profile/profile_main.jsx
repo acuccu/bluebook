@@ -20,7 +20,7 @@ class ProfileMain extends React.Component {
         
     }
 
-    componentDidMount () {
+    componentWillMount () {
         this.props.fetchUser(this.props.match.params.userId).then(() => {
             this.setState({didFetch: true})});   
     }

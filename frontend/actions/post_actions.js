@@ -26,11 +26,6 @@ export const fetchPosts = (userId) => {
     .then(payload => dispatch(receiveAllPosts(payload)))}
 )};
 
-  // export const fetchPost = (postId, userId) => dispatch => (
-  //   PostApiUtil.fetchPost(postId, userId)
-  //     .then(post => dispatch(receivePost(post)))
-  // );
-
   export const createPost = (post, userId) => dispatch => (
     ApiUtil.createPost(post, userId)
     .then(post => dispatch(receivePost(post)))
