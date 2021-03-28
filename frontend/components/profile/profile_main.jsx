@@ -5,7 +5,7 @@ import ProfileIntro from './profile_intro_container';
 import ProfileEdit from './profile_edit_container'
 import Friends from './friends_cointainer';
 import PostIndex from '../posts/post_index_container';
-import {ProtectedRoute} from '../../util/routes_util';
+import LoggedInNav from '../Nav/logged_in_container';
 
 
 class ProfileMain extends React.Component {
@@ -35,8 +35,9 @@ class ProfileMain extends React.Component {
 
     render () {
         return (
-            <div className='profile'>
-                <div>
+            <div>
+                <LoggedInNav />
+                <div className='profile'>
                 <Banner />
                 <div className='profile-content'>
                     
