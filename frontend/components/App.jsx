@@ -40,21 +40,23 @@ class App extends React.Component{
     <div className='app'>
         
         <HashRouter>
-        <Switch>     
+        {/* <Switch>     
             <AuthRoute exact path='/create' component={LoginNav} userId={currentUserId}/>
             <ProtectedRoute exact path='/feed' component={LoggedInNav} isOpen={this.state["isOpen"]} showModal={this.showModal} badge={this.state["badge"]}/>
             <ProtectedRoute exact path='/users/:userId' component={LoggedInNav} isOpen={this.state["isOpen"]} badge={this.state["badge"]} showModal={this.showModal}/>
             <ProtectedRoute exact path='/in-progress' component={LoggedInNav} />
             <AuthRoute exact path='/' component={LoginNav} userId={currentUserId}/>
-        </Switch>
+        </Switch> */}
 
-        <Switch>     
+        <Switch> 
+            <AuthRoute exact path='/' component={Main} userId={currentUserId} />˙
             <AuthRoute exact path='/login' component={LoginPage} userId={currentUserId}/>
             <AuthRoute exact path='/create' component={SignUpPage} userId={currentUserId}/>
+            {/* <ProtectedRoute exact path='/' component={FeedMain} userId={currentUserId} isOpen={this.state["isOpen"]} showModal={this.showModal}/> */}
             <ProtectedRoute exact path='/feed' component={FeedMain} userId={currentUserId} isOpen={this.state["isOpen"]} showModal={this.showModal}/>
             <ProtectedRoute exact path='/users/:userId' component={ProfileMain} />
             <ProtectedRoute exact path='/in-progress' component={InProgress} />
-            <AuthRoute exact path='/' component={Main} userId={currentUserId} />˙
+           
         </Switch>
         
         </HashRouter>

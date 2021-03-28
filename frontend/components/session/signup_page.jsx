@@ -1,6 +1,8 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom'
 import SignupForm from './signup_container'
+import LoginNav from '../Nav/LoginNav';
+
 
 
 class SignUpPage extends React.Component {

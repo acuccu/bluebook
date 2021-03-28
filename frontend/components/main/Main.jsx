@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter, HashRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import Splash from './Splash'
 import LoginNav from '../Nav/LoginNav'
 
@@ -8,8 +8,11 @@ class Main extends React.Component {
 
     render () {
         return (
+            <div>
+                <LoginNav />
             <div className='splash'>
-             <Splash />
+                <Splash />
+            </div>
             </div>
         )
     }
