@@ -36,7 +36,7 @@ class ProfileMain extends React.Component {
     render () {
         return (
             <div>
-                <LoggedInNav />
+                <LoggedInNav isOpen={this.props.isOpen} showModal={this.props.showModal} badge={this.props.badge}/>
                 <div className='profile'>
                 <Banner />
                 <div className='profile-content'>

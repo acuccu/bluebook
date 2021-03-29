@@ -5,7 +5,10 @@ import {fetchUser} from '../../actions/user_actions'
 
 const mapStateToProps = (state, ownProps) => {
     return({
-      pId: ownProps.match.params.userId
+      pId: ownProps.match.params.userId,
+      isOpen: ownProps.isOpen,
+      showModal: ownProps.showModal,
+      badge: ownProps.badge
     })};
   
 
