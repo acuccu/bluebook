@@ -7,8 +7,8 @@ class Api::UsersController < ApplicationController
     
     def show
         # @user = User.find(params[:id]).includes(:friends, :friendships)
-        @user = User.includes(:friends, :friendships).find(params[:id])
-        @friendships = @user.friendships
+        @user = User.includes(:friends, :requested_friendships, :received_friendships).find(params[:id])
+        @friendships = Friendship.where(user_id: params[:id]).or(Friendship.where(friend_id: params[:id]))
         @pending = @friendships.select {|fr| fr.accepted == false}
         @accepted = @friendships.select {|fr| fr.accepted == true}
         @friends = @friendships.map {|fr| fr.user_id == @user.id ? fr.friend : fr.user }

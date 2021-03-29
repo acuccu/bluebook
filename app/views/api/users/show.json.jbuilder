@@ -5,7 +5,6 @@
         @friends.each do |friend|
             json.set! friend.id do
                 json.extract! friend, :id, :first_name, :last_name, :email, :dob, :gender, :bio, :location, :work_place, :education
-                json.avatar friend.avatar.attached? ? friend.avatar : ""
             end
         end
     end

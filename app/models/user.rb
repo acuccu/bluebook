@@ -37,25 +37,23 @@ foreign_key: :author_id,
 class_name: :Post,
 dependent: :delete_all
 
-has_many :friendships,
+has_many :requested_friendships,
 class_name: :Friendship,
 inverse_of: :user,
 foreign_key: :user_id
 
-has_many :requested_friendships,
+has_many :received_friendships,
 class_name: :Friendship, 
 foreign_key: :friend_id
 
 has_many :friends,
-through: :friendships,
+through: :requested_friendships,
 source: :friend
 
 has_many :received_friends,
-through: :friendships,
-inverse_of: :friend,
-source: :user
-
-has_one_attached :avatar
+through: :received_friendships,
+inverse_of: :friends,
+source: :friend
 
 # has_one_attached :banner
 

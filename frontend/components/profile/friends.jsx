@@ -27,7 +27,8 @@ class Friends extends React.Component {
     }
 
     render () {
-       let friends = this.friendsArray().slice(0,9);   
+       let friends = this.friendsArray().slice(0,9);  
+      
         return(
             <div className='profile-intro'>
                 <div className='friends_title'>

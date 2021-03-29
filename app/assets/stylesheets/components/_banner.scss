@@ -97,8 +97,11 @@
 
 }
 
-// .friend-button {
-//     box-shadow: none;
-//     background-color: hsl(210, 11%, 96%);
-//     border-radius: 0px;
-// }
+.friend-button {
+    // box-shadow: none;
+    // background-color: hsl(210, 11%, 96%);
+    // border-radius: 0px;
+    position: relative;
+    left: 680px;
+    top: 280px;
+}
