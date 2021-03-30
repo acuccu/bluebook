@@ -9,7 +9,8 @@ class MSGModal extends React.Component {
 	constructor(props) {
         super(props)
 		this.handleClick = this.handleClick.bind(this)
-		// this.handleOnChange = this.handleOnChange.bind(this)
+		this.handleOnChange = this.handleOnChange.bind(this)
+		this.submitMSG = this.submitMSG.bind(this)
 		this.state = {
 			name: "",
 			email: "",
@@ -17,12 +18,29 @@ class MSGModal extends React.Component {
 		}
     };
 
-	// handleOnChange (event) {
-	// 	this.state()
-	// }
+	handleOnChange(field) {
+        return e => {
+        this.setState({[field]: e.target.value})};
+    };
 
 	handleClick () {
+		return e => 
 		console.log(this.props)
+	}
+
+	createMSG (msg) {
+		this.submitMSG(msg).then(console.log('ok'))
+	}
+
+	submitMSG (msg) {
+		return (
+			$.ajax({
+				url: `https://formspree.io/xrgyjrab`,
+				method: `POST`,
+				data: {msg}
+				}
+			)
+		)
 	}
 
     render () {
@@ -40,15 +58,37 @@ class MSGModal extends React.Component {
 							<form action="https://formspree.io/xrgyjrab" method="post">
 								<div className="fields">
 									<div >
-										<input className="field-half" type="text" name="name" id="name" placeholder="Please enter your name" />
+										<input 
+											className="field-half" 
+											type="text" name="name" 
+											id="name" 
+											value={this.state.name}
+											onChange={this.handleOnChange(`name`)}
+											placeholder="Please enter your name" 
+										/>
 									</div>
 									<div >
-										<input className="field-half" type="email" name="email" id="email" placeholder="Please enter your email" />
+										<input 
+											className="field-half" 
+											type="email" name="email" 
+											id="email" 
+											value={this.state.email}
+											onChange={this.handleOnChange(`email`)}
+											placeholder="Please enter your email" 
+										/>
 									</div>
 									<div className="input-field">
-										<textarea className="input-box" name="message" id="message" placeholder="Type a message..." rows="7"></textarea>
+										<textarea 
+											className="input-box" 
+											name="message" 
+											id="message" 
+											value={this.state.message}
+											onChange={this.handleOnChange(`message`)}
+											placeholder="Type a message..." 
+											rows="7">	
+										</textarea>
 										<ul className="actions">
-											<li><input  className="chat-button" /><FontAwesomeIcon className="paperplane" icon={faPaperPlane} /></li>
+											<li><input  className="chat-button" onClick={() => this.createMSG(this.state)}/><FontAwesomeIcon className="paperplane" icon={faPaperPlane} /></li>
 										</ul>
 									</div>
 								</div>
