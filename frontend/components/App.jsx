@@ -25,8 +25,14 @@ class App extends React.Component{
 
     showModal () {
         if (this.state["isOpen"]) {
+            const body = document.body;
+  			body.style.height = '100%';
+  			body.style.overflowY = 'auto';
             this.setState({isOpen: false})
         } else {
+            const body = document.body;
+  			body.style.height = '100vh';
+  			body.style.overflowY = 'hidden';
             this.setState({isOpen: true})
         }
         if (this.state["badge"]) {
