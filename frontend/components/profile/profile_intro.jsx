@@ -12,12 +12,16 @@ class ProfileIntro extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = this.props
-        this.user = this.state.user
+    }
+
+    componentDidMount () {
+        this.props.user || this.props.fetchUser(this.props.id)
     }
 
 
     render () {
+        if (!this.props.user) {
+            return null}
        return(
         <div className='profile-intro'>
             <div className='profile-intro-title'> 
@@ -26,23 +30,23 @@ class ProfileIntro extends React.Component {
             </div>
              
             <span className='bio-span'>
-                <p>{`${this.user.bio}`}</p>
+                <p>{`${this.props.user.bio}`}</p>
             </span>
 
             <div className='icon-div'>
                 <span className='icon-span'>
                 <FontAwesomeIcon className='icon-intro' icon={faHome} />
-                <p className='intro-black'>Lives in </p><p className='intro-blue'>{`${this.user.location}`}</p>
+                <p className='intro-black'>Lives in </p><p className='intro-blue'>{`${this.props.user.location}`}</p>
                </span>
 
                <span className='icon-span'>
                 <FontAwesomeIcon id="grad-cap" className='icon-intro' icon={faGraduationCap} />
-                <p className='intro-black'>Went to </p><p className='intro-blue'>{`${this.user.education}`}</p>
+                <p className='intro-black'>Went to </p><p className='intro-blue'>{`${this.props.user.education}`}</p>
                </span>
 
                <span className='icon-span'>
                <FontAwesomeIcon className='icon-intro' icon={faBriefcase} />
-               <p className='intro-black'>Works at </p><p className='intro-blue'>{`${this.user.work_place}`}</p>
+               <p className='intro-black'>Works at </p><p className='intro-blue'>{`${this.props.user.work_place}`}</p>
                </span>
             </div>   
             

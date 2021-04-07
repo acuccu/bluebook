@@ -20,12 +20,19 @@ class PostForm extends React.Component {
     handleSubmit(e) {
       debugger
       e.preventDefault();
-      this.props.createPost(this.state).then(() => this.clearField());
-    }
+      this.props.createPost(this.state).then(() => this.clearField());}
+
+    
+      componentDidUpdate () {
+        if (this.state.wall_id !== this.props.match.params.userId) {
+          this.setState({'wall_id': this.props.match.params.userId});
+        }
+        
+    }; 
+
 
     clearField() {
-        debugger
-        this.setState({body: "", author_id: "", wall_id: this.props.match.params.userId || this.props.author.id})
+        this.setState({body: "", author_id: this.props.author.id, wall_id: this.props.match.params.userId || this.props.author.id})
     }
   
     update(field) {

@@ -49,7 +49,7 @@ class LoggedInNav extends React.Component {
             <div className="logout-div">
               
                 <span className='logout-button'>
-                    <button className="button-logout" onClick={()=>this.logout().then(history.push("/"))}>Logout</button>
+                    <button className="button-logout" onClick={()=>this.logout()}>Logout</button>
                 </span>
             </div></div>
             <MsgModal isOpen={this.props["isOpen"]} showModal={this.props.showModal} />

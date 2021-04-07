@@ -13,6 +13,8 @@ class PostIndex extends React.Component {
         profileId: this.props.profileId}
     }
     
+    
+
     componentDidMount () {
         this.props.friendships.forEach( userId => {
           this.props.fetchPosts(userId);
@@ -20,10 +22,15 @@ class PostIndex extends React.Component {
         this.forceUpdate();
     }; 
 
+    componentDidUpdate (prevProps, prevState) {
+      if (prevProps.profileId !== this.props.profileId) {
+          this.forceUpdate()
+      }
+    };
+
     
   
     render() {
-      const { posts } = this.props;
       const author = this.props.user;
       return (
         <div>
@@ -31,7 +38,7 @@ class PostIndex extends React.Component {
           <div className="post-title"> Posts </div>
           <ul>
             {
-              posts.reverse().map(post => (
+              this.props.posts.reverse().map(post => (
                 <>
                 <PostIndexItem
                   post={post}
