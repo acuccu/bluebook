@@ -20,7 +20,10 @@ class LoggedInNav extends React.Component {
         this.badge = this.props.badge
     }
 
+    
+
     render() {
+        debugge
         return (
         <nav className="nav-profile" >
         <div className='logo-searchbar'>
@@ -43,6 +46,7 @@ class LoggedInNav extends React.Component {
                 <ReactModal className="badge" isOpen={this.props["badge"]} overlayClassName={"ReactModal_Overlay"} ariaHideApp={false}>
                     <p className="badge-text">1</p>
                 </ReactModal>
+                <ReactModal className="badge"><p className="badge-text">!</p></ReactModal>
                 <FontAwesomeIcon className="nav-i" icon={faBell} /> </div>
             
             <div className="separator-i"></div>
