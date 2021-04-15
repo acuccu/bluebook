@@ -20,15 +20,22 @@ class LoggedInNav extends React.Component {
         this.showModal = this.props.showModal
         this.badge = this.props.badge
         this.state = {
-            badge: false
+            badge: false,
+            notifications: false,
+            clicked: false
         }
         this.badgeCheck = this.badgeCheck.bind(this)
+        this.openNotifications = this.openNotifications.bind(this)
     }
 
     badgeCheck () {
-        if (this.props.pendingUsers[0] && !this.state["badge"]) {
-            this.setState ({badge: true})
+        if (this.props.pendingUsers[0] && !this.state["clicked"]) {
+            this.setState ({badge: true, clicked: true})
         }
+    }
+
+    openNotifications () {
+        this.setState ({notifications: !this.state.notifications, badge: false})
     }
 
     render() {
@@ -56,10 +63,9 @@ class LoggedInNav extends React.Component {
                 <ReactModal className="badge" isOpen={this.props["badge"]} overlayClassName={"ReactModal_Overlay"} ariaHideApp={false}>
                     <p className="badge-text">1</p>
                 </ReactModal>
-                <ReactModal className="badgeNotifications" isOpen={this.state["badge"]} overlayClassName={"ReactModal_Overlay"}><p className="badge-text">{this.props.pendingUsers.length + 3}</p></ReactModal>
-                <FontAwesomeIcon className="nav-i" icon={faBell} /> </div>
-                <Notifications />
-            
+                <ReactModal className="badgeNotifications" isOpen={this.state["badge"]} overlayClassName={"ReactModal_Overlay"}><p onClick={()=>this.openNotifications()} className="badge-text">{this.props.pendingUsers.length + 3}</p></ReactModal>
+                <FontAwesomeIcon className="nav-i" icon={faBell} onClick={()=>this.openNotifications() }/> </div>
+                <Notifications open={this.state.notifications} requests={this.props.pendingUsers} openNotifications={this.openNotifications}/>
             <div className="separator-i"></div>
             <div className="logout-div">
               
