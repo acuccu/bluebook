@@ -7,6 +7,7 @@ import {faFacebookMessenger} from '@fortawesome/free-brands-svg-icons'
 import {faBell} from '@fortawesome/free-solid-svg-icons'
 import MsgModal from './msg_modal'
 import ReactModal from 'react-modal';
+import Notifications from './notifications'
 
 
 
@@ -18,12 +19,21 @@ class LoggedInNav extends React.Component {
         this.logout = this.props.logout
         this.showModal = this.props.showModal
         this.badge = this.props.badge
+        this.state = {
+            badge: false
+        }
+        this.badgeCheck = this.badgeCheck.bind(this)
     }
 
-    
+    badgeCheck () {
+        if (this.props.pendingUsers[0] && !this.state["badge"]) {
+            this.setState ({badge: true})
+        }
+    }
 
     render() {
-        debugge
+        this.badgeCheck()
+        debugger
         return (
         <nav className="nav-profile" >
         <div className='logo-searchbar'>
@@ -46,8 +56,9 @@ class LoggedInNav extends React.Component {
                 <ReactModal className="badge" isOpen={this.props["badge"]} overlayClassName={"ReactModal_Overlay"} ariaHideApp={false}>
                     <p className="badge-text">1</p>
                 </ReactModal>
-                <ReactModal className="badge"><p className="badge-text">!</p></ReactModal>
+                <ReactModal className="badgeNotifications" isOpen={this.state["badge"]} overlayClassName={"ReactModal_Overlay"}><p className="badge-text">{this.props.pendingUsers.length + 3}</p></ReactModal>
                 <FontAwesomeIcon className="nav-i" icon={faBell} /> </div>
+                <Notifications />
             
             <div className="separator-i"></div>
             <div className="logout-div">

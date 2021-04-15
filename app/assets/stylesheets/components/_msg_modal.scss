@@ -7,10 +7,29 @@
     top: 22px;
     left: 943px;
     font-size: 12px;
-    opacity: 70%
+    opacity: 70%;
+    cursor: pointer;
+
+}
+
+.badgeNotifications{
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background-color: rgb(248, 0, 0);
+    border-radius: 50%;
+    top: 22px;
+    left: 973px;
+    font-size: 12px;
+    opacity: 80%;
+    cursor: pointer;
 }
 
 .badge:focus {
+    outline: none;
+}
+
+.badgeNotifications:focus {
     outline: none;
 }
 

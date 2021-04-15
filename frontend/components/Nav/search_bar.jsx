@@ -50,12 +50,16 @@ class SearchBar extends React.Component {
        let filteredUsers = []
        filteredUsers = this.props.users.filter(user => this.userNameFilter(user));
 
-       return( <div><form className="search-bar-form">
-        <div className='search-div'>
-        <input className="search-bar" type="text" placeholder="Search" onChange={this.searchUpdate()} value={`${this.state.query}`} />
-        <button className='searchButton' onClick={() => this.handleClick(filteredUsers)}><FontAwesomeIcon className='search-button' icon={faSearch} /></button></div>
-        </form>
-        <SearchResult users={filteredUsers} /></div>
+       return( 
+        <div>
+            <form className="search-bar-form">
+                <div className='search-div'>
+                    <input className="search-bar" type="text" placeholder="Search" onChange={this.searchUpdate()} value={`${this.state.query}`} />
+                    <button className='searchButton' onClick={() => this.handleClick(filteredUsers)}><FontAwesomeIcon className='search-button' icon={faSearch} /></button>
+                </div>
+             </form>
+             <SearchResult users={filteredUsers} />
+        </div>
         );
         
     };

@@ -6,15 +6,15 @@ import {logout} from '../../actions/session_actions'
 const mapStateToProps = ({session, entities: {users, friends}}, ownProps) => {
    
     let pendingArr = friends[session.currentUserId] ? Object.values(friends[session.currentUserId].pending) : [];
-    let reqFriendships = pendingArr.filter( fr => fr.friend_id == session.currentUserId)
-    debugger
+    let reqFriendships = pendingArr.filter( fr => fr.friend_id == session.currentUserId);
+    let pendingUsers = reqFriendships.map( fr => users[fr.user_id]);
     
     return ({
     currentUser: users[session.currentUserId],
     isOpen: ownProps.isOpen,
     showModal: ownProps.showModal,
     badge: ownProps.badge,
-    pending: reqFriendships
+    pendingUsers: pendingUsers,
 })};
 
 const mapDispatchToProps = dispatch => ({
