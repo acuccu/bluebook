@@ -49,8 +49,7 @@ class LoggedInNav extends React.Component {
         </div>
         <div className='nav-right'>
             <div className='avatar-group'>
-                <div className='nav-avatar'></div>
-                <Link to={`/users/${this.user.id}`}>{`${this.user.first_name}`}</Link>
+                <Link to={`/users/${this.user.id}`} id="navUser"><div className='nav-avatar'></div>{`${this.user.first_name}`}</Link>
                 <div className="separators" />
                 <Link to={`/feed/`}>Home</Link>
                 <div className="separators"/>
