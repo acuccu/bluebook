@@ -5,9 +5,9 @@
     background-color: rgb(248, 0, 0);
     border-radius: 50%;
     top: 22px;
-    left: 943px;
+    left: 942px;
     font-size: 12px;
-    opacity: 70%;
+    opacity: 80%;
     cursor: pointer;
 
 }
@@ -19,7 +19,7 @@
     background-color: rgb(248, 0, 0);
     border-radius: 50%;
     top: 22px;
-    left: 973px;
+    left: 975px;
     font-size: 12px;
     opacity: 80%;
     cursor: pointer;
@@ -60,7 +60,8 @@
 
 #close-modal {
     margin-left: 170px;  
-}
+    cursor: pointer;
+}       
 
 .field-half {
     border-top-style: hidden;
@@ -111,6 +112,7 @@
     border-right-style: hidden;
     border-left-style: hidden;
     border-bottom-style: hidden;
+    
 }
 
 .input-box:focus{
@@ -167,4 +169,5 @@
    color: white;
    left: -24px;
    top: 2px;
+   cursor: pointer;
 }

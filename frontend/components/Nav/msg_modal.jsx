@@ -59,7 +59,7 @@ class MSGModal extends React.Component {
             <div className="content"> 
 			
 							<div id="msgName"><div id="online-status"></div>
-							Antonio Cuccu <div id="close-modal" onClick={this.props.showModal}>x</div>
+							Antonio Cuccu <div id="close-modal" onClick={() => this.props.showModal()}>x</div>
 							</div>	
 							{this.state.sent ? <div className="chat-white2" /> : <div className="chat-white" />}
 							<p className="initial-msg">Feel free to get in touch with me through this form. I'm looking forward to the opportnity to make your ideas reality.</p>
@@ -101,7 +101,7 @@ class MSGModal extends React.Component {
 											rows="7">	
 										</textarea>
 										<ul className="actions">
-											<li><input  className="chat-button" onClick={() => this.createMSG(this.state)}/><FontAwesomeIcon className="paperplane" icon={faPaperPlane} /></li>
+											<li><input  className="chat-button" onClick={() => this.createMSG(this.state)}/><FontAwesomeIcon className="paperplane" onClick={() => this.createMSG(this.state)} icon={faPaperPlane} /></li>
 										</ul>
 									</div>
 								</div>
