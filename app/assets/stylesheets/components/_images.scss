@@ -1,4 +1,4 @@
-.banner10avatar {
+.banner1avatar {
     top: 150px;
     left: 30px;
     padding: 5px;
@@ -10,9 +10,29 @@
     background-size: cover;
 }
 
-.banner10image {
+.banner1image {
     position: relative;
     background-image: image_url('sea.png');
+    background-size: contain;
+    width: 100%;
+    height: 315px;
+}
+
+.banner2avatar {
+    top: 150px;
+    left: 30px;
+    padding: 5px;
+    position: absolute;
+    border-radius: 50%;
+    width: 168px;
+    height: 168px;
+    background-image: image_url('ecco.jpg');
+    background-size: cover;
+}
+
+.banner2image {
+    position: relative;
+    background-image: image_url('eccob.jpg');
     background-size: contain;
     width: 100%;
     height: 315px;

@@ -40,7 +40,6 @@ class LoggedInNav extends React.Component {
 
     render() {
         this.badgeCheck()
-        debugger
         return (
         <nav className="nav-profile" >
         <div className='logo-searchbar'>

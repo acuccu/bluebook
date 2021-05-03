@@ -68,9 +68,9 @@ class Banner extends React.Component {
             
             <div className='banner-main'>
 
-                <div className={`banner${this.profileUser.id}image`} >
+                <div className={`banner${this.props.profileUser.avatar}image`} >
                       <div className='avatar-frame'></div>
-                     <div className={`banner${this.profileUser.id}avatar`}></div>          
+                     <div className={`banner${this.props.profileUser.avatar}avatar`}></div>          
                      <h1 className='h1-name'>{`${this.props.profileUser.first_name} ${this.props.profileUser.last_name}`}</h1>
                      <div className='friend-button'>{this.buttonType()
                      }</div>

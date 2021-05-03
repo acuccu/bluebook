@@ -4,8 +4,8 @@ import {logout} from '../../actions/session_actions'
 
 
 const mapStateToProps = ({session, entities: {users, friends}}, ownProps) => {
-   
-    let pendingArr = friends[session.currentUserId] ? Object.values(friends[session.currentUserId].pending) : [];
+    let friendships = Boolean(friends[session.currentUserId]) ? friends[session.currentUserId] : {};
+    let pendingArr = Boolean(friendships.pending) ? Object.values(friendships.pending) : [];
     let reqFriendships = pendingArr.filter( fr => fr.friend_id == session.currentUserId);
     let pendingUsers = reqFriendships.map( fr => users[fr.user_id]);
     
