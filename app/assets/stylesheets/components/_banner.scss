@@ -24,19 +24,6 @@
     opacity: 12%;
 }
 
-
-.banner-avatar {
-    top: 150px;
-    left: 30px;
-    padding: 5px;
-    position: absolute;
-    border-radius: 50%;
-    width: 168px;
-    height: 168px;
-    background-image: image_url('turtle.png');
-    background-size: cover;
-}
-
 .avatar-frame {
     position: absolute;
     top: 144px;
@@ -48,14 +35,6 @@
     height: 178px;
     background-color: white;
     
-}
-
-.banner-image {
-    position: relative;
-    background-image: image_url('sea.png');
-    background-size: contain;
-    width: 100%;
-    height: 315px;
 }
 
 .h1-name {
