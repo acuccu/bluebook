@@ -22,6 +22,15 @@
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     margin: 10px;
+    color: black;
+}
+
+.byline-link {
+    color: black;
+}
+
+.byline-link:visited {
+    color: black;
 }
 
 .demo-button {
@@ -118,11 +127,9 @@
     height: 100%;
 }
 
-.splash-links {
-    margin-top: 25px;
-}
 
 .splash-link {
+    color:black;
     margin-left: 10px;
     font-size: 30px;
 }
@@ -288,6 +295,7 @@
     font-family: 'Open Sans', sans-serif;
     color: white;
     box-shadow: inset;
+    cursor: pointer;
 }
 
 .pres-icons{

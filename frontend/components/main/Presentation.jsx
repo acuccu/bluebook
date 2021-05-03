@@ -17,10 +17,10 @@ const Presentation = props => {
                <p> <img src={window.fishicon} /><span className='icon-bold'> Share what's new </span>  in your life on your Timeline. <br /></p>
                 <p><img src={window.whaleicon} /><span className='icon-bold'> Find more </span>  of what you're looking for with Bluebook Search.<br /></p>
             </div>
-            <div className="splashlinks">
+            <div className="splash-links">
                 <a href="https://www.linkedin.com/in/antonio-cuccu-4b0906114/" target="blank_"><FontAwesomeIcon className="splash-link" icon={faLinkedin} /></a>
                 <a href="https://github.com/acuccu" target="blank_"><FontAwesomeIcon className="splash-link" icon={faGit} /></a>
-                <p className="byline">Created by <a href="https://acuccu.github.io/" target="blank_">Antonio Cuccu</a></p>
+                <p className="byline">Created by <a href="https://acuccu.github.io/" className="byline-link" target="blank_">Antonio Cuccu</a></p>
             </div> 
 
         </div>
