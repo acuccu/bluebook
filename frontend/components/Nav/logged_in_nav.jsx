@@ -61,7 +61,7 @@ class LoggedInNav extends React.Component {
                 <ReactModal className="badge" isOpen={this.props["badge"]} overlayClassName={"ReactModal_Overlay"} ariaHideApp={false}>
                     <p  onClick={()=>this.props.showModal()} className="badge-text">1</p>
                 </ReactModal>
-                <ReactModal className="badgeNotifications" isOpen={this.state["badge"]} overlayClassName={"ReactModal_Overlay"}><p onClick={()=>this.openNotifications()} className="badge-text">{this.props.pendingUsers.length}</p></ReactModal>
+                <ReactModal className="badgeNotifications" isOpen={this.state["badge"]} overlayClassName={"ReactModal_Overlay"} ariaHideApp={false}><p onClick={()=>this.openNotifications()} className="badge-text">{this.props.pendingUsers.length}</p></ReactModal>
                 <FontAwesomeIcon className="nav-i" icon={faBell} onClick={()=>this.openNotifications() }/> </div>
                 <Notifications open={this.state.notifications} requests={this.props.pendingUsers} openNotifications={this.openNotifications}/>
             <div className="separator-i"></div>

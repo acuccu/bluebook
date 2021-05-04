@@ -39,7 +39,7 @@ class Friends extends React.Component {
                     {friends.map((friend) => {
                         return (
                             <div className='friend-frame' id={friend.id}>
-                                <div className='friend-avatar'></div>
+                                <div className={`friend${friend.avatar}avatar`} onClick={ () => this.props.fetchUser(friend.id).then(() => this.props.fetchPosts(friend.id)).then(() => this.props.history.push(`/users/${friend.id}`))}></div>
                                 <div className='friend-name' onClick={ () => this.props.fetchUser(friend.id).then(() => this.props.fetchPosts(friend.id)).then(() => this.props.history.push(`/users/${friend.id}`))}> {friend.first_name} {friend.last_name}</div>
                             </div>
                         )

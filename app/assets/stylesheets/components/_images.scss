@@ -18,6 +18,15 @@
     height: 315px;
 }
 
+.friend1avatar{
+    width: 80px;
+    height: 80px;
+    background-image: image_url('turtle.png');
+    background-size: cover;
+    cursor: pointer;
+}
+
+
 .banner2avatar {
     top: 150px;
     left: 30px;
@@ -36,4 +45,211 @@
     background-size: contain;
     width: 100%;
     height: 315px;
+}
+
+.friend2avatar{
+    width: 80px;
+    height: 80px;
+    background-image: image_url('ecco.jpg');
+    background-size: cover;
+    cursor: pointer;
+}
+
+
+.banner3avatar {
+    top: 150px;
+    left: 30px;
+    padding: 5px;
+    position: absolute;
+    border-radius: 50%;
+    width: 168px;
+    height: 168px;
+    background-image: image_url('jfish.jpg');
+    background-size: cover;
+}
+
+.banner3image {
+    position: relative;
+    background-image: image_url('jfishb.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 315px;
+}
+
+.friend3avatar{
+    width: 80px;
+    height: 80px;
+    background-image: image_url('jfish.jpg');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.banner4avatar {
+    top: 150px;
+    left: 30px;
+    padding: 5px;
+    position: absolute;
+    border-radius: 50%;
+    width: 168px;
+    height: 168px;
+    background-image: image_url('cuccu.jpg');
+    background-size: cover;
+}
+
+.banner4image {
+    position: relative;
+    background-image: image_url('cuccub.png');
+    background-size: cover;
+    width: 100%;
+    height: 315px;
+}
+
+.friend4avatar{
+    width: 80px;
+    height: 80px;
+    background-image: image_url('cuccu.jpg');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.banner5avatar {
+    top: 150px;
+    left: 30px;
+    padding: 5px;
+    position: absolute;
+    border-radius: 50%;
+    width: 168px;
+    height: 168px;
+    background-image: image_url('free.jpg');
+    background-size: cover;
+}
+
+.banner5image {
+    position: relative;
+    background-image: image_url('freeb.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 315px;
+}
+
+.friend5avatar{
+    width: 80px;
+    height: 80px;
+    background-image: image_url('free.jpg');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.banner6avatar {
+    top: 150px;
+    left: 30px;
+    padding: 5px;
+    position: absolute;
+    border-radius: 50%;
+    width: 168px;
+    height: 168px;
+    background-image: image_url('clown.jpg');
+    background-size: cover;
+}
+
+.banner6image {
+    position: relative;
+    background-image: image_url('clownb.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 315px;
+}
+
+.friend6avatar{
+    width: 80px;
+    height: 80px;
+    background-image: image_url('clown.jpg');
+    background-size: cover;
+    cursor: pointer;
+}
+
+
+.banner7avatar {
+    top: 150px;
+    left: 30px;
+    padding: 5px;
+    position: absolute;
+    border-radius: 50%;
+    width: 168px;
+    height: 168px;
+    background-image: image_url('sfish.png');
+    background-size: cover;
+}
+
+.banner7image {
+    position: relative;
+    background-image: image_url('sfishb.jpg');
+    background-size: contain;
+    width: 100%;
+    height: 315px;
+}
+
+.friend7avatar{
+    width: 80px;
+    height: 80px;
+    background-image: image_url('sfish.jpg');
+    background-size: cover;
+    cursor: pointer;
+}
+
+
+.banner8avatar {
+    top: 150px;
+    left: 30px;
+    padding: 5px;
+    position: absolute;
+    border-radius: 50%;
+    width: 168px;
+    height: 168px;
+    background-image: image_url('bfish.png');
+    background-size: cover;
+}
+
+.banner8image {
+    position: relative;
+    background-image: image_url('bfishb.jpeg');
+    background-size: cover;
+    width: 100%;
+    height: 315px;
+}
+
+.friend8avatar{
+    width: 80px;
+    height: 80px;
+    background-image: image_url('sfish.jpg');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.banner9avatar {
+    top: 150px;
+    left: 30px;
+    padding: 5px;
+    position: absolute;
+    border-radius: 50%;
+    width: 168px;
+    height: 168px;
+    background-image: image_url('scuba.png');
+    background-size: cover;
+}
+
+.banner9image {
+    position: relative;
+    background-image: image_url('scubab.jpeg');
+    background-size: cover;
+    width: 100%;
+    height: 315px;
+}
+
+.friend9avatar{
+    width: 80px;
+    height: 80px;
+    background-image: image_url('scuba.jpg');
+    background-size: cover;
+    cursor: pointer;
 }
