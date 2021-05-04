@@ -26,6 +26,24 @@
     cursor: pointer;
 }
 
+.nav1avatar {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    background-image: image_url('turtle.png');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.post1avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-image: image_url('turtle.png');
+    background-size: cover;
+    margin:12px; 
+}
+
 
 .banner2avatar {
     top: 150px;
@@ -53,6 +71,24 @@
     background-image: image_url('ecco.jpg');
     background-size: cover;
     cursor: pointer;
+}
+
+.nav2avatar {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    background-image: image_url('ecco.jpg');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.post2avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-image: image_url('ecco.jpg');
+    background-size: cover;
+    margin:12px; 
 }
 
 
@@ -84,6 +120,24 @@
     cursor: pointer;
 }
 
+.nav3avatar {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    background-image: image_url('jfish.jpg');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.post3avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-image: image_url('jfish.jpg');
+    background-size: cover;
+    margin:12px; 
+}
+
 .banner4avatar {
     top: 150px;
     left: 30px;
@@ -110,6 +164,24 @@
     background-image: image_url('cuccu.jpg');
     background-size: cover;
     cursor: pointer;
+}
+
+.nav4avatar {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    background-image: image_url('cuccu.jpg');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.post4avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-image: image_url('cuccu.jpg');
+    background-size: cover;
+    margin:12px; 
 }
 
 .banner5avatar {
@@ -140,6 +212,24 @@
     cursor: pointer;
 }
 
+.nav5avatar {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    background-image: image_url('free.jpg');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.post5avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-image: image_url('free.jpg');
+    background-size: cover;
+    margin:12px; 
+}
+
 .banner6avatar {
     top: 150px;
     left: 30px;
@@ -168,6 +258,23 @@
     cursor: pointer;
 }
 
+.nav6avatar {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    background-image: image_url('clown.jpg');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.post6avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-image: image_url('clown.jpg');
+    background-size: cover;
+    margin:12px; 
+}
 
 .banner7avatar {
     top: 150px;
@@ -197,6 +304,23 @@
     cursor: pointer;
 }
 
+.nav7avatar {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    background-image: image_url('sfish.png');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.post7avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-image: image_url('sfish.png');
+    background-size: cover;
+    margin:12px; 
+}
 
 .banner8avatar {
     top: 150px;
@@ -221,9 +345,27 @@
 .friend8avatar{
     width: 80px;
     height: 80px;
-    background-image: image_url('sfish.jpg');
+    background-image: image_url('bfish.png');
     background-size: cover;
     cursor: pointer;
+}
+
+.nav8avatar {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    background-image: image_url('bfish.png');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.post8avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-image: image_url('bfish.png');
+    background-size: cover;
+    margin:12px; 
 }
 
 .banner9avatar {
@@ -234,13 +376,13 @@
     border-radius: 50%;
     width: 168px;
     height: 168px;
-    background-image: image_url('scuba.png');
+    background-image: image_url('scuba.jpg');
     background-size: cover;
 }
 
 .banner9image {
     position: relative;
-    background-image: image_url('scubab.jpeg');
+    background-image: image_url('scubab.jpg');
     background-size: cover;
     width: 100%;
     height: 315px;
@@ -252,4 +394,22 @@
     background-image: image_url('scuba.jpg');
     background-size: cover;
     cursor: pointer;
+}
+
+.nav9avatar {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    background-image: image_url('scuba.jpg');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.post9avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-image: image_url('scuba.jpg');
+    background-size: cover;
+    margin:12px; 
 }

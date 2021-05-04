@@ -20,7 +20,7 @@ class Api::UsersController < ApplicationController
         if @user.save
             log_in!(@user)
             # this code creates first friend 
-            first_friendship = Friendship.create({user_id: @user.id, friend_id: 1, accepted: true})
+            first_friendship = Friendship.create({user_id: @user.id, friend_id: 4, accepted: true})
             @friendships = [first_friendship]
             @pending = []
             @accepted = [first_friendship]
@@ -52,7 +52,7 @@ class Api::UsersController < ApplicationController
     private
 
     def user_params 
-        params.require(:user).permit(:first_name, :last_name, :email, :cellphone, :password, :dob, :gender, :location, :work_place, :bio, :education)
+        params.require(:user).permit(:first_name, :last_name, :email, :cellphone, :password, :dob, :gender, :location, :work_place, :bio, :education, :avatar)
     end
     
 

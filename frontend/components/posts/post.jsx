@@ -14,7 +14,7 @@ const PostIndexItem = props => {
     <div className='post-item'>
     <li>
      <div className='post-item-title'>
-      <img className="post-item-avatar" />
+      <img className={`post${users[post.author_id].avatar}avatar`} />
       <div className="author">
       <Link to={`/users/${post.author_id}`}><p>{users[post.author_id].first_name} {users[post.author_id].last_name}</p></Link>
         <div className='post-author-separator'/>

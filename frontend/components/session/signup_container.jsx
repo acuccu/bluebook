@@ -11,7 +11,8 @@ const mapStateToProps = state => ({
         cellphone: '',
         password: '',
         dob: '',
-        gender: 'other'
+        gender: 'other',
+        avatar: 9
     }
 });
 

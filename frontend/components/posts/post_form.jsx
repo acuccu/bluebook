@@ -18,7 +18,6 @@ class PostForm extends React.Component {
     }
     
     handleSubmit(e) {
-      debugger
       e.preventDefault();
       this.props.createPost(this.state).then(() => this.clearField());}
 
@@ -48,15 +47,10 @@ class PostForm extends React.Component {
               <div className='form-top'>
               <FontAwesomeIcon className='icon-pencil' icon={faPencilAlt} />
                 <h3>Create Post</h3> 
-                {/* <div className='post-forum-separators' />
-                <button className='photo-button'>
-                  <FontAwesomeIcon className='icon-camera' icon={faCamera} />
-                  <p>Photo/Video</p>
-                </button> */}
               </div>
 
               <div className='post-area'>
-                  <div className='post-avatar'></div>
+                  <div className={`post${this.props.author.avatar}avatar`}></div>
                 <div className='post-textarea'>
                   <input  type="form-textarea" value={`${this.state.body}`} onChange={this.update('body')}/>
                 </div>
