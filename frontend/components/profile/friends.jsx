@@ -27,8 +27,8 @@ class Friends extends React.Component {
     }
 
     render () {
-       let friends = this.friendsArray().slice(0,9);  
-      
+       let friends1 = this.friendsArray().slice(0,3);  
+       let friends2 = this.friendsArray().slice(3,6);
         return(
             <div className='profile-intro'>
                 <div className='friends_title'>
@@ -36,7 +36,17 @@ class Friends extends React.Component {
                     <div className='friends-text'>Friends · {this.props.friendships.length}</div>
                 </div>
                 <div className="friends_pics">
-                    {friends.map((friend) => {
+                    {friends1.map((friend) => {
+                        return (
+                            <div className='friend-frame' id={friend.id}>
+                                <div className={`friend${friend.avatar}avatar`} onClick={ () => this.props.fetchUser(friend.id).then(() => this.props.fetchPosts(friend.id)).then(() => this.props.history.push(`/users/${friend.id}`))}></div>
+                                <div className='friend-name' onClick={ () => this.props.fetchUser(friend.id).then(() => this.props.fetchPosts(friend.id)).then(() => this.props.history.push(`/users/${friend.id}`))}> {friend.first_name} {friend.last_name}</div>
+                            </div>
+                        )
+                    }  )}
+                </div>
+                <div className="friends_pics">
+                    {friends2.map((friend) => {
                         return (
                             <div className='friend-frame' id={friend.id}>
                                 <div className={`friend${friend.avatar}avatar`} onClick={ () => this.props.fetchUser(friend.id).then(() => this.props.fetchPosts(friend.id)).then(() => this.props.history.push(`/users/${friend.id}`))}></div>
