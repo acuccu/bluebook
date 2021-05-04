@@ -22,6 +22,8 @@ Friendship.create([{accepted:true, user_id:1, friend_id:5}])
 Friendship.create([{accepted:true, user_id:1, friend_id:6}])
 Friendship.create([{accepted:true, user_id:1, friend_id:7}])
 Friendship.create([{accepted:true, user_id:1, friend_id:8}])
+Friendship.create([{accepted:true, user_id:2, friend_id:8}])
+
 
 Post.create([body:'This is the demo user', author_id: 1, wall_id: 1])
 Post.create([body:'throw back to a classic videogame', author_id: 2, wall_id: 1])
