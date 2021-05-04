@@ -6,7 +6,8 @@ import {withRouter} from 'react-router-dom';
 const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session: {currentUserId}}, ownProps) => {
     
 
-    let friendships = friends[ownProps.match.params.userId] ? Object.values(friends[ownProps.match.params.userId].accepted) : [];
+    let friendships = friends[ownProps.match.params.userId] ? friends[ownProps.match.params.userId] : {};
+    let accfr = friendships.accepted ? Object.values(friendships.accepted) : [];
 
     const friendsIdArray = (friendships) => {
 
@@ -30,7 +31,7 @@ const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session
       {
       posts: userPosts,
       users: users,
-      friendships: friendsIdArray(friendships),
+      friendships: friendsIdArray(accfr),
       currentUserId: currentUserId,
       profileId: ownProps.match.params.userId
       }

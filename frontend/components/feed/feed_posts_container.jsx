@@ -17,9 +17,9 @@ const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session
       return friendsArr;
     }
   
-  
-    let friendships = friends[currentUserId] ? Object.values(friends[currentUserId].accepted) : [];
-    let friendUsers = friendsIdArray(friendships);
+    let friendships = Boolean(friends[currentUserId]) ? friends[currentUserId] : {};
+    let accfr = Boolean(friendships.accepted) ? Object.values(friendships.accepted) : [];
+    let friendUsers = friendsIdArray(accfr);
     let feedPosts = Object.values(posts).filter(post => {
         return friendUsers.includes(post.author_id)});
 
