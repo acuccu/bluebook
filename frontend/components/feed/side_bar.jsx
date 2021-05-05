@@ -25,20 +25,16 @@ class SideBar extends React.Component {
                 <Link to={`/users/${user.id}`}>{`${user.first_name} ${user.last_name}`}</Link>
             </div>
             <div className='bar-elements'>
-            <div className='news-bar-element'>
-                <FontAwesomeIcon className='icon-bar' icon={faNewspaper} />
-            <a href='https://www.linkedin.com/in/antonio-cuccu-4b0906114/'>News Feed</a>
+                <div className='news-bar-element'>
+                    <FontAwesomeIcon className='icon-bar' icon={faNewspaper} />
+                <a href='https://www.linkedin.com/in/antonio-cuccu-4b0906114/'>News Feed</a>
+                </div>
+                <div className='news-bar-element' onClick={() => this.props.showModal()}>
+                    <FontAwesomeIcon className="icon-bar" icon={faFacebookMessenger} />
+                    <a>Messenger</a>
+                </div>
             </div>
-            <div className='news-bar-element' onClick={() => this.props.showModal()}>
-                <FontAwesomeIcon className="icon-bar" icon={faFacebookMessenger} />
-                <a>Messenger</a>
-            </div>
-            {/* <div className='news-bar-element'> 
-                <FontAwesomeIcon className="icon-bar" icon={faTv} />
-                <a>Watch</a>
-            </div> */}
-            </div>
-            <MsgModal isOpen={this.props["isOpen"]} showModal={this.showModal} />
+            <MsgModal isOpen={this.props["isOpen"]} showModal={this.props.showModal} />
         </div>);
     }
 }

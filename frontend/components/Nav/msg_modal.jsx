@@ -55,7 +55,7 @@ class MSGModal extends React.Component {
 		
 		
 		<ReactModal className="msg-modal" isOpen={this.props["isOpen"]} overlayClassName={
-			"ReactModal_Overlay"} >
+			"ReactModal_Overlay"} ariaHideApp={false}>
             <div className="content"> 
 			
 							<div id="msgName"><div id="online-status"></div>

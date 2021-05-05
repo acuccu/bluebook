@@ -56,7 +56,6 @@ class LoggedInNav extends React.Component {
             
             <div className='logout-i-div'>
             <div className='nav-icons'> 
-                {/* <FontAwesomeIcon className="nav-i" icon={faUserFriends} /> */}
                 <FontAwesomeIcon onClick={()=>this.props.showModal()} className="nav-i" icon={faFacebookMessenger} />
                 <ReactModal className="badge" isOpen={this.props["badge"]} overlayClassName={"ReactModal_Overlay"} ariaHideApp={false}>
                     <p  onClick={()=>this.props.showModal()} className="badge-text">1</p>
