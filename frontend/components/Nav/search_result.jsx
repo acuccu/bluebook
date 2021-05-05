@@ -13,7 +13,7 @@ class SearchResult extends React.Component {
             shouldFocusAfterRender={false}>
                 { this.props.users.map(user =>
                     <div>
-                        <Link to={`/users/${user.id}`}>{user.first_name} {user.last_name}</Link>
+                        <Link to={`/users/${user.id}`}><p className='searchResult'><div className={`nav${user.avatar}avatar`}/><p className='searchName'>{user.first_name} {user.last_name}</p></p></Link>
                     </div>
                     )
                 }

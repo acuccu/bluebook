@@ -48,3 +48,19 @@
     margin-right: 40px;
     margin-left: 20px;
 }
+
+.searchName {
+    text-decoration: none;
+    margin: 5px;
+}
+
+.searchResult {
+    display: flex;
+    justify-content: start;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: black;
+    margin: 5px;
+
+}

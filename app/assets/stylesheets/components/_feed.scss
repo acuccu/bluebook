@@ -45,8 +45,10 @@
 }
 
 .feed {
-    height: 100vh;
+    height: 100vmax;
 }
+
+
 
 .feed-avatar {
     border-radius: 50%;
@@ -80,4 +82,6 @@
     background-color: rgb(253, 253, 253);
     border-radius: 5px;
 }
+
+
 

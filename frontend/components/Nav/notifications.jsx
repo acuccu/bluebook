@@ -15,7 +15,7 @@ class Notifications extends React.Component {
             shouldFocusAfterRender={false}>
                 { this.props.requests.map(user =>
                     <div className="notification">
-                        <Link onClick={() => this.props.openNotifications()} to={`/users/${user.id}`}>{user.first_name} {user.last_name}</Link> has requested your friendship
+                         <Link className='noteLink' onClick={() => this.props.openNotifications()} to={`/users/${user.id}`}><div className={`nav${user.avatar}avatar`}/><p className='noteName'>{user.first_name} {user.last_name}</p></Link><p className='note'>has requested your friendship</p>
                     </div>
                     )
                 }

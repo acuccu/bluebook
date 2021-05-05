@@ -16,9 +16,9 @@ class ProfileMain extends React.Component {
     render () {
        
         return (
-            <div>
-                <LoggedInNav isOpen={this.props.isOpen} showModal={this.props.showModal} badge={this.props.badge}/>
             <div className='feed'>
+                <LoggedInNav isOpen={this.props.isOpen} showModal={this.props.showModal} badge={this.props.badge}/>
+            <div >
                 <div className='profile-content'>
                 <SideBar isOpen={this.props["isOpen"]} showModal={this.props.showModal} />
                 <PostIndexContainer />
