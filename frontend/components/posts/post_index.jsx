@@ -44,6 +44,8 @@ class PostIndex extends React.Component {
                   post={post}
                   key={post.id}
                   users={this.props.users}
+                  currentUserId={this.props.currentUserId}
+                  deletePost={this.props.deletePost}
                 /> 
                 <div className='post-index-div'/>
                 </>

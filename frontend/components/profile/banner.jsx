@@ -59,9 +59,7 @@ class Banner extends React.Component {
     }
 
 
-    render () {
-        debugger
-        
+    render () { 
         if (!this.props.profileUser) {
             return null
         }

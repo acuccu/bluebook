@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import FeedPosts from '../posts/post_index'
 import {fetchPosts} from '../../actions/post_actions';
 import {withRouter} from 'react-router-dom';
+import {deletePost} from '../../actions/post_actions'
 
 const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session: {currentUserId}}) => {
 
@@ -17,8 +18,8 @@ const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session
       return friendsArr;
     }
   
-    let friendships = Boolean(friends[currentUserId]) ? friends[currentUserId] : {};
-    let accfr = Boolean(friendships.accepted) ? Object.values(friendships.accepted) : [];
+    let friendships = friends[currentUserId] || {};
+    let accfr = friendships.accepted ? Object.values(friendships.accepted) : [];
     let friendUsers = friendsIdArray(accfr);
     let feedPosts = Object.values(posts).filter(post => {
         return friendUsers.includes(post.author_id)});
@@ -29,13 +30,15 @@ const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session
       {
       posts: feedPosts,
       users: users,
-      friendships: friendUsers
+      friendships: friendUsers,
+      currentUserId: currentUserId
       }
     )
 };
 
   const mapDispatchToProps = dispatch => ({
-    fetchPosts: (userId) => dispatch(fetchPosts(userId))
+    fetchPosts: (userId) => dispatch(fetchPosts(userId)),
+    deletePost: (postId) => dispatch(deletePost(postId))
   });
 
   export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FeedPosts));

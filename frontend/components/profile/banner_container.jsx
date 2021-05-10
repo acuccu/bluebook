@@ -15,18 +15,17 @@ const mapStateToProps = ({ session, entities: { users, friends } }, ownProps) =>
       obj && obj[arg], obj)
   }  
 // It searches a deep nested object for one or more keys and returns undefined if not found 
-  let friendships = Boolean(friends[ownProps.match.params.userId]) ? friends[ownProps.match.params.userId] : {};
+  let friendships =  friends[ownProps.match.params.userId] || {};
   let accfr = Boolean(friendships.accepted) ? Object.values(friendships.accepted) : [];
   let pendfr = friendships.pending ? Object.values(friendships.pending) : [];
-  debugger
   return({
     users: users, 
     profileUser: users[ownProps.match.params.userId],
     profileUserID: ownProps.match.params.userId,
     currentAccepted: extractFriends(friends, session['currentUserId'], "accepted", ownProps.match.params.userId),
     currentPending: extractFriends(friends, session['currentUserId'], "pending", ownProps.match.params.userId),
-    // currentAccepted: accfr,
-    // currentPending: pendfr,
+    currentAccepted: accfr,
+    currentPending: pendfr,
     friendships: accfr,
     currentUserId: session.currentUserId
   })

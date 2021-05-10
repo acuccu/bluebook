@@ -2,11 +2,13 @@ import { connect } from 'react-redux';
 import PostIndex from './post_index';
 import {fetchPosts} from '../../actions/post_actions';
 import {withRouter} from 'react-router-dom';
+import {deletePost} from '../../actions/post_actions'
+
 
 const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session: {currentUserId}}, ownProps) => {
     
 
-    let friendships = friends[ownProps.match.params.userId] ? friends[ownProps.match.params.userId] : {};
+    let friendships = friends[ownProps.match.params.userId] || {};
     let accfr = friendships.accepted ? Object.values(friendships.accepted) : [];
 
     const friendsIdArray = (friendships) => {
@@ -26,7 +28,6 @@ const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session
       let userPosts = Object.values(posts).filter(post => {
         return  post.wall_id ==  ownProps.match.params.userId
       });
-
     return(
       {
       posts: userPosts,
@@ -39,7 +40,8 @@ const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session
 };
 
   const mapDispatchToProps = dispatch => ({
-    fetchPosts: (userId) => dispatch(fetchPosts(userId))
+    fetchPosts: (userId) => dispatch(fetchPosts(userId)),
+    deletePost: (postId) => dispatch(deletePost(postId))
   });
 
   export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostIndex));
