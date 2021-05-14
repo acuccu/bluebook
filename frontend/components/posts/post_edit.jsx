@@ -57,7 +57,7 @@ class PostEdit extends React.Component {
     </li>
 
     <div className='post-item-icons'>
-        <div className='saveEdit' onClick={()=>this.updatePost(this.state.body)}>Save</div>
+        <div className='saveEdit' onClick={()=>this.submitEditPost(this.state)}>Save</div>
     </div>
     
     </div>

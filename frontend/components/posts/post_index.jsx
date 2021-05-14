@@ -15,7 +15,6 @@ class PostIndex extends React.Component {
         edit: false,
         editPost: 0}
       this.editPost = this.editPost.bind(this);
-      this.submitEditPost = this.submitEditPost.bind(this);
       this.closeEditPost = this.closeEditPost.bind(this);
     }
     
@@ -60,7 +59,6 @@ class PostIndex extends React.Component {
                   post={post}
                   users={this.props.users}
                   currentUserId={this.props.currentUserId}
-                  submitEditPost={this.submitEditPost}
                   closeEditPost={this.closeEditPost}
                 /> }
                 <PostIndexItem
