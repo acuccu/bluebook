@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
 
-const PostItem = props => {
+const PostEdit = props => {
     const {post} = props;
     const {users} = props;
     const deletePost = props.deletePost.bind(this); 
@@ -30,7 +30,10 @@ const PostItem = props => {
        </div> 
      </div>
      <div className='post-body'>
-      <p>{post.body}</p>
+        <input 
+            type="text" 
+            defaultValue={post.body} 
+        />
      </div>
     </li>
 
@@ -42,4 +45,4 @@ const PostItem = props => {
 
   )};
   
-  export default PostItem;
+  export default PostEdit;

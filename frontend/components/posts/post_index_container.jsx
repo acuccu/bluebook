@@ -41,7 +41,8 @@ const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session
 
   const mapDispatchToProps = dispatch => ({
     fetchPosts: (userId) => dispatch(fetchPosts(userId)),
-    deletePost: (postId) => dispatch(deletePost(postId))
+    deletePost: (postId) => dispatch(deletePost(postId)),
+    updatePost: (post, userId) => dispatch(updatePost(post, userId))
   });
 
   export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostIndex));
