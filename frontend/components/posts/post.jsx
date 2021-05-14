@@ -2,6 +2,8 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faEllipsisH} from '@fortawesome/free-solid-svg-icons'
 
 const PostItem = props => {
     const {post} = props;
@@ -18,10 +20,14 @@ const PostItem = props => {
       
       <div><div className="author"><Link to={`/users/${post.author_id}`}><p>{users[post.author_id].first_name} {users[post.author_id].last_name}</p></Link>
         {currentUserId == post.author_id ?
-          <DropdownButton id="postDropdown" title=". . .">
-            <Dropdown.Item onClick={()=>editPost(post.id)}>Edit</Dropdown.Item>
-             <Dropdown.Item id='postDelete' onClick={()=>deletePost(post)}>Delete</Dropdown.Item> 
-          </DropdownButton>
+          <div id='postDropDiv'>
+            <FontAwesomeIcon icon={faEllipsisH} id="postElli" />
+            <DropdownButton id="postDropdown" title=". . .">
+            <div className='dropdownItems'>
+              <Dropdown.Item onClick={()=>editPost(post.id)}>Edit</Dropdown.Item>
+              <Dropdown.Item id='postDelete' onClick={()=>deletePost(post)}>Delete</Dropdown.Item> 
+            </div>
+          </DropdownButton></div>
         : <div />}
       </div>
         <div className='post-author-separator'/>
