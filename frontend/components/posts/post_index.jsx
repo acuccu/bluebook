@@ -38,9 +38,6 @@ class PostIndex extends React.Component {
       this.setState({edit: true, editPost: postId})
     };
 
-    submitEditPost (post) {
-      this.props.updatePost(post, this.props.currentUserId).then(this.setState({edit: false}))
-    }
 
     closeEditPost () {
       this.setState({edit: fase})

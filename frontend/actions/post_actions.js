@@ -31,13 +31,13 @@ export const fetchPosts = (userId) => {
     .then(post => dispatch(receivePost(post)))
   );
 
-  export const updatePost = (post, userId) => dispatch => (
-    ApiUtil.updatePost(post, userId)
+  export const updatePost = (post) => dispatch => (
+    ApiUtil.updatePost(post, post.author_id)
       .then(post => dispatch(receivePost(post)))
   );
 
-  export const deletePost = (postId, userId) => dispatch => (
-    ApiUtil.deletePost(postId, userId)
+  export const deletePost = (postId) => dispatch => (
+    ApiUtil.deletePost(postId, post.author_id)
     .then(() => dispatch(removePost(postId)))
   );
   

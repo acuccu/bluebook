@@ -1,28 +1,46 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import Dropdown from 'react-bootstrap/Dropdown'
 
-const PostEdit = props => {
-    const {post} = props;
-    const {users} = props;
-    const deletePost = props.deletePost.bind(this); 
-    const {currentUserId} = props;
+
+class PostEdit extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            body: this.props.post.body,
+            author_id: this.props.post.author_id,
+            wall_id: this.props.post.wall_id
+        };
+        this.submitEditPost = this.submitEditPost.bind(this)
+        this.updateText = this.updateText.bind(this)
+    }
+
+    submitEditPost (post) {
+        this.props.updatePost(post).then(this.props.closeEdit())
+      }
+
+    updateText () {
+        return e => this.setState({body: e.currentTarget.value})
+    }
+
+    
+    
+    render () {
     let date = new Date(post.created_at);
     return (
     <div className='post-item'>
-    <li>
+     <div className='editPostTitle'><p>Edit Post</p>
+     <div className='closeEditPost' onClick={this.props.closeEdit()}>X</div>
+     </div>
+     <li>
      <div className='post-item-title'>
-      <img className={`post${users[post.author_id].avatar}avatar`} />
+      <img className={`post${users[this.post.author_id].avatar}avatar`} />
       
-      <div><div className="author"><Link to={`/users/${post.author_id}`}><p>{users[post.author_id].first_name} {users[post.author_id].last_name}</p></Link>
-        {currentUserId == post.author_id ?
-          <DropdownButton id="postDropdown" title=". . .">
-            <Dropdown.Item onClick={()=>this.props.editPost(post.id)}>Edit</Dropdown.Item>
-             <Dropdown.Item id='postDelete' onClick={()=>deletePost(post.id)}>Delete</Dropdown.Item> 
-          </DropdownButton>
-        : <div />}
-      </div>
+      <div>
+        <div className="author">
+            <Link to={`/users/${post.author_id}`}>
+                <p>{users[post.author_id].first_name} {users[post.author_id].last_name}</p>
+            </Link>
+        </div>
         <div className='post-author-separator'/>
         <div className="post-date">
         <p>{date.toDateString()}</p>
@@ -32,17 +50,18 @@ const PostEdit = props => {
      <div className='post-body'>
         <input 
             type="text" 
-            defaultValue={post.body} 
+            value={this.state.post.body}
+            onChange={this.updateText()}
         />
      </div>
     </li>
 
     <div className='post-item-icons'>
-      
+        <div className='saveEdit' onClick={()=>this.updatePost(this.state.body)}>Save</div>
     </div>
     
     </div>
 
-  )};
+  )}};
   
   export default PostEdit;
