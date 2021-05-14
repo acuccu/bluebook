@@ -39,6 +39,7 @@ class PostIndex extends React.Component {
 
 
     closeEditPost () {
+      debugger
       this.setState({edit: false})
     }
 
@@ -54,13 +55,13 @@ class PostIndex extends React.Component {
             {
               this.props.posts.reverse().map(post => (
                 <>
-                {(!this.state.edit && (post.id !== this.state.editPost) && Boolean(post)) || 
+                {this.state.edit && (post.id == this.state.editPost) ? 
                 <PostEdit 
                   post={post}
                   users={this.props.users}
                   currentUserId={this.props.currentUserId}
                   closeEditPost={this.closeEditPost}
-                /> }
+                /> : null}
                 <PostIndexItem
                   post={post}
                   key={post.id}

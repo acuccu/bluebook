@@ -6,9 +6,10 @@ class PostEdit extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: this.props.post.id,
             body: this.props.post.body,
             author_id: this.props.post.author_id,
-            wall_id: this.props.post.wall_id
+            wall_id: this.props.post.wall_id,
         };
         this.post = this.props.post;
         this.submitEditPost = this.submitEditPost.bind(this)
@@ -31,7 +32,7 @@ class PostEdit extends React.Component {
     return (
     <div className='post-item'>
      <div className='editPostTitle'><p>Edit Post</p>
-     <div className='closeEditPost' onClick={this.props.closeEditPost()}>X</div>
+     <div className='closeEditPost' onClick={() => this.props.closeEditPost()}>X</div>
      </div>
      <li>
      <div className='post-item-title'>

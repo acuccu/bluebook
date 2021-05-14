@@ -36,9 +36,9 @@ export const fetchPosts = (userId) => {
       .then(post => dispatch(receivePost(post)))
   );
 
-  export const deletePost = (postId) => dispatch => (
-    ApiUtil.deletePost(postId, post.author_id)
-    .then(() => dispatch(removePost(postId)))
+  export const deletePost = (post) => dispatch => (
+    ApiUtil.deletePost(post.id, post.author_id)
+    .then(() => dispatch(removePost(post.id)))
   );
   
 
