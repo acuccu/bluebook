@@ -2,7 +2,7 @@ import React from 'react';
 import PostIndexItem from './post';
 import PostForm from './post_form_container';
 import {withRouter} from 'react-router-dom';
-import PostEdit from './post_edit'
+import PostEdit from './post_edit_container'
 
 
 
@@ -39,7 +39,7 @@ class PostIndex extends React.Component {
 
 
     closeEditPost () {
-      this.setState({edit: fase})
+      this.setState({edit: false})
     }
 
     
@@ -54,7 +54,7 @@ class PostIndex extends React.Component {
             {
               this.props.posts.reverse().map(post => (
                 <>
-                {(this.state.edit && post.id !== this.state.editPost) || 
+                {(!this.state.edit && (post.id !== this.state.editPost) && Boolean(post)) || 
                 <PostEdit 
                   post={post}
                   users={this.props.users}
@@ -65,6 +65,7 @@ class PostIndex extends React.Component {
                   post={post}
                   key={post.id}
                   users={this.props.users}
+                  editPost={this.editPost}
                   currentUserId={this.props.currentUserId}
                   deletePost={this.props.deletePost}
                   editPost={this.editPost}

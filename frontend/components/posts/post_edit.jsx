@@ -10,12 +10,14 @@ class PostEdit extends React.Component {
             author_id: this.props.post.author_id,
             wall_id: this.props.post.wall_id
         };
+        this.post = this.props.post;
         this.submitEditPost = this.submitEditPost.bind(this)
         this.updateText = this.updateText.bind(this)
+        this.user = this.props.user;
     }
 
     submitEditPost (post) {
-        this.props.updatePost(post).then(this.props.closeEdit())
+        this.props.updatePost(post).then(this.props.closeEditPost())
       }
 
     updateText () {
@@ -25,20 +27,20 @@ class PostEdit extends React.Component {
     
     
     render () {
-    let date = new Date(post.created_at);
+    let date = new Date(this.post.created_at);
     return (
     <div className='post-item'>
      <div className='editPostTitle'><p>Edit Post</p>
-     <div className='closeEditPost' onClick={this.props.closeEdit()}>X</div>
+     <div className='closeEditPost' onClick={this.props.closeEditPost()}>X</div>
      </div>
      <li>
      <div className='post-item-title'>
-      <img className={`post${users[this.post.author_id].avatar}avatar`} />
+      <img className={`post${this.user.avatar}avatar`} />
       
       <div>
         <div className="author">
-            <Link to={`/users/${post.author_id}`}>
-                <p>{users[post.author_id].first_name} {users[post.author_id].last_name}</p>
+            <Link to={`/users/${this.post.author_id}`}>
+                <p>{this.user.first_name} {this.user.last_name}</p>
             </Link>
         </div>
         <div className='post-author-separator'/>
@@ -50,7 +52,7 @@ class PostEdit extends React.Component {
      <div className='post-body'>
         <input 
             type="text" 
-            value={this.state.post.body}
+            value={this.state.body}
             onChange={this.updateText()}
         />
      </div>
