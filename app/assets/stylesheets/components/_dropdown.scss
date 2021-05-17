@@ -22,3 +22,18 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+.dropdownItem {
+    padding: 2.5px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.dropdownItems {
+    background-color: white;
+    border: 1px solid #cacdd3;
+    border-radius: 2px;
+    padding: 5px;
+    box-sizing: border-box;
+}

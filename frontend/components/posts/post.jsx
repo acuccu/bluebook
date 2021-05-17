@@ -24,8 +24,8 @@ const PostItem = props => {
             <FontAwesomeIcon icon={faEllipsisH} id="postElli" />
             <DropdownButton id="postDropdown" title=". . .">
             <div className='dropdownItems'>
-              <Dropdown.Item onClick={()=>editPost(post.id)}>Edit</Dropdown.Item>
-              <Dropdown.Item id='postDelete' onClick={()=>deletePost(post)}>Delete</Dropdown.Item> 
+              <div className='dropdownItem'><Dropdown.Item onClick={()=>editPost(post.id)}>Edit</Dropdown.Item></div>
+              <div className='dropdownItem'><Dropdown.Item id='postDelete' onClick={()=>deletePost(post)}>Delete</Dropdown.Item></div> 
             </div>
           </DropdownButton></div>
         : <div />}
