@@ -25,14 +25,24 @@ class PostEdit extends React.Component {
         return e => this.setState({body: e.currentTarget.value})
     }
 
+    componentDidMount() {
+        document.body.style.overflow = 'hidden';
+    }
+    
+    componentWillUnmount() {
+        document.body.style.overflow = 'unset';
+    }
+
     
     
     render () {
     let date = new Date(this.post.created_at);
     return (
-    <div className='post-item'>
-     <div className='editPostTitle'><p>Edit Post</p>
-     <div className='closeEditPost' onClick={() => this.props.closeEditPost()}>X</div>
+    <div className='editOverlay'>
+    <div className='post-item' id='postEdit'>
+     <div className='editPostTitle'>
+         <p className='editTitle'>Edit Post</p>
+        <div className='closeEditPost' onClick={() => this.props.closeEditPost()}>X</div>
      </div>
      <li>
      <div className='post-item-title'>
@@ -55,6 +65,7 @@ class PostEdit extends React.Component {
             type="text" 
             value={this.state.body}
             onChange={this.updateText()}
+            autoFocus
         />
      </div>
     </li>
@@ -62,7 +73,7 @@ class PostEdit extends React.Component {
     <div className='post-item-icons'>
         <div className='saveEdit' onClick={()=>this.submitEditPost(this.state)}>Save</div>
     </div>
-    
+    </div>
     </div>
 
   )}};
