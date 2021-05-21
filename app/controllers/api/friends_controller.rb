@@ -27,8 +27,6 @@ class Api::FriendsController < ApplicationController
 
         @friendship = Friendship.where(user_id: params[:user_id], friend_id: params[:id]).or(Friendship.where(user_id: params[:id], friend_id: params[:user_id]))  
         @user = current_user
-        
-        byebug 
 
       if @friendship[0].accepted
           @friendship[0].update_attribute(:accepted, false)

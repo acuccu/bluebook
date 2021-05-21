@@ -4,7 +4,7 @@ import {fetchPosts} from '../../actions/post_actions';
 import {withRouter} from 'react-router-dom';
 import {deletePost} from '../../actions/post_actions'
 
-const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session: {currentUserId}}) => {
+const mapStateToProps = ({entities: {users, friends, posts}, session: {currentUserId}}) => {
 
     const friendsIdArray = (friendships) => {
       let friendsArr = friendships.map((fr) => {

@@ -10,7 +10,7 @@ const mapStateToProps = ({entities: {users}, session: {currentUserId}}, ownProps
       post: {
         body: '',
         author_id: currentUserId,
-        wall_id: ownProps.match.params.userId
+        wall_id: ownProps.match.params.userId || currentUserId
       },
       author: users[currentUserId]     
   })};

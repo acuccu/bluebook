@@ -9,7 +9,25 @@ class ProfileMain extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            fetched: false
+        }
+        this.fetchFunc = this.fetchFunc.bind(this);
     };
+
+    fetchFunc () {
+        this.props.users.forEach(userId => {
+            this.props.fetchFriends(userId)
+            this.props.fetchPosts(userId)
+        });
+        this.setState({fetched: true})
+    }
+
+    componentDidMount () {
+        if (!this.state.fetched) {
+            this.fetchFunc()
+        }
+    }
 
     
 

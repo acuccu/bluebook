@@ -9,7 +9,7 @@ class Banner extends React.Component {
         this.profileUser = this.props.profileUser;
         this.buttonType = this.buttonType.bind(this);
         this.state = {
-            friendships: this.props.friendships,
+            friendships: this.props.currentAccepted,
             currentPending: this.props.currentPending
         }
     }
@@ -46,23 +46,12 @@ class Banner extends React.Component {
        }
     }
 
-  
-
-    componentDidUpdate (prevProps, prevState) {
-        if (prevProps.profileUserID !== this.props.profileUserID) {
-            this.profileUser = this.props.user
-        }
-    }
-
-    componentDidMount () {
-        this.props.profileUser || this.props.fetchUser(this.props.profileUserID)
-    }
-
 
     render () { 
+        debugger
         if (!this.props.profileUser) {
             return null
-        }
+        } 
         
         
         return(
