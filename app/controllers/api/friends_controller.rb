@@ -3,6 +3,7 @@ class Api::FriendsController < ApplicationController
     def index
         @friendships = Friendship.where(user_id: params[:user_id]).or(Friendship.where(friend_id: params[:user_id]))
         @user = current_user
+        @userId = params[:user_id]
         @pending = @friendships.select {|fr| fr.accepted == false}
         @accepted = @friendships.select {|fr| fr.accepted == true}
         render :index

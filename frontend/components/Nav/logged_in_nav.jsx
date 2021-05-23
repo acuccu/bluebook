@@ -2,11 +2,9 @@ import React from 'react';
 import SearchBarContainer from './search_bar_container'
 import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faUserFriends} from '@fortawesome/free-solid-svg-icons'
 import {faFacebookMessenger} from '@fortawesome/free-brands-svg-icons'
 import {faBell} from '@fortawesome/free-solid-svg-icons'
 import MsgModal from './msg_modal'
-import ReactModal from 'react-modal';
 import Notifications from './notifications'
 
 
@@ -42,35 +40,48 @@ class LoggedInNav extends React.Component {
         this.badgeCheck()
         return (
         <nav className="nav-profile" >
-        <div className='logo-searchbar'>
-        <img className='profile-logo' src={window.fishicon} />
-        <SearchBarContainer />
-        </div>
+
+            <div className='logo-searchbar'>
+                <img className='profile-logo' src={window.fishicon} />
+                <SearchBarContainer />
+            </div>
         <div className='nav-right'>
             <div className='avatar-group'>
                 <Link to={`/users/${this.user.id}`} id="navUser"><div className={`nav${this.user.avatar}avatar`}></div>{`${this.user.first_name}`}</Link>
                 <div className="separators" />
                 <Link to={`/feed/`}>Home</Link>
-                <div className="separators"/>
+                <div className="separators" />
             </div>
-            
-            <div className='logout-i-div'>
+                
             <div className='nav-icons'> 
-                <FontAwesomeIcon onClick={()=>this.props.showModal()} className="nav-i" icon={faFacebookMessenger} />
-                <ReactModal className="badge" isOpen={this.props["badge"]} overlayClassName={"ReactModal_Overlay"} ariaHideApp={false}>
-                    <p  onClick={()=>this.props.showModal()} className="badge-text">1</p>
-                </ReactModal>
-                <ReactModal className="badgeNotifications" isOpen={this.state["badge"]} overlayClassName={"ReactModal_Overlay"} ariaHideApp={false}><p onClick={()=>this.openNotifications()} className="badge-text">{this.props.pendingUsers.length}</p></ReactModal>
-                <FontAwesomeIcon className="nav-i" icon={faBell} onClick={()=>this.openNotifications() }/> </div>
-                <Notifications open={this.state.notifications} requests={this.props.pendingUsers} openNotifications={this.openNotifications}/>
-            <div className="separator-i"></div>
-            <div className="logout-div">
-              
-                <span className='logout-button'>
-                    <button className="button-logout" onClick={()=>this.logout()}>Logout</button>
-                </span>
-            </div></div>
+                
+                    {/* This is the code for the badges */}        
+                    <div className='div-i'>
+                    <FontAwesomeIcon onClick={()=>this.props.showModal()} className="nav-i" icon={faFacebookMessenger} />
+                    {this.props["badge"] ?
+                    <div className="badge">
+                        <p  onClick={()=>this.props.showModal()} className="badge-text">1</p>
+                    </div> :
+                    <div className="badgeNone" ><p className="badge-text">1</p></div>}
+                    </div>
+
+                    <div>
+                    <FontAwesomeIcon className="nav-i" icon={faBell} onClick={()=>this.openNotifications() }/>
+                    {this.state["badge"] ?
+                    <div className="badgeNotifications"><p onClick={()=>this.openNotifications()} className="badge-text">{this.props.pendingUsers.length}</p></div>
+                    : <div className="badgeNoNote"><p className="badge-text">1</p></div>}
+                    </div>
+                    {/* Here ends the code of the badges */}
+                    <Notifications open={this.state.notifications} requests={this.props.pendingUsers} openNotifications={this.openNotifications}/>
+
+                    <span className="separator-i" />
+               
+                    <span>
+                        <button className="button-logout" onClick={()=>this.logout()}>Logout</button>
+                    </span>
+                
             <MsgModal isOpen={this.props["isOpen"]} showModal={this.props.showModal} />
+        </div>
         </div>
         </nav>)
     }

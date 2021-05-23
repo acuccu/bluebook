@@ -10,6 +10,7 @@ class ProfileMain extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            fetchUsers: false,
             fetched: false
         }
         this.fetchFunc = this.fetchFunc.bind(this);
@@ -17,6 +18,7 @@ class ProfileMain extends React.Component {
 
     fetchFunc () {
         this.props.users.forEach(userId => {
+            debugger
             this.props.fetchFriends(userId)
             this.props.fetchPosts(userId)
         });
@@ -24,7 +26,9 @@ class ProfileMain extends React.Component {
     }
 
     componentDidMount () {
+        
         if (!this.state.fetched) {
+            debugger
             this.fetchFunc()
         }
     }
@@ -32,7 +36,11 @@ class ProfileMain extends React.Component {
     
 
     render () {
-       
+        if (!this.state.fetchUsers) {
+            this.props.fetchUsers().then(this.setState({fetchUsers: true}))
+            debugger
+            };
+
         return (
             <div className='feed'>
                 <LoggedInNav isOpen={this.props.isOpen} showModal={this.props.showModal} badge={this.props.badge}/>
