@@ -14,9 +14,9 @@
 }
 
 .notifications {
-    position: absolute;
-    top: 37px;
-    left: 933px;
+    position: relative;
+    top: 90%;
+    left: -60%;
     cursor: pointer;
     background-color: white;
     border: 1px solid #cacdd3;
@@ -26,6 +26,23 @@
     border-radius: 2px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
+    z-index: 1000;
+}
+
+.notificationsClosed {
+    position: relative;
+    top: 90%;
+    left: -60%;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #cacdd3;
+    padding: 15px;
+    margin: -1px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    opacity: 0%;
 }
 
 .notification {

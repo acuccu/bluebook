@@ -72,10 +72,9 @@ class LoggedInNav extends React.Component {
                     : <div className="badgeNoNote"><p className="badge-text">1</p></div>}
                     </div>
                     {/* Here ends the code of the badges */}
-                    <Notifications open={this.state.notifications} requests={this.props.pendingUsers} openNotifications={this.openNotifications}/>
 
                     <span className="separator-i" />
-               
+                    
                     <span>
                         <button className="button-logout" onClick={()=>this.logout()}>Logout</button>
                     </span>
@@ -83,6 +82,7 @@ class LoggedInNav extends React.Component {
             <MsgModal isOpen={this.props["isOpen"]} showModal={this.props.showModal} />
         </div>
         </div>
+        <Notifications open={this.state.notifications} requests={this.props.pendingUsers} openNotifications={this.openNotifications}/>
         </nav>)
     }
 }

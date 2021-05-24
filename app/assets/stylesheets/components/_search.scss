@@ -1,10 +1,9 @@
 .searchModal{
-    position: absolute; 
-    top: 37px;
-    left: 183px;
+    position: relative; 
     width: 393px;
     background: white;
     border: 1px solid #cacdd3;
+    z-index: 1000;
 }
 
 .search-bar:focus {
@@ -27,6 +26,7 @@
 }
 
 .searchButton {
+    position: relative;
     height: 26px;
     width: 49px;
     outline: none;

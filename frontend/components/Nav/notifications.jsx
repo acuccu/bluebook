@@ -11,15 +11,21 @@ class Notifications extends React.Component {
 
     render () {
         return(
-            <ReactModal className="notifications" isOpen={this.props.open} overlayClassName={"ReactModal_Overlay"}
-            shouldFocusAfterRender={false}>
+            <div>
+            {(this.props.open && this.props.requests[0]) ? <div className="notifications">
                 { this.props.requests.map(user =>
                     <div className="notification">
                          <Link className='noteLink' onClick={() => this.props.openNotifications()} to={`/users/${user.id}`}><div className={`nav${user.avatar}avatar`}/><p className='noteName'>{user.first_name} {user.last_name}</p></Link><p className='note'>has requested your friendship</p>
                     </div>
-                    )
-                }
-            </ReactModal>
+                    )}
+            </div> : <div className="notificationsClosed">
+                        {this.props.requests.map(user =>
+                            <div className="notification">
+                                <Link className='noteLink' onClick={() => this.props.openNotifications()} to={`/users/${user.id}`}><div className={`nav${user.avatar}avatar`}/><p className='noteName'>{user.first_name} {user.last_name}</p></Link><p className='note'>has requested your friendship</p>
+                            </div>
+                        )}
+                    </div>}
+            </div>
         )
     }
 

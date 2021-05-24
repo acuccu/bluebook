@@ -42,7 +42,6 @@ class SearchBar extends React.Component {
     };
 
     componentDidMount() {
-        debugger
         this.props.fetchUsers();
     };
 
@@ -53,13 +52,12 @@ class SearchBar extends React.Component {
 
        return( 
         <div>
-            <form className="search-bar-form">
                 <div className='search-div'>
                     <input className="search-bar" type="text" placeholder="Search" onChange={this.searchUpdate()} value={`${this.state.query}`} />
                     <button className='searchButton' onClick={() => this.handleClick(filteredUsers)}><FontAwesomeIcon className='searchButtonIcon' icon={faSearch} /></button>
+                    <SearchResult users={filteredUsers} />
                 </div>
-             </form>
-             <SearchResult users={filteredUsers} />
+    
         </div>
         );
         
