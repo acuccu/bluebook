@@ -42,7 +42,7 @@ class LoggedInNav extends React.Component {
         <nav className="nav-profile" >
 
             <div className='logo-searchbar'>
-                <img className='profile-logo' src={window.fishicon} />
+                <Link to={`/feed`}><img className='profile-logo' src={window.fishicon} /></Link>
                 <SearchBarContainer />
             </div>
         <div className='nav-right'>

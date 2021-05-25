@@ -14,9 +14,9 @@
 }
 
 .notifications {
-    position: relative;
-    top: 90%;
-    left: -60%;
+    // position: absolute;
+    // top: 55%;
+    // left: -47%;
     cursor: pointer;
     background-color: white;
     border: 1px solid #cacdd3;
@@ -27,12 +27,13 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
     z-index: 1000;
+    max-width: max-content;
+    max-height: max-content;
 }
 
 .notificationsClosed {
-    position: relative;
+    // position: absolute;
     top: 90%;
-    left: -60%;
     cursor: pointer;
     background-color: white;
     border: 1px solid #cacdd3;
@@ -49,4 +50,47 @@
     display: flex;
     justify-content: start;
 }
+
+.notifParent {
+    position:absolute;
+    width: 300px;
+    z-index: 1000;
+    top: 7%;
+    left: 65%;
+    width:max-content;
+}
+
+@media screen and (max-width: 420px) {
+    .notifParent {
+        top: 3.5%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .notifParent {
+        top: 2.5%;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .notifParent {
+        top: 6.5%;
+    }
+}
+
+@media screen and (max-width: 1365px) {
+    .notifParent {
+        top: 6.5%;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .notifParent {
+        top: 4.2%;
+    }
+}
+
+
+
+
 
