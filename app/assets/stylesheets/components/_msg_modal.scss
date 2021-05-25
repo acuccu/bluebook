@@ -160,9 +160,9 @@
 
 
 .msg-modal {
-    position: absolute; 
-    top: 275px;
-    left: 900px;
+    position: fixed; 
+    bottom: 0;
+    right: 0;
     height: 350px;
     width: 300px; 
     float: left;
