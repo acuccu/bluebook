@@ -11,8 +11,6 @@
 }
 
 .search-div {
-    display: flex;
-    justify-content: flex-start;
     height: 24px;
 }
 
@@ -55,7 +53,7 @@
     margin: 5px;
 }
 
-.searchResult {
+.searchResult { 
     display: flex;
     justify-content: start;
     cursor: pointer;

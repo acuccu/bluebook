@@ -1,5 +1,5 @@
 json.friendships do 
-  json.set! @userId do 
+  json.set! @userId do  
       json.accepted do
       @accepted.each do |friendship|
           json.set! ( @userId == friendship.user_id ? friendship.friend_id : friendship.user_id) do 
