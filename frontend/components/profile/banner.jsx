@@ -10,8 +10,10 @@ class Banner extends React.Component {
         this.buttonType = this.buttonType.bind(this);
         this.state = {
             friendships: this.props.currentAccepted,
-            currentPending: this.props.currentPending
+            currentPending: this.props.currentPending,
+            fetched: false
         }
+        this.fetchFunc = this.fetchFunc.bind(this);
     }
 
     buttonType () {
@@ -46,9 +48,28 @@ class Banner extends React.Component {
        }
     }
 
+    componentDidMount () {
+        if (!this.state.fetched) {
+            this.fetchFunc()
+        }
+    }
+
+
+    fetchFunc () {
+            this.props.fetchUsers().then(() => {
+                this.props.users.forEach(userId => {
+                    this.props.fetchFriends(userId).then(() => {
+                        this.props.fetchPosts(userId).then(()=>{
+                            this.setState({fetched: true});
+
+                        })
+                    })
+                })  
+            })
+    }
+
 
     render () { 
-        debugger
         if (!this.props.profileUser) {
             return null
         } 

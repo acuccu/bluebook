@@ -12,6 +12,7 @@ class PostIndex extends React.Component {
       this.state = {
         posts: this.props.posts,
         profileId: this.props.profileId,
+        fetched: true,
         edit: false,
         editPost: 0}
       this.editPost = this.editPost.bind(this);
@@ -24,6 +25,7 @@ class PostIndex extends React.Component {
     //     this.props.friendships.forEach( userId => {
     //       this.props.fetchPosts(userId);
     //     });
+    //     // this.setState({fetched:true});
     //     this.forceUpdate();
     // }; 
 

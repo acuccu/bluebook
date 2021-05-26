@@ -21,7 +21,6 @@ class ProfileMain extends React.Component {
 
         if (!this.state.fetchUsers) {
             this.props.fetchUsers().then(() => {
-                console.log(this.props.users);
                 this.props.users.forEach(userId => {
                     this.props.fetchFriends(userId).then(() => {
                         this.props.fetchPosts(userId).then(()=>{
@@ -32,7 +31,7 @@ class ProfileMain extends React.Component {
                 })  
             })
         }
-    }
+    };
 
     componentDidMount () {
         
