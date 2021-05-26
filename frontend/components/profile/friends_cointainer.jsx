@@ -8,6 +8,8 @@ import {fetchPosts} from '../../actions/post_actions';
 const mapStateToProps = ({entities: {users, friends}}, ownProps) => {
     let friendships = Boolean(friends[ownProps.match.params.userId]) ? friends[ownProps.match.params.userId] : {};
     let accfriends = Boolean(friendships.accepted) ? Object.values(friendships.accepted) : [] ;
+
+    debugger
     return({
         users: users, 
         friendships: accfriends,

@@ -15,7 +15,7 @@ const mapStateToProps = ({ session, entities: { users, friends } }, ownProps) =>
       obj && obj[arg], obj)
   }  
 
-  
+  debugger
 // It searches a deep nested object for one or more keys and returns undefined if not found 
   return({
     friendships: friends,

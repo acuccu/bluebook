@@ -45,7 +45,7 @@ class ProfileMain extends React.Component {
             <div className='feed'>
                 <LoggedInNav isOpen={this.props.isOpen} showModal={this.props.showModal} badge={this.props.badge}/>
             <div >
-                <div className='profile-content'>
+                <div className='feedContent'>
                 <SideBar isOpen={this.props["isOpen"]} showModal={this.props.showModal} />
                 <PostIndexContainer />
                 </div>

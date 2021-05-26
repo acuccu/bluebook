@@ -1,4 +1,7 @@
-.profile-content > *{
+.feedContent {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     margin-top: 5px;
     box-sizing: content-box;
     padding: 10px;
