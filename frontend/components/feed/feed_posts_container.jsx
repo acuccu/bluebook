@@ -23,7 +23,7 @@ const mapStateToProps = ({entities: {users, friends, posts}, session: {currentUs
     let friendUsers = friendsIdArray(accfr);
     let feedPosts = Object.values(posts).filter(post => {
         return friendUsers.includes(post.author_id)});
-
+      // debugger
     // Searches through all the posts and filters in all the ones whose author is a friend of the user
     return(
       {

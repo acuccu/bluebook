@@ -17,18 +17,26 @@ class ProfileMain extends React.Component {
     };
 
     fetchFunc () {
-        this.props.users.forEach(userId => {
-            debugger
-            this.props.fetchFriends(userId)
-            this.props.fetchPosts(userId)
-        });
-        this.setState({fetched: true})
+        
+
+        if (!this.state.fetchUsers) {
+            this.props.fetchUsers().then(() => {
+                console.log(this.props.users);
+                this.props.users.forEach(userId => {
+                    this.props.fetchFriends(userId).then(() => {
+                        this.props.fetchPosts(userId).then(()=>{
+                            this.setState({fetched: true, fetchUsers: true});
+
+                        })
+                    })
+                })  
+            })
+        }
     }
 
     componentDidMount () {
         
         if (!this.state.fetched) {
-            debugger
             this.fetchFunc()
         }
     }
@@ -36,10 +44,7 @@ class ProfileMain extends React.Component {
     
 
     render () {
-        if (!this.state.fetchUsers) {
-            this.props.fetchUsers().then(this.setState({fetchUsers: true}))
-            debugger
-            };
+        
 
         return (
             <div className='feed'>

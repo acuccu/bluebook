@@ -20,12 +20,12 @@ class PostIndex extends React.Component {
     
     
 
-    componentDidMount () {
-        this.props.friendships.forEach( userId => {
-          this.props.fetchPosts(userId);
-        });
-        this.forceUpdate();
-    }; 
+    // componentDidMount () {
+    //     this.props.friendships.forEach( userId => {
+    //       this.props.fetchPosts(userId);
+    //     });
+    //     this.forceUpdate();
+    // }; 
 
     componentDidUpdate (prevProps, prevState) {
       if (prevProps.profileId !== this.props.profileId) {

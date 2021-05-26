@@ -18,11 +18,10 @@ const receiveFriend = friend => ({
     friend
 });
 
-export const fetchFriends = (userId) => {
-    return ( (dispatch) => {
+export const fetchFriends = (userId) => dispatch => (
     ApiUtil.fetchFriends(userId)
-      .then(payload => dispatch(receiveAllFriends(payload)))}
-)};
+      .then(payload => dispatch(receiveAllFriends(payload)))
+);
 
 export const createFriend = (friendship, currentUserId) => dispatch => (
     ApiUtil.createFriend(friendship, currentUserId)
