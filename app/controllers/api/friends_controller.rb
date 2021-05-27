@@ -58,11 +58,11 @@ class Api::FriendsController < ApplicationController
           @user = current_user
           @friendships = Friendship.where(user_id: params[:user_id]).or(Friendship.where(friend_id: params[:user_id]))
           if @friendships[0]
-            @pending = @friendships[0].select {|fr| fr.accepted == false}
-            @accepted = @friendships[0].select {|fr| fr.accepted == true}
+            @pending = @friendships.select {|fr| fr.accepted == false}
+            @accepted = @friendships.select {|fr| fr.accepted == true}
             render :index
           else 
-            #if user has no friendships a mock friendship is created and sent to the frontend
+            #if user has no friendships a mock empty friendship is created and sent to the frontend
             @pending = [{}]
             render :nil
           end
