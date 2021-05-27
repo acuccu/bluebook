@@ -11,7 +11,8 @@ class Banner extends React.Component {
         this.state = {
             friendships: this.props.currentAccepted,
             currentPending: this.props.currentPending,
-            fetched: false
+            fetched: false,
+            buttonActive: false
         }
         this.fetchFunc = this.fetchFunc.bind(this);
     }
@@ -20,12 +21,12 @@ class Banner extends React.Component {
         debugger
        if (this.props.currentUserId == this.props.match.params.userId) {
         return <div></div> ;
-       } else if (this.props.currentAccepted) {
-           return <button onClick={
-             () => {
-                 this.props.deleteFriend(this.props.match.params.userId, this.props.currentUserId)
-             }
+        // if the currentUser is on its own profile no friend button will be displayed
+       } else if (this.props.currentAccepted && !this.state.buttonActive) {
+           return <button onClick={() => this.setState({buttonActive: true})
            }>Friends</button>
+        // if visiting the profile of a friend pressing the friendButton will set a state that visualizes a second friendButton
+        // this is a way to ask the user if they are sure they want to unfriend
        } else if (this.props.currentPending) {
            return (this.props.currentPending.user_id == this.props.currentUserId) ?  
            <button onClick={
@@ -36,7 +37,14 @@ class Banner extends React.Component {
                () => {
                 this.props.acceptFriend(this.props.match.params.userId, this.props.currentUserId)
                }
-           }>Accept</button>
+           }>Accept</button> 
+       } else if (this.props.currentAccepted && this.state.buttonActive) {
+                return (
+                        <button onClick={
+                            () => {
+                                this.props.deleteFriend(this.props.match.params.userId, this.props.currentUserId)
+                            }}>Unfriend?</button>)
+            //this is the friendButton asking the currentUser if they are sure they want to unfriend
        } else {
            return <button onClick={()=>
                this.props.createFriend(
