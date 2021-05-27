@@ -18,22 +18,7 @@ class PostIndex extends React.Component {
       this.editPost = this.editPost.bind(this);
       this.closeEditPost = this.closeEditPost.bind(this);
     }
-    
-    
-
-    // componentDidMount () {
-    //     this.props.friendships.forEach( userId => {
-    //       this.props.fetchPosts(userId);
-    //     });
-    //     // this.setState({fetched:true});
-    //     this.forceUpdate();
-    // }; 
-
-    componentDidUpdate (prevProps, prevState) {
-      if (prevProps.profileId !== this.props.profileId) {
-          this.forceUpdate()
-      }
-    };
+  
 
     editPost (postId) {
       this.setState({edit: true, editPost: postId})
@@ -41,7 +26,6 @@ class PostIndex extends React.Component {
 
 
     closeEditPost () {
-      debugger
       this.setState({edit: false})
     }
 

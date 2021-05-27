@@ -33,8 +33,8 @@ export const acceptFriend = (currentUserId, friendId) => dispatch => (
     .then(friendships => dispatch(receiveAllFriends(friendships))) 
 );
 
-export const deleteFriend = (currentUserId, friendId) => dispatch => (
-    ApiUtil.deleteFriend(currentUserId, friendId)
+export const deleteFriend = (profileId, currentUserId) => dispatch => (
+    ApiUtil.deleteFriend(profileId, currentUserId)
     .then(friendships => dispatch(receiveAllFriends(friendships)))
 ); 
 

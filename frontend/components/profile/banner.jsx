@@ -17,23 +17,24 @@ class Banner extends React.Component {
     }
 
     buttonType () {
+        debugger
        if (this.props.currentUserId == this.props.match.params.userId) {
         return <div></div> ;
        } else if (this.props.currentAccepted) {
            return <button onClick={
              () => {
-                 this.props.deleteFriend(this.props.currentUserId, this.props.match.params.userId)
+                 this.props.deleteFriend(this.props.match.params.userId, this.props.currentUserId)
              }
            }>Friends</button>
        } else if (this.props.currentPending) {
            return (this.props.currentPending.user_id == this.props.currentUserId) ?  
            <button onClick={
             () => {
-                this.props.deleteFriend(this.props.currentUserId, this.props.match.params.userId)
+                this.props.deleteFriend(this.props.match.params.userId, this.props.currentUserId).then((res) => console.log(res))
             }}>Pending</button> : 
            <button onClick={
                () => {
-                this.props.acceptFriend(this.props.currentUserId, this.props.match.params.userId)
+                this.props.acceptFriend(this.props.match.params.userId, this.props.currentUserId)
                }
            }>Accept</button>
        } else {
@@ -42,7 +43,7 @@ class Banner extends React.Component {
                    {user_id: this.props.currentUserId, 
                     friend_id: this.props.profileUser.id,
                     accepted: false}, 
-                    this.props.currentUserId
+                    this.props.match.params.userId
                 )}
                >Request Friendship</button>
        }
@@ -90,7 +91,7 @@ class Banner extends React.Component {
                 <div className='div-banner'>
                 <nav className='nav-banner'>
                 <div className='banner-separators' />
-                   <Link to='/feed'>Timeline</Link>
+                <Link to='/feed'>Timeline</Link>
                 <div className='banner-separators' />
                 <Link to='/in-progress'>About</Link>
                 <div className='banner-separators' />
