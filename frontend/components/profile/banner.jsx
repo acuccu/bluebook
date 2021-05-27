@@ -42,7 +42,7 @@ class Banner extends React.Component {
                 return (
                         <button onClick={
                             () => {
-                                this.props.deleteFriend(this.props.match.params.userId, this.props.currentUserId)
+                                this.props.deleteFriend(this.props.match.params.userId, this.props.currentUserId).then(() => this.setState({buttonActive:false}) )
                             }}>Unfriend?</button>)
             //this is the friendButton asking the currentUser if they are sure they want to unfriend
        } else {

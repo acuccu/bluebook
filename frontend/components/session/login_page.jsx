@@ -23,7 +23,7 @@ class LoginPage extends React.Component {
             <>
             <div className="nav-inside">
                 <a className="nav-logo" href='https://thebluebook.herokuapp.com/'>bluebook</a>
-            <div className="lin-create"><Link to='/create' >Create New Account </Link> </div>
+            <div className="lin-create"><Link to='/' >Create New Account </Link> </div>
             </div>
             <div className='login-white-square'>
             <p className="lin-error-message">The email or phone number you’ve entered doesn’t match any account. Sign up for an account.</p>

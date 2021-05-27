@@ -17,8 +17,8 @@ class LoginForm extends React.Component {
         const errorCB = () => {
             this.props.history.push("/login")};
 
-        // e.preventDefault();
-        // this.login(this.state).then(null, errorCB());
+        e.preventDefault();
+        this.login(this.state).then(null, errorCB());
 
         const loginCB = () => {
             return <Redirect to="/feed" />
