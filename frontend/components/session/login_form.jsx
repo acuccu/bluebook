@@ -9,23 +9,26 @@ class LoginForm extends React.Component {
         
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.errorCB = this.errorCB.bind(this);
+        this.loginCB = this.loginCB.bind(this);
         this.state = this.props.credentials;
         this.login = this.props.login;
     }
 
     handleSubmit (e) {
-        const errorCB = () => {
-            this.props.history.push("/login")};
 
         e.preventDefault();
-        this.login(this.state).then(null, errorCB());
-
-        const loginCB = () => {
-            return <Redirect to="/feed" />
-        }
+        this.login(this.state).then(() => this.loginCB(), () => this.errorCB());
 
         e.preventDefault();
         this.login(this.state);
+    }
+
+    errorCB () {
+        this.props.history.push("/login")};
+        
+    loginCB () {
+        return <Redirect to="/feed"/>
     }
 
     update(field) {

@@ -48,19 +48,19 @@ class ProfileEdit extends React.Component {
                 <span className='icon-span'>
                 <FontAwesomeIcon className='icon-intro' icon={faHome} />
                 <p className='intro-black'>Lives in </p>
-                <input type="text" placeholder={`${this.currentUser.location}`} onChange={this.inputUpdate('location')} value={`${this.state.location}`} />
+                <input className='editInput' type="text" placeholder={`${this.currentUser.location}`} onChange={this.inputUpdate('location')} value={`${this.state.location}`} />
                </span>
 
                <span className='icon-span'>
                 <FontAwesomeIcon id="grad-cap" className='icon-intro' icon={faGraduationCap} />
                 <p className='intro-black'>Went to </p>
-                <input type="text" placeholder={`${this.currentUser.education}`} onChange={this.inputUpdate('education')} value={`${this.state.education}`} />
+                <input className='editInput' type="text" placeholder={`${this.currentUser.education}`} onChange={this.inputUpdate('education')} value={`${this.state.education}`} />
                </span>
 
                <span className='icon-span'>
                <FontAwesomeIcon className='icon-intro' icon={faBriefcase} />
                <p className='intro-black'>Works at </p>
-               <input type="text" placeholder={`${this.currentUser.work_place}`} onChange={this.inputUpdate('work_place')} value={`${this.state.work_place}`} />
+               <input className='editInput' type="text" placeholder={`${this.currentUser.work_place}`} onChange={this.inputUpdate('work_place')} value={`${this.state.work_place}`} />
                </span>
             </div>
 
