@@ -1,10 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faCamera} from '@fortawesome/free-solid-svg-icons';
 import {faPencilAlt} from '@fortawesome/free-solid-svg-icons';
-import {faImages} from '@fortawesome/free-solid-svg-icons';
-import {faUserTag} from '@fortawesome/free-solid-svg-icons';
-import {faGrin} from '@fortawesome/free-solid-svg-icons';
 import {withRouter} from 'react-router-dom';
 
 
@@ -18,20 +14,24 @@ class PostForm extends React.Component {
     }
     
     handleSubmit(e) {
+      debugger
       e.preventDefault();
       this.props.createPost(this.state).then(() => this.clearField());}
 
     
       componentDidUpdate () {
-        if (this.state.wall_id !== this.props.match.params.userId) {
-          this.setState({'wall_id': this.props.match.params.userId});
+        if (!this.props.match.params && (this.state.wall_id !== this.props.author.id)) {
+          this.setState({wall_id: this.props.author.id })
+        }
+        else if (this.state.wall_id !== this.props.match.params.userId) {
+          this.setState({wall_id: this.props.match.params.userId});
         }
         
     }; 
 
 
     clearField() {
-        this.setState({body: "", author_id: this.props.author.id, wall_id: this.props.match.params.userId || this.props.author.id})
+        this.setState({body: "", author_id: this.props.author.id, wall_id: this.props.post.wall_id})
     }
   
     update(field) {
@@ -39,7 +39,6 @@ class PostForm extends React.Component {
     }
     
     render () {
-      
       return(
         <div className='create-post'>
            

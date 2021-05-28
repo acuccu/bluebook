@@ -4,7 +4,6 @@ import PostForm from './post_form';
 import { createPost } from '../../actions/post_actions';
 
 const mapStateToProps = ({entities: {users}, session: {currentUserId}}, ownProps) => {
-  
   return ({
 
       post: {
