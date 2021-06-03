@@ -20,7 +20,8 @@ class LoggedInNav extends React.Component {
         this.state = {
             badge: false,
             notifications: false,
-            clicked: false
+            clicked: false,
+            noteClicked: false,
         }
         this.badgeCheck = this.badgeCheck.bind(this)
         this.openNotifications = this.openNotifications.bind(this)
@@ -34,6 +35,11 @@ class LoggedInNav extends React.Component {
 
     openNotifications () {
         this.setState ({notifications: !this.state.notifications, badge: false})
+    }
+
+    componentWillUnmount () {
+        if (this.props.isOpen) {
+        this.props.showModal();}
     }
 
     render() {
@@ -67,7 +73,7 @@ class LoggedInNav extends React.Component {
 
                     <div>
                     <FontAwesomeIcon className="nav-i" icon={faBell} onClick={()=>this.openNotifications() }/>
-                    {this.state["badge"] ?
+                    {this.state["badge"]  ?
                     <div className="badgeNotifications"><p onClick={()=>this.openNotifications()} className="badge-text">{this.props.pendingUsers.length}</p></div>
                     : <div className="badgeNoNote"><p className="badge-text">1</p></div>}
                     </div>

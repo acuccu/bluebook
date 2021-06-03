@@ -22,7 +22,7 @@ class SideBar extends React.Component {
         <div className='side-bar'>
             <div className='bar-user'>
                 <div className={`nav${user.avatar}avatar`}></div>
-                <Link to={`/users/${user.id}`}>{`${user.first_name} ${user.last_name}`}</Link>
+                <Link className='sideBarUser' to={`/users/${user.id}`}>{`${user.first_name} ${user.last_name}`}</Link>
             </div>
             <div className='bar-elements'>
                 <div className='news-bar-element'>

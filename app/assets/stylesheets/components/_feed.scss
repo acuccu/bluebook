@@ -37,7 +37,7 @@
     border-radius: 5px;
 }
 
-.news-bar-element > * {
+.news-bar-element {
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     box-sizing: content-box;
@@ -84,6 +84,20 @@
     border: 1px solid #979797; 
     background-color: rgb(253, 253, 253);
     border-radius: 5px;
+}
+
+.side-bar {
+    margin-right: 3%;
+}
+
+.sideBarUser {
+     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    box-sizing: content-box;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+    padding: 2px;
 }
 
 
