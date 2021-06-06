@@ -2,6 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faLinkedin} from '@fortawesome/free-brands-svg-icons'
 import {faGit} from '@fortawesome/free-brands-svg-icons'
+import {faAnchor} from '@fortawesome/free-solid-svg-icons'
+
 
 class MoreModal extends React.Component {
 
@@ -29,7 +31,7 @@ class MoreModal extends React.Component {
                 <div className="more-modal" onMouseLeave={this.handleMouseHover}>
                     <div className="div-more"><a href="https://www.linkedin.com/in/antonio-cuccu-4b0906114/" target="blank_"><FontAwesomeIcon className="more-icon" icon={faLinkedin} />LinkedIn</a></div>
                     <div className="div-more"><a href="https://github.com/acuccu" target="blank_"><FontAwesomeIcon className="more-icon" icon={faGit} />gitHub</a></div>
-                    <div className="div-more"><a href="https://acuccu.github.io/" target="blank_">Personal website</a></div>
+                    <div className="div-more"><a href="https://acuccu.github.io/" target="blank_"><FontAwesomeIcon className="more-icon" icon={faAnchor} />Portfolio</a></div>
                 </div>}
                 
             </div>
