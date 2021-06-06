@@ -14,15 +14,13 @@ class ProfileMain extends React.Component {
         super(props);
         this.editIntro = this.editIntro.bind(this);
         this.state = {
-            didFetch: false,
             edit: false
         };
         
     }
 
     componentDidMount () {
-        this.props.fetchUser(this.props.match.params.userId).then(() => {
-            this.setState({didFetch: true})});   
+        this.props.fetchUser(this.props.match.params.userId)
     }
 
     editIntro () {
@@ -44,7 +42,7 @@ class ProfileMain extends React.Component {
                     <div className='side-bar'>
                     {!this.state.edit && <ProfileIntro editIntro={this.editIntro} />}
                     {this.state.edit && <ProfileEdit editIntro={this.editIntro} />}
-                    {this.state.didFetch && <Friends />}
+                    <Friends />
                     </div>
                     <PostIndex />
                 </div>

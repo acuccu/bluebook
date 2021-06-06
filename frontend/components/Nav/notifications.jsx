@@ -11,7 +11,7 @@ class Notifications extends React.Component {
     }
 
     handleClickOutside() {
-       this.props.open && this.props.openNotifications();
+       this.props.open && this.props.outsideClick();
       }
 
     notifications (arrayReq) {

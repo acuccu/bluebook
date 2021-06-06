@@ -25,6 +25,7 @@ class LoggedInNav extends React.Component {
         }
         this.badgeCheck = this.badgeCheck.bind(this)
         this.openNotifications = this.openNotifications.bind(this)
+        this.outsideClick = this.outsideClick.bind(this)
     }
 
     badgeCheck () {
@@ -34,7 +35,13 @@ class LoggedInNav extends React.Component {
     }
 
     openNotifications () {
+        debugger
         this.setState ({notifications: !this.state.notifications, badge: false})
+    }
+
+    outsideClick () {
+        debugger
+        this.setState({notifications: false})
     }
 
     componentWillUnmount () {
@@ -88,7 +95,7 @@ class LoggedInNav extends React.Component {
             <MsgModal isOpen={this.props["isOpen"]} showModal={this.props.showModal} />
         </div>
         </div>
-        <Notifications open={this.state.notifications} requests={this.props.pendingUsers} openNotifications={this.openNotifications}/>
+        <Notifications open={this.state.notifications} requests={this.props.pendingUsers} openNotifications={this.openNotifications} outsideClick={this.outsideClick}/>
         </nav>)
     }
 }

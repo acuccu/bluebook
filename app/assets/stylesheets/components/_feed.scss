@@ -1,12 +1,9 @@
-.feedContent {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 5px;
-    box-sizing: content-box;
-    padding: 10px;
+.bar-element {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin-top: 3px;
+  
 }
-
 
 .bar-user {
     display: flex;
@@ -26,32 +23,9 @@
     color: #333333;
 }
 
-.news-bar-element {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    // border: 1px solid #979797; 
-    // background-color: rgb(253, 253, 253);
-    border-radius: 5px;
-}
-
-.news-bar-element {
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    box-sizing: content-box;
-    font-size: 14px;
-    color: black;
-    cursor: pointer;
-    padding: 2px;
-}
-
 .feed {
     height: max-content;
 }
-
-
 
 .feed-avatar {
     border-radius: 50%;
@@ -61,23 +35,33 @@
     background-size: cover;
 }
 
-.icon-bar {
-    font-size: 21px;
-
+.feedContent {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 5px;
+    box-sizing: content-box;
+    padding: 10px;
 }
 
-.bar-elements > * {
-    display: flex;
+.icon-bar {
+    font-size: 21px;
+    margin: 5%;
+}
+
+.news-bar-anchor{
+    display: flex;  
+    text-decoration: none;
     align-items: center;
 }
 
-.bar-element > * {
+.news-bar-element {
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
-    box-sizing: content-box;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
     padding: 2px;
-    font-size: 16px;
-    margin-top: 3px;
 }
 
 .news-bar-element:hover {
