@@ -35,13 +35,12 @@ class LoggedInNav extends React.Component {
     }
 
     openNotifications () {
-        debugger
         this.setState ({notifications: !this.state.notifications, badge: false})
     }
 
-    outsideClick () {
-        debugger
-        this.setState({notifications: false})
+    outsideClick (e) {
+        e.stopPropagation();
+        this.setState({notifications: false});
     }
 
     componentWillUnmount () {
