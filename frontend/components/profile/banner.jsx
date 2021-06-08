@@ -18,7 +18,7 @@ class Banner extends React.Component {
     }
 
     buttonType () {
-        debugger
+        
        if (this.props.currentUserId == this.props.match.params.userId) {
         return <div></div> ;
         // if the currentUser is on its own profile no friend button will be displayed
