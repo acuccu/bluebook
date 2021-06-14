@@ -8,16 +8,15 @@
     display: flex;
     justify-content: space-evenly;
     margin: 5px;
+    color: black;
 }
 
 .noteName {
     margin: 5px;
+    
 }
 
 .notifications {
-    // position: absolute;
-    // top: 55%;
-    // left: -47%;
     cursor: pointer;
     background-color: white;
     border: 1px solid #cacdd3;
@@ -33,7 +32,6 @@
 }
 
 .notificationsClosed {
-    // position: absolute;
     top: 90%;
     cursor: pointer;
     background-color: white;
