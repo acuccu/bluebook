@@ -58,9 +58,12 @@ class Banner extends React.Component {
     }
 
     componentDidMount () {
-        if (!this.state.fetched) {
-            this.fetchFunc()
-        }
+        // if (!this.state.fetched) {
+        //     this.fetchFunc()
+        // }
+        this.props.fetchFriends(this.props.currentUserId).then(() => {
+            this.props.fetchPosts(this.props.currentUserId)
+        })
     }
 
 

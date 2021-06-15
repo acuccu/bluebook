@@ -26,7 +26,7 @@ const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session
      };
 
       let userPosts = Object.values(posts).filter(post => {
-        return  (post.wall_id ==  ownProps.match.params.userId || post.author_id == ownProps.match.params.userId)
+        return  (post.wall_id ==  ownProps.match.params.userId)
       });
 
      

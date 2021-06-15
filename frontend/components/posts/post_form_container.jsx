@@ -11,7 +11,8 @@ const mapStateToProps = ({entities: {users}, session: {currentUserId}}, ownProps
         author_id: currentUserId,
         wall_id: ownProps.match.params.userId || currentUserId
       },
-      author: users[currentUserId]     
+      author: users[currentUserId],
+      params:ownProps.match.params.userId 
   })};
   
   const mapDispatchToProps = dispatch => ({

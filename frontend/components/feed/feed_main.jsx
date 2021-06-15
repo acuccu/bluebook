@@ -17,8 +17,6 @@ class ProfileMain extends React.Component {
             this.props.fetchPosts(this.props.currentUserId)
         })
     }
-
-
     
 
     render () {
