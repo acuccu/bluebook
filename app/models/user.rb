@@ -32,6 +32,8 @@ def ensure_session_token
     self.session_token ||= SecureRandom.base64(16)
 end
 
+
+
 has_many :posts,
 foreign_key: :author_id,
 class_name: :Post,
@@ -46,7 +48,7 @@ has_many :received_friendships,
 class_name: :Friendship, 
 foreign_key: :friend_id
 
-has_many :friends,
+has_many :req_friends,
 through: :requested_friendships,
 source: :friend
 
@@ -55,6 +57,5 @@ through: :received_friendships,
 inverse_of: :friends,
 source: :friend
 
-# has_one_attached :banner
 
 end

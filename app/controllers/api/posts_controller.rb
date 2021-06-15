@@ -1,6 +1,7 @@
 class Api::PostsController < ApplicationController
     def index
-        @posts = Post.includes(:author).where(author_id: params[:user_id])
+        @authors_id = friends_id.push(current_user.id)
+        @posts = Post.includes(:author).where(author_id: @authors_id).or(Post.includes(:author).where(wall_id:  params[:user_id]))
         render :index
       end
     
@@ -42,6 +43,11 @@ class Api::PostsController < ApplicationController
     
       def post_params
         params.require(:post).permit(:id, :body, :author_id, :wall_id)
+      end
+
+      def friends_id
+        friendships = Friendship.where(user_id: params[:user_id]).or(Friendship.where(friend_id: params[:user_id]))
+        friends_id = friendships.map {|fr| fr.user_id == current_user.id ? fr.friend_id : fr.user_id}
       end
     
 end
