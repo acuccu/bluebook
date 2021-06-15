@@ -32,7 +32,7 @@ const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session
      
     return(
       {
-      posts: userPosts,
+      posts: userPosts.reverse(),
       users: users,
       friendships: friendsIdArray(accfr),
       currentUserId: currentUserId,

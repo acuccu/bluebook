@@ -39,7 +39,7 @@ class PostIndex extends React.Component {
           <div className="post-title"> Posts </div>
           <ul>
             {
-              this.props.posts.reverse().map(post => (
+              this.props.posts.map(post => (
                 <>
                 {this.state.edit && (post.id == this.state.editPost) ? 
                 <PostEdit 
