@@ -5,11 +5,13 @@ import {fetchPosts} from '../../actions/post_actions'
 import {fetchUsers} from '../../actions/user_actions'
 import {withRouter} from 'react-router-dom';
 
-const mapStateToProps = ({entities: {users}}) => {
+const mapStateToProps = ({entities: {users}, session}) => {
     let usersArray = Object.values(users);
     let usersId = usersArray.map(user => (user.id))
+    
     return ({
-        users: usersId
+        users: usersId,
+        currentUserId: session.currentUserId
     }
     )
 };
