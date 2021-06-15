@@ -44,7 +44,7 @@ class PostIndex extends React.Component {
                 {this.state.edit && (post.id == this.state.editPost) ? 
                 <PostEdit 
                   post={post}
-                  key={post.id}
+                  key={post.id + "edit"}
                   users={this.props.users}
                   currentUserId={this.props.currentUserId}
                   closeEditPost={this.closeEditPost}

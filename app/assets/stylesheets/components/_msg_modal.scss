@@ -12,6 +12,10 @@
     margin-left: -10%;
 }
 
+.badge:focus {
+    outline: none;
+}
+
 .badgeNone {
     position: relative;
     height: 12px;
@@ -38,6 +42,10 @@
     z-index: 1000;
 }
 
+.badgeNotifications:focus {
+    outline: none;
+}
+
 .badgeNoNote {
     position: relative;
     height: 12px;
@@ -51,22 +59,11 @@
     z-index: 1000;
 }
 
-.divBadge {
-    margin-top: 10%;
-}
-
-.badge:focus {
-    outline: none;
-}
-
-.badgeNotifications:focus {
-    outline: none;
-}
-
 .badge-text{
     position: relative;
     left: 3px;
 }
+
 .chat-button{
     display: inline-block;
     border: none;
@@ -91,7 +88,11 @@
 #close-modal {
     margin-left: 170px;  
     cursor: pointer;
-}       
+}    
+
+.divBadge {
+    margin-top: 10%;
+}
 
 .field-half {
     border-top-style: hidden;

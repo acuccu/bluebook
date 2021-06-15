@@ -1,7 +1,49 @@
+.author > a {
+    color: $fb-blue;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.horizontal-spacing {
+    margin-right: 30px;
+}
+
+.post-author-separator {
+    margin: 5px;
+}
+
+.post-body {
+    padding: 8px;
+    border-bottom: 1px solid #dddfe2;
+
+}
+
+.post-body > p {
+    font-size: 14px;
+    color: #333333;
+}
+
+.post-button {
+    opacity: 75%;
+    margin-top: 3px;
+    margin-left: 50px;
+    transform: scale(1.4);
+}
+
+.post-date {
+    
+    font-size: 12px;
+    color: #616770;
+}
+
+.postEditClick {
+    color:black;
+}
+
 .post-item {
     box-sizing: border-box;
     border: 1px solid #cacdd3;
-    // padding-top: 5px;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 2px;
     background-color: white;
@@ -19,15 +61,6 @@
     background-color: white;
 }
 
-.post-author-separator {
-    margin: 5px;
-}
-
-.post-body {
-    padding: 8px;
-    border-bottom: 1px solid #dddfe2;
-
-}
 
 .post-item-avatar {
     border-radius: 50%;
@@ -41,24 +74,6 @@
 
 }
 
-.post-body > p {
-    font-size: 14px;
-    color: #333333;
-}
-
-.author > a {
-    color: $fb-blue;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.post-date {
-    
-    font-size: 12px;
-    color: #616770;
-}
-
 .post-item-icons {
     box-sizing: border-box;
    
@@ -66,17 +81,6 @@
     display: flex;
     justify-content: start;
    padding-top: 7px;
-}
-
-.post-button {
-    opacity: 75%;
-    margin-top: 3px;
-    margin-left: 50px;
-    transform: scale(1.4);
-}
-
-.horizontal-spacing {
-    margin-right: 30px;
 }
 
 #postDropdown {

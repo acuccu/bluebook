@@ -1,14 +1,3 @@
-.icon-globe {
-    background-color: red;
-    border-radius: 70%;
-    color: white;
-    padding: 5px;
-    -webkit-font-smoothing: antialiased;
-    transform: scale(0.7);
-    margin-bottom: 3px;
-}
-
-
 
 .friends_title {
     display: flex;
@@ -33,4 +22,14 @@
     color: $fb-blue;
     margin-top: 5px;
     cursor: pointer;
+}
+
+.icon-globe {
+    background-color: red;
+    border-radius: 70%;
+    color: white;
+    padding: 5px;
+    -webkit-font-smoothing: antialiased;
+    transform: scale(0.7);
+    margin-bottom: 3px;
 }
