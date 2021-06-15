@@ -26,7 +26,7 @@ const mapStateToProps = ({entities: {users, friends, posts}, session: {currentUs
     // Searches through all the posts and filters in all the ones whose author is a friend of the user
     return(
       {
-      posts: feedPosts,
+      posts: feedPosts.reverse(),
       users: users,
       friendships: friendUsers,
       currentUserId: currentUserId
