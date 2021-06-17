@@ -21,13 +21,11 @@ class PostForm extends React.Component {
 
     
     componentDidUpdate () {
-      debugger
+      
         if (!this.props.match.params.userId && (this.state.wall_id !== this.props.author.id)) {
-          debugger
           this.setState({wall_id: this.props.author.id })
         }
         else if (this.props.match.params.userId && (this.state.wall_id !== this.props.match.params.userId)) {
-          debugger
           this.setState({wall_id: this.props.match.params.userId});
         }
         

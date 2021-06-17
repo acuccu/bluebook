@@ -13,7 +13,7 @@ const PostItem = props => {
     const editPost = props.editPost;
     let date = new Date(post.created_at);
     return (
-    <div className='post-item'>
+    <div className='post-item' >
     <li>
      <div className='post-item-title'>
       <img className={`post${users[post.author_id].avatar}avatar`} />

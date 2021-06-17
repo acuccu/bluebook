@@ -38,7 +38,7 @@ class Friends extends React.Component {
                 <div className="friends_pics">
                     {friends1.map((friend) => {
                         return (
-                            <div className='friend-frame' id={friend.id}>
+                            <div className='friend-frame' key={friend.id}>
                                 <div className={`friend${friend.avatar}avatar`} onClick={ () => this.props.fetchUser(friend.id).then(() => this.props.fetchPosts(friend.id)).then(() => this.props.history.push(`/users/${friend.id}`))}></div>
                                 <div className='friend-name' onClick={ () => this.props.fetchUser(friend.id).then(() => this.props.fetchPosts(friend.id)).then(() => this.props.history.push(`/users/${friend.id}`))}> {friend.first_name} {friend.last_name}</div>
                             </div>
@@ -48,7 +48,7 @@ class Friends extends React.Component {
                 <div className="friends_pics">
                     {friends2.map((friend) => {
                         return (
-                            <div className='friend-frame' id={friend.id}>
+                            <div className='friend-frame'  key={friend.id}>
                                 <div className={`friend${friend.avatar}avatar`} onClick={ () => this.props.fetchUser(friend.id).then(() => this.props.fetchPosts(friend.id)).then(() => this.props.history.push(`/users/${friend.id}`))}></div>
                                 <div className='friend-name' onClick={ () => this.props.fetchUser(friend.id).then(() => this.props.fetchPosts(friend.id)).then(() => this.props.history.push(`/users/${friend.id}`))}> {friend.first_name} {friend.last_name}</div>
                             </div>
