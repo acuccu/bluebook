@@ -1,10 +1,14 @@
 # BlueBook
 
-BlueBook is a social-media website for marine fauna that is modeled after Facebook. Users can login and post on their wall. 
+BlueBook is a social-media website for marine fauna that is modeled after old classic Facebook we all know. Users can login, request and accept friendships, and post on every user's wall. 
 
 ## Styling 
 
-BlueBook is closely modeled to render the feeling and user experience of Facebook. 
+BlueBook is closely modeled to render the feeling and user experience of classic Facebook. 
+
+![login](public/Screen%20Shot%202021-06-20%20at%209.36.26%20PM.png)
+
+
 
 ## Front-end and backend authentication
 
@@ -13,6 +17,5 @@ All the forms in the website are self-validating and offer the user guidence on 
 ## Future implementations
 
 * Add comments to posts 
-* Friendship requests
-* Feed and continuous scrolling 
-* Uploading pictures
+* Likes
+* Live chat
