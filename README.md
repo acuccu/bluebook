@@ -1,4 +1,4 @@
-# BlueBook
+# The Bluebook
 
 BlueBook is a social-media website for marine fauna that is modeled after old classic Facebook we all know. Users can login, request and accept friendships, and post on every user's wall. 
 
@@ -37,6 +37,6 @@ Easy navigation through the Nav bar. Search for users, receive notifications, or
 
 ## Future implementations
 
-* Add comments to posts 
+* Comments on posts 
 * Likes
 * Live chat
