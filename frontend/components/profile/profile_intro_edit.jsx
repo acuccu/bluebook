@@ -16,7 +16,7 @@ class ProfileEdit extends React.Component {
         this.state = {
             bio: this.currentUser.bio,
             location: this.currentUser.location,
-            eduction: this.currentUser.eductation,
+            education: this.currentUser.education,
             work_place: this.currentUser.work_place
         }
     }

@@ -12,7 +12,11 @@ const mapStateToProps = state => ({
         password: '',
         dob: '',
         gender: 'other',
-        avatar: 9
+        avatar: 9,
+        location: 'from the land',
+        work_place: 'dream job',
+        education: 'College University',
+        bio: 'Hello recruiter, thank you for visiting!'
     }
 });
 
