@@ -5,16 +5,15 @@ class bodSelector extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            month: '',
-            day: '',
-            year: '',
+            month: '01',
+            day: '01',
+            year: '1995'
         };
+        this.dobSetState = this.dobSetState.bind(this);
     }
 
     dobSetState (field) {
-
-        const that = this; 
-        return (e) => that.setState({[field]: e.currentTarget.value}, () => this.props.dobUpdate(this.state)); 
+        return (e) => this.setState({[field]: e.currentTarget.value}, () => this.props.dobUpdate(this.state)); 
     };
    
     

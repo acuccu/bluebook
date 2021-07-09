@@ -20,6 +20,7 @@ class SignUpForm extends React.Component {
     };
 
     handleSubmit (e) {
+        debugger
         e.preventDefault();
         this.validateFields(this.state.newUser);
         this.signUp(this.state.newUser);
@@ -79,7 +80,8 @@ class SignUpForm extends React.Component {
 
     dobUpdate({month, day, year}) {
         const bday = `${month}/${day}/${year}`;
-        this.setState({['dob']: bday})
+        const newState = Object.assign({}, this.state.newUser, {['dob']: bday});
+        this.setState({newUser: newState })
     };
 
     removeSessionErrors() {
