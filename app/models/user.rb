@@ -57,5 +57,7 @@ through: :received_friendships,
 inverse_of: :friends,
 source: :friend
 
+has_many :likes, dependent: :destroy
+
 
 end
