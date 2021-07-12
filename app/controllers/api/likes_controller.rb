@@ -1,13 +1,11 @@
 class Api::LikesController < ApplicationController
 
-    def index 
-        @likes = Post.likes
-    end
+    
 
     def create
         @like = Like.new(like_params)
         if @like.save
-            index
+            show
         else
             render json: @friendship.errors.full_messages, status: 422
         end

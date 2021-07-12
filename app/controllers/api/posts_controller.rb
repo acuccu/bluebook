@@ -2,6 +2,7 @@ class Api::PostsController < ApplicationController
     def index
         @authors_id = friends_id.push(current_user.id)
         @posts = Post.includes(:author).where(author_id: @authors_id).or(Post.includes(:author).where(wall_id:  params[:user_id]))
+        @likes = @posts.likes
         render :index
       end
     
@@ -21,6 +22,7 @@ class Api::PostsController < ApplicationController
     
       def update
         @post = Post.find(params[:id])
+        @likes = @post.likes
     
         if @post.update(post_params)
           render :show

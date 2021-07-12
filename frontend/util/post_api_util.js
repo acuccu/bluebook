@@ -27,4 +27,4 @@ export const deletePost = (postId, userId) => (
     url: `/api/users/${userId}/posts/${postId}/`,
     method: 'DELETE'
   })
-)
+);
