@@ -2,7 +2,7 @@ import {RECEIVE_ALL_FRIENDS, REMOVE_FRIEND, RECEIVE_FRIEND} from '../actions/fri
 import {RECEIVE_CURRENT_USER} from '../actions/session_actions'
 import {RECEIVE_USER} from '../actions/user_actions'
 
-const FriendsReducer = (state = {}, action) => {
+const friendsReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
       case RECEIVE_CURRENT_USER:
@@ -21,4 +21,4 @@ const FriendsReducer = (state = {}, action) => {
     }
   };
   
-  export default FriendsReducer;
+  export default friendsReducer;
