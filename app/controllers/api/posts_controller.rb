@@ -1,8 +1,7 @@
 class Api::PostsController < ApplicationController
     def index
         @authors_id = friends_id.push(current_user.id)
-        @posts = Post.includes(:author).where(author_id: @authors_id).or(Post.includes(:author).where(wall_id:  params[:user_id]))
-        @likes = @posts.likes
+        @posts = Post.includes(:author, :likes).where(author_id: @authors_id).or(Post.includes(:author, :likes).where(wall_id:  params[:user_id]))
         render :index
       end
     

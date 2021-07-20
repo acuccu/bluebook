@@ -12,6 +12,8 @@ const likesReducer = (state = {}, action) => {
             delete nextState[action.likeId]
         case RECEIVE_ALL_POSTS:
             return Object.assign({}, state, action.payload.likes) 
+        default: 
+            return state;
     }
 };
 

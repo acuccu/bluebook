@@ -2,10 +2,13 @@ import { connect } from 'react-redux';
 import PostIndex from './post_index';
 import {fetchPosts} from '../../actions/post_actions';
 import {withRouter} from 'react-router-dom';
-import {deletePost} from '../../actions/post_actions'
+import {deletePost} from '../../actions/post_actions';
+import {createLike} from '../../actions/like_actions';
+import {deleteLike} from '../../actions/like_actions';
 
 
-const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session: {currentUserId}}, ownProps) => {
+
+const mapStateToProps = ({entities: {users, friends, posts}, session: {currentUserId}}, ownProps) => {
     
 
     let friendships = friends[ownProps.match.params.userId] || {};
@@ -28,7 +31,7 @@ const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session
       let userPosts = Object.values(posts).filter(post => {
         return  (post.wall_id ==  ownProps.match.params.userId)
       });
-
+      
      
     return(
       {
@@ -44,7 +47,9 @@ const mapStateToProps = ({entities: {posts}, entities: {users, friends}, session
   const mapDispatchToProps = dispatch => ({
     fetchPosts: (userId) => dispatch(fetchPosts(userId)),
     deletePost: (postId) => dispatch(deletePost(postId)),
-    updatePost: (post, userId) => dispatch(updatePost(post, userId))
+    updatePost: (post, userId) => dispatch(updatePost(post, userId)),
+    createLike: (userId, postId) => dispatch(createLike(userId, postId)),
+    deleteLike: (likeId) => dispatch(deleteLike((likeId)))
   });
 
   export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostIndex));

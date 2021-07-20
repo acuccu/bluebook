@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_09_131501) do
+ActiveRecord::Schema.define(version: 2021_07_20_224051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_07_09_131501) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "liked_id"
+    t.integer "post_id"
     t.string "type"
     t.integer "value"
     t.datetime "created_at", precision: 6, null: false

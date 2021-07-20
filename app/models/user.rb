@@ -37,7 +37,7 @@ end
 has_many :posts,
 foreign_key: :author_id,
 class_name: :Post,
-dependent: :delete_all
+dependent: :destroy
 
 has_many :requested_friendships,
 class_name: :Friendship,
@@ -56,8 +56,6 @@ has_many :received_friends,
 through: :received_friendships,
 inverse_of: :friends,
 source: :friend
-
-has_many :likes, dependent: :destroy
 
 
 end

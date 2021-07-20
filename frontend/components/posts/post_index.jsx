@@ -28,8 +28,6 @@ class PostIndex extends React.Component {
     closeEditPost () {
       this.setState({edit: false})
     }
-
-    
   
     render() {
       const author = this.props.user;
@@ -57,6 +55,8 @@ class PostIndex extends React.Component {
                   currentUserId={this.props.currentUserId}
                   deletePost={this.props.deletePost}
                   editPost={this.editPost}
+                  createLike={this.props.createLike}
+                  deleteLike={this.props.deleteLike}
                 />
                 <div className='post-index-div'/>
                 </>

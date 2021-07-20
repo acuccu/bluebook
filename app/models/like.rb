@@ -1,8 +1,10 @@
 class Like < ApplicationRecord
-    validates_presence_of :value, :user, :liked
-    validates :user_id, uniqueness: { scope: [:liked_id, :liked_type] }
-    validates :value, inclusion: 0..4
 
-    belongs_to :user
-    belongs_to :liked, polymorphic: true
+    belongs_to :user,
+    foreign_key: :user_id,
+    class_name: :User
+
+    belongs_to :liked,
+    foreign_key: :post_id,
+    class_name: :Post
 end

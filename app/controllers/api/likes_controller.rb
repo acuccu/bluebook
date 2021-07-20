@@ -1,11 +1,11 @@
 class Api::LikesController < ApplicationController
 
-    
-
     def create
-        @like = Like.new(like_params)
+        @like = Like.new({user_id: params["user_id"], post_id: params["post_id"]})
         if @like.save
-            show
+            @post = @like.liked
+            @likes = @post.likes.map {|like| like.user_id}
+            render :show
         else
             render json: @friendship.errors.full_messages, status: 422
         end
@@ -13,12 +13,12 @@ class Api::LikesController < ApplicationController
 
     def destroy
         @like = current_user.likes.find(params[:id])
+        @post = @like.liked
         @like.destroy
+        @likes = post.likes.map {|like| like.user_id}
+        render :show
     end
 
-protected
-    def like_params
-        params.require(:like).permit(:value, :user_id, :reference_id, :reference_type)
-    end
+
 
 end

@@ -1,17 +1,23 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import Dropdown from 'react-bootstrap/Dropdown'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faEllipsisH} from '@fortawesome/free-solid-svg-icons'
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faEllipsisH} from '@fortawesome/free-solid-svg-icons';
+import {faThumbsUp} from '@fortawesome/free-solid-svg-icons';
+
+
 
 const PostItem = props => {
     const {post} = props;
     const {users} = props;
     const deletePost = props.deletePost.bind(this);
     const {currentUserId} = props;
+    const {createLike} = props;
+    const {deleteLike} = props;
     const editPost = props.editPost;
     let date = new Date(post.created_at);
+    debugger
     return (
     <div className='post-item' >
     <li>
@@ -42,7 +48,10 @@ const PostItem = props => {
     </li>
 
     <div className='post-item-icons'>
-      
+      {post.likes.includes(currentUserId) ? 
+      <div className='unlike' onClick={()=>deleteLike(currentUserId, post.id)}></div> : 
+      <button className='like' onClick={()=>createLike(currentUserId, post.id)}>Like</button>}
+      <div className='like-list'>{post.likes.length} have liked this post</div>
     </div>
     
     </div>
