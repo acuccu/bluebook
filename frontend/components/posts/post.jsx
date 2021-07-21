@@ -49,8 +49,8 @@ const PostItem = props => {
 
     <div className='post-item-icons'>
       {post.likes.includes(currentUserId) ? 
-      <button className='unlike' onClick={()=>deleteLike(currentUserId, post.id)}><FontAwesomeIcon icon={faThumbsDown} />Unlike</button> : 
-      <button className='like' onClick={()=>createLike(currentUserId, post.id)}><FontAwesomeIcon icon={faThumbsUp} />Like</button>}
+      <button className='like' onClick={()=>deleteLike(currentUserId, post.id)}><FontAwesomeIcon className='unlikeIcon' icon={faThumbsDown} />Unlike</button> : 
+      <button className='like' onClick={()=>createLike(currentUserId, post.id)}><FontAwesomeIcon className='likeIcon'icon={faThumbsUp} />Like</button>}
       <div className='like-list'>{likesWording(post.likes, users)}</div>
     </div>
     
@@ -64,11 +64,11 @@ const PostItem = props => {
     } else if (likesArr.length === 1) {
       let userId = likesArr[0];
       let user = users[userId];
-      return `${user.first_name} ${user.last_name} liked the post`
+      return (<><Link className='like-link' to={`/users/${user.id}`}>{user.first_name} {user.last_name}</Link> liked the post</>)
     } else if (likesArr.length === 2) {
       let user1 = users[likesArr[0]];
       let user2 = users[likesArr[1]];
-      return `${user1.first_name} ${user1.last_name} and ${user2.first_name} ${user2.last_name} liked the post`
+      return (<><Link className='like-link' to={`/users/${user1.id}`}>{user1.first_name} {user1.last_name}</Link> and <Link className='like-link' to={`/users/${user2.id}`}>{user2.first_name} {user2.last_name}</Link> liked the post</>)
     } else {
       let user = users[likesArr[0]];
       return `${user.first_name} ${user.last_name} and ${likesArr.length} liked the post`

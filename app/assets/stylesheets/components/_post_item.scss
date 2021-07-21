@@ -9,6 +9,38 @@
     margin-right: 30px;
 }
 
+.like {
+    font-size: 14px;
+    color: #3b5998;
+    cursor: pointer;
+}
+
+.likeIcon {
+    margin-right: 0.2rem;
+    margin-bottom: 0.1rem;
+}
+
+.unlikeIcon {
+    margin-right: 0.2rem;
+    margin-bottom: -0.1rem;
+}
+
+.like-link {
+    margin-top: -0.03rem;
+    margin-right: 0.2rem;
+    margin-left: 0.2rem;
+    color: #333333;
+}
+
+.like-list {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 0.1rem;
+    margin-left: 0.1rem;
+    color: #333333;
+}
+
 .post-author-separator {
     margin: 5px;
 }
