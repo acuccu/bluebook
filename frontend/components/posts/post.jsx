@@ -68,10 +68,10 @@ const PostItem = props => {
     } else if (likesArr.length === 2) {
       let user1 = users[likesArr[0]];
       let user2 = users[likesArr[1]];
-      return (<><Link className='like-link' to={`/users/${user1.id}`}>{user1.first_name} {user1.last_name}</Link> and <Link className='like-link' to={`/users/${user2.id}`}>{user2.first_name} {user2.last_name}</Link> liked the post</>)
+      return (<><Link className='like-link' to={`/users/${user1.id}`}>{user1.first_name} {user1.last_name}</Link> and <Link className='like-link2' to={`/users/${user2.id}`}>{user2.first_name} {user2.last_name}</Link> liked the post</>)
     } else {
       let user = users[likesArr[0]];
-      return `${user.first_name} ${user.last_name} and ${likesArr.length} liked the post`
+      return (<><Link className='like-link' to={`/users/${user.id}`}>{user.first_name} {user.last_name}</Link> and {likesArr.length} liked the post</>)
     }
   }
   

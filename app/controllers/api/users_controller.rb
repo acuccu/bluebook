@@ -20,9 +20,11 @@ class Api::UsersController < ApplicationController
         if @user.save
             log_in!(@user)
             # this code creates first friend 
-            first_friendship = Friendship.create({user_id: @user.id, friend_id: 4, accepted: true})
+            first_friendship = Friendship.create({user_id: @user.id, friend_id: 2, accepted: true})
+            welcome_post = Post.create({body:'Thank you for registering!', author_id: 4, wall_id: @user.id})
+            pending_friendship = Friendship.create({user_id: 4, friend_id: @user.id, accepted: false})
             @friendships = [first_friendship]
-            @pending = []
+            @pending = [pending_friendship]
             @accepted = [first_friendship]
             @friends = [first_friendship.friend]
             # <--->
