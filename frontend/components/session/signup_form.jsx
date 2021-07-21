@@ -66,7 +66,7 @@ class SignUpForm extends React.Component {
             signUpErrors['cellphone'] = true;
         } else { signUpErrors['cellphone'] = false};
 
-        if (userInfo.password === "" || userInfo.password.length > 6) {
+        if (userInfo.password === "" || userInfo.password.length < 6) {
             signUpErrors['password'] = true;
         } else { signUpErrors['password'] = false};
 

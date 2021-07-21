@@ -10,13 +10,13 @@ const mapStateToProps = state => ({
         email: '',
         cellphone: '',
         password: '',
-        dob: '',
+        dob: '01/01/1995',
         gender: 'other',
         avatar: 9,
         location: 'from the land',
         work_place: 'dream job',
         education: 'College University',
-        bio: 'Hello recruiter, thank you for visiting!'
+        bio: 'Welcome'
     }
 });
 

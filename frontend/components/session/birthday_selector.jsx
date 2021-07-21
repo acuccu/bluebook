@@ -19,7 +19,6 @@ class bodSelector extends React.Component {
     
     
     render () { 
-         
     const years = [];
     let d = new Date();
 
@@ -84,7 +83,7 @@ class bodSelector extends React.Component {
             if (year == 1995) {
                 return  <option value="1995" key="1995" >1995</option>
             } else {
-                return  <option value={year} key ={year}>{year}</option>
+                return  <option value={year} key={year}>{year}</option>
             }
             })}
     </select>
