@@ -2,7 +2,9 @@ import { connect } from 'react-redux';
 import FeedPosts from '../posts/post_index'
 import {fetchPosts} from '../../actions/post_actions';
 import {withRouter} from 'react-router-dom';
-import {deletePost} from '../../actions/post_actions'
+import {deletePost} from '../../actions/post_actions';
+import {createLike} from '../../actions/like_actions';
+import {deleteLike} from '../../actions/like_actions';
 
 const mapStateToProps = ({entities: {users, friends, posts}, session: {currentUserId}}) => {
 
@@ -36,7 +38,9 @@ const mapStateToProps = ({entities: {users, friends, posts}, session: {currentUs
 
   const mapDispatchToProps = dispatch => ({
     fetchPosts: (userId) => dispatch(fetchPosts(userId)),
-    deletePost: (postId) => dispatch(deletePost(postId))
+    deletePost: (postId) => dispatch(deletePost(postId)),
+    createLike: (userId, postId) => dispatch(createLike(userId, postId)),
+    deleteLike: (userId, postId) => dispatch(deleteLike(userId, postId))
   });
 
   export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FeedPosts));

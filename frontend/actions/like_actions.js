@@ -9,5 +9,5 @@ export const createLike = (userId, postId) => dispatch => (
 
 export const deleteLike = (userId, postId) => dispatch => (
     ApiUtil.deleteLike(userId, postId)
-    .then(post => dispatch(removePost(post)))
+    .then(post => dispatch(receivePost(post)))
   );
