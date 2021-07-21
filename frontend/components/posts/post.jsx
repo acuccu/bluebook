@@ -4,7 +4,8 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEllipsisH} from '@fortawesome/free-solid-svg-icons';
-import {faThumbsUp} from '@fortawesome/free-solid-svg-icons';
+import {faThumbsDown} from '@fortawesome/free-solid-svg-icons';
+import {faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -17,7 +18,6 @@ const PostItem = props => {
     const {deleteLike} = props;
     const editPost = props.editPost;
     let date = new Date(post.created_at);
-    debugger
     return (
     <div className='post-item' >
     <li>
@@ -49,13 +49,30 @@ const PostItem = props => {
 
     <div className='post-item-icons'>
       {post.likes.includes(currentUserId) ? 
-      <div className='unlike' onClick={()=>deleteLike(currentUserId, post.id)}>Unlike</div> : 
-      <button className='like' onClick={()=>createLike(currentUserId, post.id)}>Like</button>}
-      <div className='like-list'>{post.likes.length} have liked this post</div>
+      <button className='unlike' onClick={()=>deleteLike(currentUserId, post.id)}><FontAwesomeIcon icon={faThumbsDown} />Unlike</button> : 
+      <button className='like' onClick={()=>createLike(currentUserId, post.id)}><FontAwesomeIcon icon={faThumbsUp} />Like</button>}
+      <div className='like-list'>{likesWording(post.likes, users)}</div>
     </div>
     
     </div>
 
   )};
+
+  const likesWording = (likesArr, users) => {
+    if (likesArr.length === 0) {
+      return '';
+    } else if (likesArr.length === 1) {
+      let userId = likesArr[0];
+      let user = users[userId];
+      return `${user.first_name} ${user.last_name} liked the post`
+    } else if (likesArr.length === 2) {
+      let user1 = users[likesArr[0]];
+      let user2 = users[likesArr[1]];
+      return `${user1.first_name} ${user1.last_name} and ${user2.first_name} ${user2.last_name} liked the post`
+    } else {
+      let user = users[likesArr[0]];
+      return `${user.first_name} ${user.last_name} and ${likesArr.length} liked the post`
+    }
+  }
   
   export default PostItem;
