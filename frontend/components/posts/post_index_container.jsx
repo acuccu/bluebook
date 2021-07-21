@@ -49,7 +49,7 @@ const mapStateToProps = ({entities: {users, friends, posts}, session: {currentUs
     deletePost: (postId) => dispatch(deletePost(postId)),
     updatePost: (post, userId) => dispatch(updatePost(post, userId)),
     createLike: (userId, postId) => dispatch(createLike(userId, postId)),
-    deleteLike: (likeId) => dispatch(deleteLike((likeId)))
+    deleteLike: (userId, postId) => dispatch(deleteLike(userId, postId))
   });
 
   export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostIndex));

@@ -49,7 +49,7 @@ const PostItem = props => {
 
     <div className='post-item-icons'>
       {post.likes.includes(currentUserId) ? 
-      <div className='unlike' onClick={()=>deleteLike(currentUserId, post.id)}></div> : 
+      <div className='unlike' onClick={()=>deleteLike(currentUserId, post.id)}>Unlike</div> : 
       <button className='like' onClick={()=>createLike(currentUserId, post.id)}>Like</button>}
       <div className='like-list'>{post.likes.length} have liked this post</div>
     </div>

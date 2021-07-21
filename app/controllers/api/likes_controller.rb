@@ -12,11 +12,14 @@ class Api::LikesController < ApplicationController
     end
 
     def destroy
-        @like = current_user.likes.find(params[:id])
+        @like = Like.where(user_id: params["user_id"]).and(Like.where(post_id: params["post_id"])).first
         @post = @like.liked
-        @like.destroy
-        @likes = post.likes.map {|like| like.user_id}
-        render :show
+        if @like.destroy
+            @likes = @post.likes.map {|like| like.user_id}
+            render :show
+        else
+            render json: @post.errors.full_messages, status: 422
+        end
     end
 
 
